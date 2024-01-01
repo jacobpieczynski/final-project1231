@@ -25,10 +25,3383 @@ H2H Advantage won 600 out of 1159 total games. This is 51.77%
 
 TEST PRINTS
 --------------------------------------------------
+[[lemad001, 'DJ LeMahieu', 1, '3'], [judga001, 'Aaron Judge', 2, '10'], [torrg001, 'Gleyber Torres', 3, '4'], [wella002, 'Austin Wells', 4, '2'], [volpa001, 'Anthony Volpe', 5, '6'], [kinei001, 'Isiah Kiner-Falefa', 6, '7'], [cabro002, 'Oswaldo Cabrera', 7, '9'], [perao002, 'Oswald Peraza', 8, '5'], [flore001, 'Estevan Florial', 9, '8']]
+break
+[martk001, mccaj003, gurrl001, walkc002, longe001, rivee001, ahmen001, kellc002, thoma004, donob001, goldp001, arenn001, nootl001, contw001, gormn001, oneit001, walkj003, dejop001, 'donob001', 'goldp001', 'arenn001', 'martk001', 'mccaj003', 'gurrl001', 'nootl001', 'contw001', 'gormn001', 'oneit001', 'walkj003', 'walkc002', 'longe001', 'rivee001', 'ahmen001', 'dejop001', 'kellc002', 'thoma004', 'canzd001', 'carrc005', 'carld002', 'burla001']
 [[carrc005, 'Corbin Carroll', 1, '9'], [martk001, 'Ketel Marte', 2, '4'], [phamt001, 'Tommy Pham', 3, '10'], [walkc002, 'Christian Walker', 4, '3'], [thoma004, 'Alek Thomas', 5, '8'], [gurrl001, 'Lourdes Gurriel Jr.', 6, '7'], [longe001, 'Evan Longoria', 7, '5'], [moreg001, 'Gabriel Moreno', 8, '2'], [perdg001, 'Geraldo Perdomo', 9, '6']]
 Corbin Carroll
 1 is: True
-{'Singles': 97, 'Doubles': 31, 'Triples': 9, 'Home Runs': 25, 'Hits': 162, 'Walks': 62, 'At Bats': 652}
-PLAYER WITH MOST HOME RUNS
-{'Singles': 112, 'Doubles': 28, 'Triples': 3, 'Home Runs': 54, 'Hits': 197, 'Walks': 102, 'At Bats': 760}
-Matt Olson had the most home runs in 2023
+Corbin Carroll batting totals:
+Action in game on 07/02/2023, Visitor against ANA
+At bat for Corbin Carroll with a result of 46(1)/FO/G34+.B-1
+Ball in play but out. Total for season: 1
+Plate Appearance. Total for season: 1
+
+---------------
+Action in game on 07/18/2023, Visitor against ATL
+At bat for Corbin Carroll with a result of T9/L9LS.1-H
+Triple! Total for season: 1
+Plate Appearance. Total for season: 2
+
+Action in game on 07/18/2023, Visitor against ATL
+At bat for Corbin Carroll with a result of K+WP.2-H(E2/TH)(NR);B-3
+Strikeout. Total on season: 1
+Plate Appearance. Total for season: 3
+
+Action in game on 07/18/2023, Visitor against ATL
+At bat for Corbin Carroll with a result of 8/L8XD+
+Ball in play but out. Total for season: 2
+Plate Appearance. Total for season: 4
+
+Action in game on 07/18/2023, Visitor against ATL
+At bat for Corbin Carroll with a result of S3/G34S-.3-H;2-3
+Single! Total for season: 1
+Plate Appearance. Total for season: 5
+
+Action in game on 07/18/2023, Visitor against ATL
+At bat for Corbin Carroll with a result of HP
+Hit by Pitch. Total for season: 1
+Plate Appearance. Total for season: 6
+
+Action in game on 07/18/2023, Visitor against ATL
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 2
+Plate Appearance. Total for season: 7
+
+---------------
+Action in game on 07/19/2023, Visitor against ATL
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 3
+Plate Appearance. Total for season: 8
+
+Action in game on 07/19/2023, Visitor against ATL
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 1
+Plate Appearance. Total for season: 9
+
+Action in game on 07/19/2023, Visitor against ATL
+At bat for Corbin Carroll with a result of 3/G3
+Ball in play but out. Total for season: 3
+Plate Appearance. Total for season: 10
+
+Action in game on 07/19/2023, Visitor against ATL
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 4
+Plate Appearance. Total for season: 11
+
+Action in game on 07/19/2023, Visitor against ATL
+At bat for Corbin Carroll with a result of 7/F7LD
+Ball in play but out. Total for season: 4
+Plate Appearance. Total for season: 12
+
+---------------
+Action in game on 07/20/2023, Visitor against ATL
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 5
+Plate Appearance. Total for season: 13
+
+Action in game on 07/20/2023, Visitor against ATL
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 6
+Plate Appearance. Total for season: 14
+
+Action in game on 07/20/2023, Visitor against ATL
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 2
+Plate Appearance. Total for season: 15
+
+Action in game on 07/20/2023, Visitor against ATL
+At bat for Corbin Carroll with a result of HR/F9D
+Home Run! Total for season: 1
+Plate Appearance. Total for season: 16
+
+---------------
+Action in game on 04/06/2023, Home against LAN
+At bat for Corbin Carroll with a result of 4/L34D
+Ball in play but out. Total for season: 5
+Plate Appearance. Total for season: 17
+
+Action in game on 04/06/2023, Home against LAN
+At bat for Corbin Carroll with a result of 43/G4
+Ball in play but out. Total for season: 6
+Plate Appearance. Total for season: 18
+
+Action in game on 04/06/2023, Home against LAN
+At bat for Corbin Carroll with a result of 3/G34
+Ball in play but out. Total for season: 7
+Plate Appearance. Total for season: 19
+
+Action in game on 04/06/2023, Home against LAN
+At bat for Corbin Carroll with a result of 2/P1S
+Ball in play but out. Total for season: 8
+Plate Appearance. Total for season: 20
+
+---------------
+Action in game on 04/07/2023, Home against LAN
+At bat for Corbin Carroll with a result of 9/L9
+Ball in play but out. Total for season: 9
+Plate Appearance. Total for season: 21
+
+Action in game on 04/07/2023, Home against LAN
+At bat for Corbin Carroll with a result of S4/G34.3-H;1-2
+Single! Total for season: 2
+Plate Appearance. Total for season: 22
+
+Action in game on 04/07/2023, Home against LAN
+At bat for Corbin Carroll with a result of HR/F89XD
+Home Run! Total for season: 2
+Plate Appearance. Total for season: 23
+
+Action in game on 04/07/2023, Home against LAN
+At bat for Corbin Carroll with a result of 43/G4.2-3
+Ball in play but out. Total for season: 10
+Plate Appearance. Total for season: 24
+
+---------------
+Action in game on 04/08/2023, Home against LAN
+At bat for Corbin Carroll with a result of 43/G34
+Ball in play but out. Total for season: 11
+Plate Appearance. Total for season: 25
+
+Action in game on 04/08/2023, Home against LAN
+At bat for Corbin Carroll with a result of HP
+Hit by Pitch. Total for season: 2
+Plate Appearance. Total for season: 26
+
+Action in game on 04/08/2023, Home against LAN
+At bat for Corbin Carroll with a result of S9/F9
+Single! Total for season: 3
+Plate Appearance. Total for season: 27
+
+Action in game on 04/08/2023, Home against LAN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 7
+Plate Appearance. Total for season: 28
+
+Action in game on 04/08/2023, Home against LAN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 8
+Plate Appearance. Total for season: 29
+
+---------------
+Action in game on 04/09/2023, Home against LAN
+At bat for Corbin Carroll with a result of S8/L8.2-H;BX2(826)
+Single! Total for season: 4
+Plate Appearance. Total for season: 30
+
+Action in game on 04/09/2023, Home against LAN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 9
+Plate Appearance. Total for season: 31
+
+Action in game on 04/09/2023, Home against LAN
+At bat for Corbin Carroll with a result of 6/P56D
+Ball in play but out. Total for season: 12
+Plate Appearance. Total for season: 32
+
+Action in game on 04/09/2023, Home against LAN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 10
+Plate Appearance. Total for season: 33
+
+Action in game on 04/09/2023, Home against LAN
+At bat for Corbin Carroll with a result of 9/F89XD
+Ball in play but out. Total for season: 13
+Plate Appearance. Total for season: 34
+
+---------------
+Action in game on 04/11/2023, Home against MIL
+At bat for Corbin Carroll with a result of 9/F89XD
+Ball in play but out. Total for season: 14
+Plate Appearance. Total for season: 35
+
+Action in game on 04/11/2023, Home against MIL
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 11
+Plate Appearance. Total for season: 36
+
+Action in game on 04/11/2023, Home against MIL
+At bat for Corbin Carroll with a result of 8/F89D
+Ball in play but out. Total for season: 15
+Plate Appearance. Total for season: 37
+
+---------------
+Action in game on 04/12/2023, Home against MIL
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 12
+Plate Appearance. Total for season: 38
+
+Action in game on 04/12/2023, Home against MIL
+At bat for Corbin Carroll with a result of S8/G4M+
+Single! Total for season: 5
+Plate Appearance. Total for season: 39
+
+Action in game on 04/12/2023, Home against MIL
+At bat for Corbin Carroll with a result of 31/G3+
+Ball in play but out. Total for season: 16
+Plate Appearance. Total for season: 40
+
+Action in game on 04/12/2023, Home against MIL
+At bat for Corbin Carroll with a result of HR/F78XD.1-H
+Home Run! Total for season: 3
+Plate Appearance. Total for season: 41
+
+---------------
+Action in game on 04/20/2023, Home against SDN
+At bat for Corbin Carroll with a result of 9/F89D+
+Ball in play but out. Total for season: 17
+Plate Appearance. Total for season: 42
+
+Action in game on 04/20/2023, Home against SDN
+At bat for Corbin Carroll with a result of 31/G3
+Ball in play but out. Total for season: 18
+Plate Appearance. Total for season: 43
+
+Action in game on 04/20/2023, Home against SDN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 13
+Plate Appearance. Total for season: 44
+
+Action in game on 04/20/2023, Home against SDN
+At bat for Corbin Carroll with a result of 6/P6D
+Ball in play but out. Total for season: 19
+Plate Appearance. Total for season: 45
+
+Action in game on 04/20/2023, Home against SDN
+At bat for Corbin Carroll with a result of 7/F7
+Ball in play but out. Total for season: 20
+Plate Appearance. Total for season: 46
+
+---------------
+Action in game on 04/21/2023, Home against SDN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 14
+Plate Appearance. Total for season: 47
+
+Action in game on 04/21/2023, Home against SDN
+At bat for Corbin Carroll with a result of 43/G34
+Ball in play but out. Total for season: 21
+Plate Appearance. Total for season: 48
+
+Action in game on 04/21/2023, Home against SDN
+At bat for Corbin Carroll with a result of 9/L89D+
+Ball in play but out. Total for season: 22
+Plate Appearance. Total for season: 49
+
+Action in game on 04/21/2023, Home against SDN
+At bat for Corbin Carroll with a result of S7/G56.1-2
+Single! Total for season: 6
+Plate Appearance. Total for season: 50
+
+Action in game on 04/21/2023, Home against SDN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 15
+Plate Appearance. Total for season: 51
+
+---------------
+Action in game on 04/22/2023, Home against SDN
+At bat for Corbin Carroll with a result of S8/L78D+.1-3
+Single! Total for season: 7
+Plate Appearance. Total for season: 52
+
+Action in game on 04/22/2023, Home against SDN
+At bat for Corbin Carroll with a result of D9/G3
+Double! Total for season: 1
+Plate Appearance. Total for season: 53
+
+Action in game on 04/22/2023, Home against SDN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 16
+Plate Appearance. Total for season: 54
+
+Action in game on 04/22/2023, Home against SDN
+At bat for Corbin Carroll with a result of 7/L7D+
+Ball in play but out. Total for season: 23
+Plate Appearance. Total for season: 55
+
+---------------
+Action in game on 04/23/2023, Home against SDN
+At bat for Corbin Carroll with a result of 6/P6
+Ball in play but out. Total for season: 24
+Plate Appearance. Total for season: 56
+
+Action in game on 04/23/2023, Home against SDN
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 3
+Plate Appearance. Total for season: 57
+
+Action in game on 04/23/2023, Home against SDN
+At bat for Corbin Carroll with a result of S9/G3.1-3
+Single! Total for season: 8
+Plate Appearance. Total for season: 58
+
+Action in game on 04/23/2023, Home against SDN
+At bat for Corbin Carroll with a result of D7/G5
+Double! Total for season: 2
+Plate Appearance. Total for season: 59
+
+---------------
+Action in game on 04/24/2023, Home against KCA
+At bat for Corbin Carroll with a result of D8/L89D
+Double! Total for season: 3
+Plate Appearance. Total for season: 60
+
+Action in game on 04/24/2023, Home against KCA
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 4
+Plate Appearance. Total for season: 61
+
+Action in game on 04/24/2023, Home against KCA
+At bat for Corbin Carroll with a result of 6/P4D
+Ball in play but out. Total for season: 25
+Plate Appearance. Total for season: 62
+
+Action in game on 04/24/2023, Home against KCA
+At bat for Corbin Carroll with a result of 6/P56D
+Ball in play but out. Total for season: 26
+Plate Appearance. Total for season: 63
+
+---------------
+Action in game on 04/25/2023, Home against KCA
+At bat for Corbin Carroll with a result of 3/G3
+Ball in play but out. Total for season: 27
+Plate Appearance. Total for season: 64
+
+Action in game on 04/25/2023, Home against KCA
+At bat for Corbin Carroll with a result of T8/F8XD+
+Triple! Total for season: 2
+Plate Appearance. Total for season: 65
+
+Action in game on 04/25/2023, Home against KCA
+At bat for Corbin Carroll with a result of D7/F5D
+Double! Total for season: 4
+Plate Appearance. Total for season: 66
+
+Action in game on 04/25/2023, Home against KCA
+At bat for Corbin Carroll with a result of S3/G3
+Single! Total for season: 9
+Plate Appearance. Total for season: 67
+
+Action in game on 04/25/2023, Home against KCA
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 5
+Plate Appearance. Total for season: 68
+
+---------------
+Action in game on 04/26/2023, Home against KCA
+At bat for Corbin Carroll with a result of S7/G56
+Single! Total for season: 10
+Plate Appearance. Total for season: 69
+
+Action in game on 04/26/2023, Home against KCA
+At bat for Corbin Carroll with a result of W.1-2
+Walk. Total for season: 6
+Plate Appearance. Total for season: 70
+
+Action in game on 04/26/2023, Home against KCA
+At bat for Corbin Carroll with a result of HP
+Hit by Pitch. Total for season: 3
+Plate Appearance. Total for season: 71
+
+---------------
+Action in game on 05/05/2023, Home against WAS
+At bat for Corbin Carroll with a result of 8/L89D
+Ball in play but out. Total for season: 28
+Plate Appearance. Total for season: 72
+
+Action in game on 05/05/2023, Home against WAS
+At bat for Corbin Carroll with a result of HR/F78XD
+Home Run! Total for season: 4
+Plate Appearance. Total for season: 73
+
+Action in game on 05/05/2023, Home against WAS
+At bat for Corbin Carroll with a result of 9/F9D+
+Ball in play but out. Total for season: 29
+Plate Appearance. Total for season: 74
+
+Action in game on 05/05/2023, Home against WAS
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 7
+Plate Appearance. Total for season: 75
+
+---------------
+Action in game on 05/06/2023, Home against WAS
+At bat for Corbin Carroll with a result of S8/G4M.2-H
+Single! Total for season: 11
+Plate Appearance. Total for season: 76
+
+Action in game on 05/06/2023, Home against WAS
+At bat for Corbin Carroll with a result of W.1-2
+Walk. Total for season: 8
+Plate Appearance. Total for season: 77
+
+---------------
+Action in game on 05/07/2023, Home against WAS
+At bat for Corbin Carroll with a result of D9/L9LD+.1-3
+Double! Total for season: 5
+Plate Appearance. Total for season: 78
+
+Action in game on 05/07/2023, Home against WAS
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 17
+Plate Appearance. Total for season: 79
+
+Action in game on 05/07/2023, Home against WAS
+At bat for Corbin Carroll with a result of 43/G34
+Ball in play but out. Total for season: 30
+Plate Appearance. Total for season: 80
+
+Action in game on 05/07/2023, Home against WAS
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 18
+Plate Appearance. Total for season: 81
+
+Action in game on 05/07/2023, Home against WAS
+At bat for Corbin Carroll with a result of 43/G4
+Ball in play but out. Total for season: 31
+Plate Appearance. Total for season: 82
+
+---------------
+Action in game on 05/08/2023, Home against MIA
+At bat for Corbin Carroll with a result of 3/G3
+Ball in play but out. Total for season: 32
+Plate Appearance. Total for season: 83
+
+Action in game on 05/08/2023, Home against MIA
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 19
+Plate Appearance. Total for season: 84
+
+Action in game on 05/08/2023, Home against MIA
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 20
+Plate Appearance. Total for season: 85
+
+Action in game on 05/08/2023, Home against MIA
+At bat for Corbin Carroll with a result of 43/G34
+Ball in play but out. Total for season: 33
+Plate Appearance. Total for season: 86
+
+Action in game on 05/08/2023, Home against MIA
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 21
+Plate Appearance. Total for season: 87
+
+---------------
+Action in game on 05/09/2023, Home against MIA
+At bat for Corbin Carroll with a result of 43/G34.2-3
+Ball in play but out. Total for season: 34
+Plate Appearance. Total for season: 88
+
+Action in game on 05/09/2023, Home against MIA
+At bat for Corbin Carroll with a result of 46(1)/FO/G4.2-3;B-1
+Ball in play but out. Total for season: 35
+Plate Appearance. Total for season: 89
+
+Action in game on 05/09/2023, Home against MIA
+At bat for Corbin Carroll with a result of S7/G6
+Single! Total for season: 12
+Plate Appearance. Total for season: 90
+
+Action in game on 05/09/2023, Home against MIA
+At bat for Corbin Carroll with a result of 3/G3
+Ball in play but out. Total for season: 36
+Plate Appearance. Total for season: 91
+
+---------------
+Action in game on 05/10/2023, Home against MIA
+At bat for Corbin Carroll with a result of 43/G34
+Ball in play but out. Total for season: 37
+Plate Appearance. Total for season: 92
+
+Action in game on 05/10/2023, Home against MIA
+At bat for Corbin Carroll with a result of W.1-2
+Walk. Total for season: 9
+Plate Appearance. Total for season: 93
+
+Action in game on 05/10/2023, Home against MIA
+At bat for Corbin Carroll with a result of 3/SH/BG3S-.1-2
+Ball in play but out. Total for season: 38
+Plate Appearance. Total for season: 94
+
+Action in game on 05/10/2023, Home against MIA
+At bat for Corbin Carroll with a result of 5/P5SF/FL
+Ball in play but out. Total for season: 39
+Plate Appearance. Total for season: 95
+
+---------------
+Action in game on 05/12/2023, Home against SFN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 22
+Plate Appearance. Total for season: 96
+
+Action in game on 05/12/2023, Home against SFN
+At bat for Corbin Carroll with a result of 5/P5DF/FL
+Ball in play but out. Total for season: 40
+Plate Appearance. Total for season: 97
+
+Action in game on 05/12/2023, Home against SFN
+At bat for Corbin Carroll with a result of 43/G4
+Ball in play but out. Total for season: 41
+Plate Appearance. Total for season: 98
+
+Action in game on 05/12/2023, Home against SFN
+At bat for Corbin Carroll with a result of 63/G4M
+Ball in play but out. Total for season: 42
+Plate Appearance. Total for season: 99
+
+Action in game on 05/12/2023, Home against SFN
+At bat for Corbin Carroll with a result of 31/G34.2-3
+Ball in play but out. Total for season: 43
+Plate Appearance. Total for season: 100
+
+---------------
+Action in game on 05/13/2023, Home against SFN
+At bat for Corbin Carroll with a result of 8/F8D
+Ball in play but out. Total for season: 44
+Plate Appearance. Total for season: 101
+
+Action in game on 05/13/2023, Home against SFN
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 10
+Plate Appearance. Total for season: 102
+
+Action in game on 05/13/2023, Home against SFN
+At bat for Corbin Carroll with a result of 3/G3
+Ball in play but out. Total for season: 45
+Plate Appearance. Total for season: 103
+
+Action in game on 05/13/2023, Home against SFN
+At bat for Corbin Carroll with a result of S9/G34.1-2
+Single! Total for season: 13
+Plate Appearance. Total for season: 104
+
+---------------
+Action in game on 05/14/2023, Home against SFN
+At bat for Corbin Carroll with a result of W.1-2
+Walk. Total for season: 11
+Plate Appearance. Total for season: 105
+
+Action in game on 05/14/2023, Home against SFN
+At bat for Corbin Carroll with a result of 7/F7
+Ball in play but out. Total for season: 46
+Plate Appearance. Total for season: 106
+
+Action in game on 05/14/2023, Home against SFN
+At bat for Corbin Carroll with a result of 3/G3
+Ball in play but out. Total for season: 47
+Plate Appearance. Total for season: 107
+
+Action in game on 05/14/2023, Home against SFN
+At bat for Corbin Carroll with a result of 31/G34
+Ball in play but out. Total for season: 48
+Plate Appearance. Total for season: 108
+
+---------------
+Action in game on 05/26/2023, Home against BOS
+At bat for Corbin Carroll with a result of S8/G4M
+Single! Total for season: 14
+Plate Appearance. Total for season: 109
+
+Action in game on 05/26/2023, Home against BOS
+At bat for Corbin Carroll with a result of 43/G34
+Ball in play but out. Total for season: 49
+Plate Appearance. Total for season: 110
+
+Action in game on 05/26/2023, Home against BOS
+At bat for Corbin Carroll with a result of 5/P56S
+Ball in play but out. Total for season: 50
+Plate Appearance. Total for season: 111
+
+Action in game on 05/26/2023, Home against BOS
+At bat for Corbin Carroll with a result of 4/P34D
+Ball in play but out. Total for season: 51
+Plate Appearance. Total for season: 112
+
+---------------
+Action in game on 05/27/2023, Home against BOS
+At bat for Corbin Carroll with a result of 31/G34
+Ball in play but out. Total for season: 52
+Plate Appearance. Total for season: 113
+
+Action in game on 05/27/2023, Home against BOS
+At bat for Corbin Carroll with a result of 8/F89S
+Ball in play but out. Total for season: 53
+Plate Appearance. Total for season: 114
+
+Action in game on 05/27/2023, Home against BOS
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 23
+Plate Appearance. Total for season: 115
+
+Action in game on 05/27/2023, Home against BOS
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 24
+Plate Appearance. Total for season: 116
+
+---------------
+Action in game on 05/28/2023, Home against BOS
+At bat for Corbin Carroll with a result of HR/F7D.1-H
+Home Run! Total for season: 5
+Plate Appearance. Total for season: 117
+
+Action in game on 05/28/2023, Home against BOS
+At bat for Corbin Carroll with a result of 43/G4
+Ball in play but out. Total for season: 54
+Plate Appearance. Total for season: 118
+
+Action in game on 05/28/2023, Home against BOS
+At bat for Corbin Carroll with a result of 8/F89XD+.2-3
+Ball in play but out. Total for season: 55
+Plate Appearance. Total for season: 119
+
+Action in game on 05/28/2023, Home against BOS
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 25
+Plate Appearance. Total for season: 120
+
+---------------
+Action in game on 05/29/2023, Home against COL
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 26
+Plate Appearance. Total for season: 121
+
+Action in game on 05/29/2023, Home against COL
+At bat for Corbin Carroll with a result of S6/G4.1-2
+Single! Total for season: 15
+Plate Appearance. Total for season: 122
+
+Action in game on 05/29/2023, Home against COL
+At bat for Corbin Carroll with a result of 7/F7D
+Ball in play but out. Total for season: 56
+Plate Appearance. Total for season: 123
+
+Action in game on 05/29/2023, Home against COL
+At bat for Corbin Carroll with a result of S8/G4M
+Single! Total for season: 16
+Plate Appearance. Total for season: 124
+
+---------------
+Action in game on 05/30/2023, Home against COL
+At bat for Corbin Carroll with a result of 43/G3
+Ball in play but out. Total for season: 57
+Plate Appearance. Total for season: 125
+
+Action in game on 05/30/2023, Home against COL
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 12
+Plate Appearance. Total for season: 126
+
+Action in game on 05/30/2023, Home against COL
+At bat for Corbin Carroll with a result of HR/L9D
+Home Run! Total for season: 6
+Plate Appearance. Total for season: 127
+
+---------------
+Action in game on 05/31/2023, Home against COL
+At bat for Corbin Carroll with a result of S9/G4+.3-H;1-3
+Single! Total for season: 17
+Plate Appearance. Total for season: 128
+
+Action in game on 05/31/2023, Home against COL
+At bat for Corbin Carroll with a result of S9/G34.2-H
+Single! Total for season: 18
+Plate Appearance. Total for season: 129
+
+Action in game on 05/31/2023, Home against COL
+At bat for Corbin Carroll with a result of 43/G4
+Ball in play but out. Total for season: 58
+Plate Appearance. Total for season: 130
+
+Action in game on 05/31/2023, Home against COL
+At bat for Corbin Carroll with a result of 9/L89
+Ball in play but out. Total for season: 59
+Plate Appearance. Total for season: 131
+
+---------------
+Action in game on 06/01/2023, Home against COL
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 27
+Plate Appearance. Total for season: 132
+
+Action in game on 06/01/2023, Home against COL
+At bat for Corbin Carroll with a result of 9/F89
+Ball in play but out. Total for season: 60
+Plate Appearance. Total for season: 133
+
+Action in game on 06/01/2023, Home against COL
+At bat for Corbin Carroll with a result of 8/F8XD
+Ball in play but out. Total for season: 61
+Plate Appearance. Total for season: 134
+
+Action in game on 06/01/2023, Home against COL
+At bat for Corbin Carroll with a result of 7/L7
+Ball in play but out. Total for season: 62
+Plate Appearance. Total for season: 135
+
+Action in game on 06/01/2023, Home against COL
+At bat for Corbin Carroll with a result of D8/L78.3-H;2-H
+Double! Total for season: 6
+Plate Appearance. Total for season: 136
+
+---------------
+Action in game on 06/02/2023, Home against ATL
+At bat for Corbin Carroll with a result of S34/G34.1-2
+Single! Total for season: 19
+Plate Appearance. Total for season: 137
+
+Action in game on 06/02/2023, Home against ATL
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 13
+Plate Appearance. Total for season: 138
+
+Action in game on 06/02/2023, Home against ATL
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 28
+Plate Appearance. Total for season: 139
+
+Action in game on 06/02/2023, Home against ATL
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 29
+Plate Appearance. Total for season: 140
+
+---------------
+Action in game on 06/03/2023, Home against ATL
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 30
+Plate Appearance. Total for season: 141
+
+Action in game on 06/03/2023, Home against ATL
+At bat for Corbin Carroll with a result of 63/G6M
+Ball in play but out. Total for season: 63
+Plate Appearance. Total for season: 142
+
+Action in game on 06/03/2023, Home against ATL
+At bat for Corbin Carroll with a result of 7/F7L
+Ball in play but out. Total for season: 64
+Plate Appearance. Total for season: 143
+
+Action in game on 06/03/2023, Home against ATL
+At bat for Corbin Carroll with a result of 1/L13
+Ball in play but out. Total for season: 65
+Plate Appearance. Total for season: 144
+
+---------------
+Action in game on 06/04/2023, Home against ATL
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 14
+Plate Appearance. Total for season: 145
+
+Action in game on 06/04/2023, Home against ATL
+At bat for Corbin Carroll with a result of HR/L78XD
+Home Run! Total for season: 7
+Plate Appearance. Total for season: 146
+
+Action in game on 06/04/2023, Home against ATL
+At bat for Corbin Carroll with a result of D9/L9L+
+Double! Total for season: 7
+Plate Appearance. Total for season: 147
+
+Action in game on 06/04/2023, Home against ATL
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 31
+Plate Appearance. Total for season: 148
+
+Action in game on 06/04/2023, Home against ATL
+At bat for Corbin Carroll with a result of 36(1)1/GDP/G34
+Ball in play but out. Total for season: 66
+Plate Appearance. Total for season: 149
+
+---------------
+Action in game on 06/12/2023, Home against PHI
+At bat for Corbin Carroll with a result of HP.1-2
+Hit by Pitch. Total for season: 4
+Plate Appearance. Total for season: 150
+
+Action in game on 06/12/2023, Home against PHI
+At bat for Corbin Carroll with a result of HP.1-2
+Hit by Pitch. Total for season: 5
+Plate Appearance. Total for season: 151
+
+Action in game on 06/12/2023, Home against PHI
+At bat for Corbin Carroll with a result of T9/L9LD+.1-H
+Triple! Total for season: 3
+Plate Appearance. Total for season: 152
+
+Action in game on 06/12/2023, Home against PHI
+At bat for Corbin Carroll with a result of S3/G34S.1-2
+Single! Total for season: 20
+Plate Appearance. Total for season: 153
+
+Action in game on 06/12/2023, Home against PHI
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 32
+Plate Appearance. Total for season: 154
+
+---------------
+Action in game on 06/13/2023, Home against PHI
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 33
+Plate Appearance. Total for season: 155
+
+Action in game on 06/13/2023, Home against PHI
+At bat for Corbin Carroll with a result of 63/G4M
+Ball in play but out. Total for season: 67
+Plate Appearance. Total for season: 156
+
+Action in game on 06/13/2023, Home against PHI
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 15
+Plate Appearance. Total for season: 157
+
+Action in game on 06/13/2023, Home against PHI
+At bat for Corbin Carroll with a result of HR/F9D
+Home Run! Total for season: 8
+Plate Appearance. Total for season: 158
+
+---------------
+Action in game on 06/14/2023, Home against PHI
+At bat for Corbin Carroll with a result of 6(1)/FO/G6.B-1
+Ball in play but out. Total for season: 68
+Plate Appearance. Total for season: 159
+
+---------------
+Action in game on 06/15/2023, Home against PHI
+At bat for Corbin Carroll with a result of 31/G3
+Ball in play but out. Total for season: 69
+Plate Appearance. Total for season: 160
+
+Action in game on 06/15/2023, Home against PHI
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 34
+Plate Appearance. Total for season: 161
+
+Action in game on 06/15/2023, Home against PHI
+At bat for Corbin Carroll with a result of 43/G34
+Ball in play but out. Total for season: 70
+Plate Appearance. Total for season: 162
+
+Action in game on 06/15/2023, Home against PHI
+At bat for Corbin Carroll with a result of 26(1)/FO/BG2-.B-1
+Ball in play but out. Total for season: 71
+Plate Appearance. Total for season: 163
+
+---------------
+Action in game on 06/16/2023, Home against CLE
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 35
+Plate Appearance. Total for season: 164
+
+Action in game on 06/16/2023, Home against CLE
+At bat for Corbin Carroll with a result of S8/G4MS
+Single! Total for season: 21
+Plate Appearance. Total for season: 165
+
+Action in game on 06/16/2023, Home against CLE
+At bat for Corbin Carroll with a result of 3/G3
+Ball in play but out. Total for season: 72
+Plate Appearance. Total for season: 166
+
+Action in game on 06/16/2023, Home against CLE
+At bat for Corbin Carroll with a result of D7/L7L.2-H;1-3
+Double! Total for season: 8
+Plate Appearance. Total for season: 167
+
+Action in game on 06/16/2023, Home against CLE
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 36
+Plate Appearance. Total for season: 168
+
+---------------
+Action in game on 06/17/2023, Home against CLE
+At bat for Corbin Carroll with a result of E3/G34.B-1
+Plate Appearance. Total for season: 169
+
+Action in game on 06/17/2023, Home against CLE
+At bat for Corbin Carroll with a result of 3/G3.1-2
+Ball in play but out. Total for season: 73
+Plate Appearance. Total for season: 170
+
+Action in game on 06/17/2023, Home against CLE
+At bat for Corbin Carroll with a result of 7/L78
+Ball in play but out. Total for season: 74
+Plate Appearance. Total for season: 171
+
+Action in game on 06/17/2023, Home against CLE
+At bat for Corbin Carroll with a result of HR/F9D.1-H
+Home Run! Total for season: 9
+Plate Appearance. Total for season: 172
+
+---------------
+Action in game on 06/18/2023, Home against CLE
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 37
+Plate Appearance. Total for season: 173
+
+Action in game on 06/18/2023, Home against CLE
+At bat for Corbin Carroll with a result of D9/L9
+Double! Total for season: 9
+Plate Appearance. Total for season: 174
+
+Action in game on 06/18/2023, Home against CLE
+At bat for Corbin Carroll with a result of 36(1)/FO/G3S.2-3;B-1
+Ball in play but out. Total for season: 75
+Plate Appearance. Total for season: 175
+
+Action in game on 06/18/2023, Home against CLE
+At bat for Corbin Carroll with a result of 13/G1S-
+Ball in play but out. Total for season: 76
+Plate Appearance. Total for season: 176
+
+Action in game on 06/18/2023, Home against CLE
+At bat for Corbin Carroll with a result of 43/G4
+Ball in play but out. Total for season: 77
+Plate Appearance. Total for season: 177
+
+---------------
+Action in game on 06/27/2023, Home against TBA
+At bat for Corbin Carroll with a result of HR/F8XD.2-H;1-H
+Home Run! Total for season: 10
+Plate Appearance. Total for season: 178
+
+Action in game on 06/27/2023, Home against TBA
+At bat for Corbin Carroll with a result of S8/G4
+Single! Total for season: 22
+Plate Appearance. Total for season: 179
+
+Action in game on 06/27/2023, Home against TBA
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 38
+Plate Appearance. Total for season: 180
+
+Action in game on 06/27/2023, Home against TBA
+At bat for Corbin Carroll with a result of 9/F89XD+
+Ball in play but out. Total for season: 78
+Plate Appearance. Total for season: 181
+
+---------------
+Action in game on 06/28/2023, Home against TBA
+At bat for Corbin Carroll with a result of 63/G6
+Ball in play but out. Total for season: 79
+Plate Appearance. Total for season: 182
+
+Action in game on 06/28/2023, Home against TBA
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 39
+Plate Appearance. Total for season: 183
+
+Action in game on 06/28/2023, Home against TBA
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 40
+Plate Appearance. Total for season: 184
+
+Action in game on 06/28/2023, Home against TBA
+At bat for Corbin Carroll with a result of S3/BG23
+Single! Total for season: 23
+Plate Appearance. Total for season: 185
+
+---------------
+Action in game on 06/29/2023, Home against TBA
+At bat for Corbin Carroll with a result of 6/L6M
+Ball in play but out. Total for season: 80
+Plate Appearance. Total for season: 186
+
+Action in game on 06/29/2023, Home against TBA
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 41
+Plate Appearance. Total for season: 187
+
+---------------
+Action in game on 07/04/2023, Home against NYN
+At bat for Corbin Carroll with a result of HR/F7D
+Home Run! Total for season: 11
+Plate Appearance. Total for season: 188
+
+Action in game on 07/04/2023, Home against NYN
+At bat for Corbin Carroll with a result of 31/G3
+Ball in play but out. Total for season: 81
+Plate Appearance. Total for season: 189
+
+Action in game on 07/04/2023, Home against NYN
+At bat for Corbin Carroll with a result of W.3-H;2-3;1-2
+Walk. Total for season: 16
+Plate Appearance. Total for season: 190
+
+Action in game on 07/04/2023, Home against NYN
+At bat for Corbin Carroll with a result of 31/G3
+Ball in play but out. Total for season: 82
+Plate Appearance. Total for season: 191
+
+Action in game on 07/04/2023, Home against NYN
+At bat for Corbin Carroll with a result of S7/L7.2-3;1-2
+Single! Total for season: 24
+Plate Appearance. Total for season: 192
+
+---------------
+Action in game on 07/05/2023, Home against NYN
+At bat for Corbin Carroll with a result of S7/L7S.1-2
+Single! Total for season: 25
+Plate Appearance. Total for season: 193
+
+Action in game on 07/05/2023, Home against NYN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 42
+Plate Appearance. Total for season: 194
+
+Action in game on 07/05/2023, Home against NYN
+At bat for Corbin Carroll with a result of K.BX1(23)
+Strikeout. Total on season: 43
+Plate Appearance. Total for season: 195
+
+Action in game on 07/05/2023, Home against NYN
+At bat for Corbin Carroll with a result of 13/G3
+Ball in play but out. Total for season: 83
+Plate Appearance. Total for season: 196
+
+---------------
+Action in game on 07/06/2023, Home against NYN
+At bat for Corbin Carroll with a result of 7/F7S
+Ball in play but out. Total for season: 84
+Plate Appearance. Total for season: 197
+
+Action in game on 07/06/2023, Home against NYN
+At bat for Corbin Carroll with a result of 31/G34
+Ball in play but out. Total for season: 85
+Plate Appearance. Total for season: 198
+
+---------------
+Action in game on 07/07/2023, Home against PIT
+At bat for Corbin Carroll with a result of 8/F8XD
+Ball in play but out. Total for season: 86
+Plate Appearance. Total for season: 199
+
+Action in game on 07/07/2023, Home against PIT
+At bat for Corbin Carroll with a result of S3/BG23-.3-H;1-2
+Single! Total for season: 26
+Plate Appearance. Total for season: 200
+
+Action in game on 07/07/2023, Home against PIT
+At bat for Corbin Carroll with a result of 3/G3S
+Ball in play but out. Total for season: 87
+Plate Appearance. Total for season: 201
+
+Action in game on 07/07/2023, Home against PIT
+At bat for Corbin Carroll with a result of S7/L78S
+Single! Total for season: 27
+Plate Appearance. Total for season: 202
+
+Action in game on 07/07/2023, Home against PIT
+At bat for Corbin Carroll with a result of 3/G3
+Ball in play but out. Total for season: 88
+Plate Appearance. Total for season: 203
+
+---------------
+Action in game on 07/08/2023, Home against PIT
+At bat for Corbin Carroll with a result of 7/F78
+Ball in play but out. Total for season: 89
+Plate Appearance. Total for season: 204
+
+Action in game on 07/08/2023, Home against PIT
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 17
+Plate Appearance. Total for season: 205
+
+Action in game on 07/08/2023, Home against PIT
+At bat for Corbin Carroll with a result of W.1-2
+Walk. Total for season: 18
+Plate Appearance. Total for season: 206
+
+Action in game on 07/08/2023, Home against PIT
+At bat for Corbin Carroll with a result of 5/P6S
+Ball in play but out. Total for season: 90
+Plate Appearance. Total for season: 207
+
+Action in game on 07/08/2023, Home against PIT
+At bat for Corbin Carroll with a result of S9/L9LS.3-H(UR);2-3;1-2
+Single! Total for season: 28
+Plate Appearance. Total for season: 208
+
+---------------
+Action in game on 07/09/2023, Home against PIT
+At bat for Corbin Carroll with a result of 8/L8
+Ball in play but out. Total for season: 91
+Plate Appearance. Total for season: 209
+
+Action in game on 07/09/2023, Home against PIT
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 44
+Plate Appearance. Total for season: 210
+
+Action in game on 07/09/2023, Home against PIT
+At bat for Corbin Carroll with a result of 34/SH/BG34S.2-3
+Ball in play but out. Total for season: 92
+Plate Appearance. Total for season: 211
+
+Action in game on 07/09/2023, Home against PIT
+At bat for Corbin Carroll with a result of 63/G6M
+Ball in play but out. Total for season: 93
+Plate Appearance. Total for season: 212
+
+---------------
+Action in game on 07/24/2023, Home against SLN
+At bat for Corbin Carroll with a result of 9/SF/F89D.3-H
+Ball in play but out. Total for season: 94
+Plate Appearance. Total for season: 213
+
+Action in game on 07/24/2023, Home against SLN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 45
+Plate Appearance. Total for season: 214
+
+Action in game on 07/24/2023, Home against SLN
+At bat for Corbin Carroll with a result of 9/F89XD
+Ball in play but out. Total for season: 95
+Plate Appearance. Total for season: 215
+
+Action in game on 07/24/2023, Home against SLN
+At bat for Corbin Carroll with a result of 53/G56-
+Ball in play but out. Total for season: 96
+Plate Appearance. Total for season: 216
+
+Action in game on 07/24/2023, Home against SLN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 46
+Plate Appearance. Total for season: 217
+
+---------------
+Action in game on 07/25/2023, Home against SLN
+At bat for Corbin Carroll with a result of T9/F8XD+.2-H;1-H
+Triple! Total for season: 4
+Plate Appearance. Total for season: 218
+
+---------------
+Action in game on 07/26/2023, Home against SLN
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 19
+Plate Appearance. Total for season: 219
+
+Action in game on 07/26/2023, Home against SLN
+At bat for Corbin Carroll with a result of D7/L7D+.1-3
+Double! Total for season: 10
+Plate Appearance. Total for season: 220
+
+Action in game on 07/26/2023, Home against SLN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 47
+Plate Appearance. Total for season: 221
+
+Action in game on 07/26/2023, Home against SLN
+At bat for Corbin Carroll with a result of S4/G4
+Single! Total for season: 29
+Plate Appearance. Total for season: 222
+
+Action in game on 07/26/2023, Home against SLN
+At bat for Corbin Carroll with a result of S7/L7
+Single! Total for season: 30
+Plate Appearance. Total for season: 223
+
+---------------
+Action in game on 07/28/2023, Home against SEA
+At bat for Corbin Carroll with a result of 41/G34.1-2
+Ball in play but out. Total for season: 97
+Plate Appearance. Total for season: 224
+
+Action in game on 07/28/2023, Home against SEA
+At bat for Corbin Carroll with a result of 8/L8D
+Ball in play but out. Total for season: 98
+Plate Appearance. Total for season: 225
+
+Action in game on 07/28/2023, Home against SEA
+At bat for Corbin Carroll with a result of 43/G34
+Ball in play but out. Total for season: 99
+Plate Appearance. Total for season: 226
+
+Action in game on 07/28/2023, Home against SEA
+At bat for Corbin Carroll with a result of S8/L78.1-2
+Single! Total for season: 31
+Plate Appearance. Total for season: 227
+
+Action in game on 07/28/2023, Home against SEA
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 20
+Plate Appearance. Total for season: 228
+
+---------------
+Action in game on 07/29/2023, Home against SEA
+At bat for Corbin Carroll with a result of 31/G3
+Ball in play but out. Total for season: 100
+Plate Appearance. Total for season: 229
+
+Action in game on 07/29/2023, Home against SEA
+At bat for Corbin Carroll with a result of 4/P3D
+Ball in play but out. Total for season: 101
+Plate Appearance. Total for season: 230
+
+Action in game on 07/29/2023, Home against SEA
+At bat for Corbin Carroll with a result of 9/F89D
+Ball in play but out. Total for season: 102
+Plate Appearance. Total for season: 231
+
+Action in game on 07/29/2023, Home against SEA
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 21
+Plate Appearance. Total for season: 232
+
+---------------
+Action in game on 07/30/2023, Home against SEA
+At bat for Corbin Carroll with a result of 5/P6S-
+Ball in play but out. Total for season: 103
+Plate Appearance. Total for season: 233
+
+Action in game on 07/30/2023, Home against SEA
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 48
+Plate Appearance. Total for season: 234
+
+Action in game on 07/30/2023, Home against SEA
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 49
+Plate Appearance. Total for season: 235
+
+Action in game on 07/30/2023, Home against SEA
+At bat for Corbin Carroll with a result of 13/G34S
+Ball in play but out. Total for season: 104
+Plate Appearance. Total for season: 236
+
+---------------
+Action in game on 08/08/2023, Home against LAN
+At bat for Corbin Carroll with a result of 8/F8S
+Ball in play but out. Total for season: 105
+Plate Appearance. Total for season: 237
+
+Action in game on 08/08/2023, Home against LAN
+At bat for Corbin Carroll with a result of 53/G6
+Ball in play but out. Total for season: 106
+Plate Appearance. Total for season: 238
+
+Action in game on 08/08/2023, Home against LAN
+At bat for Corbin Carroll with a result of 43/G34.1-2
+Ball in play but out. Total for season: 107
+Plate Appearance. Total for season: 239
+
+Action in game on 08/08/2023, Home against LAN
+At bat for Corbin Carroll with a result of S9/L9LS.1-3
+Single! Total for season: 32
+Plate Appearance. Total for season: 240
+
+Action in game on 08/08/2023, Home against LAN
+At bat for Corbin Carroll with a result of 36(1)3/GDP/G3
+Ball in play but out. Total for season: 108
+Plate Appearance. Total for season: 241
+
+---------------
+Action in game on 08/09/2023, Home against LAN
+At bat for Corbin Carroll with a result of 8/L8D+
+Ball in play but out. Total for season: 109
+Plate Appearance. Total for season: 242
+
+Action in game on 08/09/2023, Home against LAN
+At bat for Corbin Carroll with a result of 7/F7D
+Ball in play but out. Total for season: 110
+Plate Appearance. Total for season: 243
+
+Action in game on 08/09/2023, Home against LAN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 50
+Plate Appearance. Total for season: 244
+
+Action in game on 08/09/2023, Home against LAN
+At bat for Corbin Carroll with a result of 63/G6MS
+Ball in play but out. Total for season: 111
+Plate Appearance. Total for season: 245
+
+---------------
+Action in game on 08/11/2023, Home against SDN
+At bat for Corbin Carroll with a result of W.1-2
+Walk. Total for season: 22
+Plate Appearance. Total for season: 246
+
+Action in game on 08/11/2023, Home against SDN
+At bat for Corbin Carroll with a result of 63/G6M
+Ball in play but out. Total for season: 112
+Plate Appearance. Total for season: 247
+
+Action in game on 08/11/2023, Home against SDN
+At bat for Corbin Carroll with a result of K.BX1(23)
+Strikeout. Total on season: 51
+Plate Appearance. Total for season: 248
+
+Action in game on 08/11/2023, Home against SDN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 52
+Plate Appearance. Total for season: 249
+
+---------------
+Action in game on 08/12/2023, Home against SDN
+At bat for Corbin Carroll with a result of DGR/L9D+
+Double! Total for season: 11
+Plate Appearance. Total for season: 250
+
+Action in game on 08/12/2023, Home against SDN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 53
+Plate Appearance. Total for season: 251
+
+Action in game on 08/12/2023, Home against SDN
+At bat for Corbin Carroll with a result of 9/L9LD
+Ball in play but out. Total for season: 113
+Plate Appearance. Total for season: 252
+
+Action in game on 08/12/2023, Home against SDN
+At bat for Corbin Carroll with a result of 8/F78D
+Ball in play but out. Total for season: 114
+Plate Appearance. Total for season: 253
+
+---------------
+Action in game on 08/13/2023, Home against SDN
+At bat for Corbin Carroll with a result of T9/G3
+Triple! Total for season: 5
+Plate Appearance. Total for season: 254
+
+Action in game on 08/13/2023, Home against SDN
+At bat for Corbin Carroll with a result of 9/L9D
+Ball in play but out. Total for season: 115
+Plate Appearance. Total for season: 255
+
+Action in game on 08/13/2023, Home against SDN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 54
+Plate Appearance. Total for season: 256
+
+Action in game on 08/13/2023, Home against SDN
+At bat for Corbin Carroll with a result of 8/F78
+Ball in play but out. Total for season: 116
+Plate Appearance. Total for season: 257
+
+---------------
+Action in game on 08/21/2023, Home against TEX
+At bat for Corbin Carroll with a result of 2/P2F/FL
+Ball in play but out. Total for season: 117
+Plate Appearance. Total for season: 258
+
+---------------
+Action in game on 08/22/2023, Home against TEX
+At bat for Corbin Carroll with a result of 43/G34
+Ball in play but out. Total for season: 118
+Plate Appearance. Total for season: 259
+
+Action in game on 08/22/2023, Home against TEX
+At bat for Corbin Carroll with a result of S1/G3S.2-H;1-3(E1/TH)
+Single! Total for season: 33
+Plate Appearance. Total for season: 260
+
+Action in game on 08/22/2023, Home against TEX
+At bat for Corbin Carroll with a result of S9/L9S.1-2
+Single! Total for season: 34
+Plate Appearance. Total for season: 261
+
+Action in game on 08/22/2023, Home against TEX
+At bat for Corbin Carroll with a result of 7/SF/F78D.3-H
+Ball in play but out. Total for season: 119
+Plate Appearance. Total for season: 262
+
+---------------
+Action in game on 08/24/2023, Home against CIN
+At bat for Corbin Carroll with a result of 63/G4M
+Ball in play but out. Total for season: 120
+Plate Appearance. Total for season: 263
+
+Action in game on 08/24/2023, Home against CIN
+At bat for Corbin Carroll with a result of S7/L7+
+Single! Total for season: 35
+Plate Appearance. Total for season: 264
+
+Action in game on 08/24/2023, Home against CIN
+At bat for Corbin Carroll with a result of 7/F7L
+Ball in play but out. Total for season: 121
+Plate Appearance. Total for season: 265
+
+Action in game on 08/24/2023, Home against CIN
+At bat for Corbin Carroll with a result of HR/L9D.1-H
+Home Run! Total for season: 12
+Plate Appearance. Total for season: 266
+
+---------------
+Action in game on 08/25/2023, Home against CIN
+At bat for Corbin Carroll with a result of 8/F8XD
+Ball in play but out. Total for season: 122
+Plate Appearance. Total for season: 267
+
+Action in game on 08/25/2023, Home against CIN
+At bat for Corbin Carroll with a result of K+SB2
+Strikeout. Total on season: 55
+Plate Appearance. Total for season: 268
+
+Action in game on 08/25/2023, Home against CIN
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 23
+Plate Appearance. Total for season: 269
+
+Action in game on 08/25/2023, Home against CIN
+At bat for Corbin Carroll with a result of W.1-2
+Walk. Total for season: 24
+Plate Appearance. Total for season: 270
+
+Action in game on 08/25/2023, Home against CIN
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 25
+Plate Appearance. Total for season: 271
+
+---------------
+Action in game on 08/26/2023, Home against CIN
+At bat for Corbin Carroll with a result of T9/L9LD+
+Triple! Total for season: 6
+Plate Appearance. Total for season: 272
+
+Action in game on 08/26/2023, Home against CIN
+At bat for Corbin Carroll with a result of 13/SH/BG34S.1-2
+Ball in play but out. Total for season: 123
+Plate Appearance. Total for season: 273
+
+Action in game on 08/26/2023, Home against CIN
+At bat for Corbin Carroll with a result of D7/L7D+.1-3
+Double! Total for season: 12
+Plate Appearance. Total for season: 274
+
+Action in game on 08/26/2023, Home against CIN
+At bat for Corbin Carroll with a result of 7/F7D
+Ball in play but out. Total for season: 124
+Plate Appearance. Total for season: 275
+
+Action in game on 08/26/2023, Home against CIN
+At bat for Corbin Carroll with a result of W.1-2
+Walk. Total for season: 26
+Plate Appearance. Total for season: 276
+
+---------------
+Action in game on 08/27/2023, Home against CIN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 56
+Plate Appearance. Total for season: 277
+
+Action in game on 08/27/2023, Home against CIN
+At bat for Corbin Carroll with a result of S8/F8
+Single! Total for season: 36
+Plate Appearance. Total for season: 278
+
+Action in game on 08/27/2023, Home against CIN
+At bat for Corbin Carroll with a result of T8/F8XD+.BXH(862)
+Triple! Total for season: 7
+Plate Appearance. Total for season: 279
+
+Action in game on 08/27/2023, Home against CIN
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 27
+Plate Appearance. Total for season: 280
+
+---------------
+Action in game on 09/01/2023, Home against BAL
+At bat for Corbin Carroll with a result of 3/G3
+Ball in play but out. Total for season: 125
+Plate Appearance. Total for season: 281
+
+Action in game on 09/01/2023, Home against BAL
+At bat for Corbin Carroll with a result of S6/G6
+Single! Total for season: 37
+Plate Appearance. Total for season: 282
+
+Action in game on 09/01/2023, Home against BAL
+At bat for Corbin Carroll with a result of 6(1)3/GDP/G6M
+Ball in play but out. Total for season: 126
+Plate Appearance. Total for season: 283
+
+Action in game on 09/01/2023, Home against BAL
+At bat for Corbin Carroll with a result of DGR/L89XD.1-3
+Double! Total for season: 13
+Plate Appearance. Total for season: 284
+
+---------------
+Action in game on 09/02/2023, Home against BAL
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 57
+Plate Appearance. Total for season: 285
+
+Action in game on 09/02/2023, Home against BAL
+At bat for Corbin Carroll with a result of S15/G1.1-3
+Single! Total for season: 38
+Plate Appearance. Total for season: 286
+
+Action in game on 09/02/2023, Home against BAL
+At bat for Corbin Carroll with a result of 7/F7LD
+Ball in play but out. Total for season: 127
+Plate Appearance. Total for season: 287
+
+Action in game on 09/02/2023, Home against BAL
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 58
+Plate Appearance. Total for season: 288
+
+---------------
+Action in game on 09/03/2023, Home against BAL
+At bat for Corbin Carroll with a result of 7/F7
+Ball in play but out. Total for season: 128
+Plate Appearance. Total for season: 289
+
+Action in game on 09/03/2023, Home against BAL
+At bat for Corbin Carroll with a result of HR/F9D
+Home Run! Total for season: 13
+Plate Appearance. Total for season: 290
+
+Action in game on 09/03/2023, Home against BAL
+At bat for Corbin Carroll with a result of FC4/G4.1-2;B-1
+Plate Appearance. Total for season: 291
+
+Action in game on 09/03/2023, Home against BAL
+At bat for Corbin Carroll with a result of S9/G34
+Single! Total for season: 39
+Plate Appearance. Total for season: 292
+
+Action in game on 09/03/2023, Home against BAL
+At bat for Corbin Carroll with a result of 3/G3
+Ball in play but out. Total for season: 129
+Plate Appearance. Total for season: 293
+
+---------------
+Action in game on 09/04/2023, Home against COL
+At bat for Corbin Carroll with a result of 7/L78D+
+Ball in play but out. Total for season: 130
+Plate Appearance. Total for season: 294
+
+Action in game on 09/04/2023, Home against COL
+At bat for Corbin Carroll with a result of T9/G3+.1-H
+Triple! Total for season: 8
+Plate Appearance. Total for season: 295
+
+Action in game on 09/04/2023, Home against COL
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 59
+Plate Appearance. Total for season: 296
+
+Action in game on 09/04/2023, Home against COL
+At bat for Corbin Carroll with a result of 5/P5F/FL
+Ball in play but out. Total for season: 131
+Plate Appearance. Total for season: 297
+
+---------------
+Action in game on 09/05/2023, Home against COL
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 28
+Plate Appearance. Total for season: 298
+
+Action in game on 09/05/2023, Home against COL
+At bat for Corbin Carroll with a result of 7/SF/F78D.3-H;2-3
+Ball in play but out. Total for season: 132
+Plate Appearance. Total for season: 299
+
+Action in game on 09/05/2023, Home against COL
+At bat for Corbin Carroll with a result of 36(1)/FO/G3.2-3;B-1
+Ball in play but out. Total for season: 133
+Plate Appearance. Total for season: 300
+
+Action in game on 09/05/2023, Home against COL
+At bat for Corbin Carroll with a result of 8/F89D
+Ball in play but out. Total for season: 134
+Plate Appearance. Total for season: 301
+
+---------------
+Action in game on 09/06/2023, Home against COL
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 60
+Plate Appearance. Total for season: 302
+
+Action in game on 09/06/2023, Home against COL
+At bat for Corbin Carroll with a result of HP.1-2
+Hit by Pitch. Total for season: 6
+Plate Appearance. Total for season: 303
+
+Action in game on 09/06/2023, Home against COL
+At bat for Corbin Carroll with a result of HP.1-2
+Hit by Pitch. Total for season: 7
+Plate Appearance. Total for season: 304
+
+---------------
+Action in game on 09/15/2023, Home against CHN
+At bat for Corbin Carroll with a result of 3/SH/BG3S.1-2
+Ball in play but out. Total for season: 135
+Plate Appearance. Total for season: 305
+
+Action in game on 09/15/2023, Home against CHN
+At bat for Corbin Carroll with a result of 63/G6M
+Ball in play but out. Total for season: 136
+Plate Appearance. Total for season: 306
+
+Action in game on 09/15/2023, Home against CHN
+At bat for Corbin Carroll with a result of S5/G6
+Single! Total for season: 40
+Plate Appearance. Total for season: 307
+
+Action in game on 09/15/2023, Home against CHN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 61
+Plate Appearance. Total for season: 308
+
+---------------
+Action in game on 09/16/2023, Home against CHN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 62
+Plate Appearance. Total for season: 309
+
+Action in game on 09/16/2023, Home against CHN
+At bat for Corbin Carroll with a result of 43/G4D
+Ball in play but out. Total for season: 137
+Plate Appearance. Total for season: 310
+
+Action in game on 09/16/2023, Home against CHN
+At bat for Corbin Carroll with a result of 9/F89XD
+Ball in play but out. Total for season: 138
+Plate Appearance. Total for season: 311
+
+Action in game on 09/16/2023, Home against CHN
+At bat for Corbin Carroll with a result of 9/L9D
+Ball in play but out. Total for season: 139
+Plate Appearance. Total for season: 312
+
+Action in game on 09/16/2023, Home against CHN
+At bat for Corbin Carroll with a result of S7/L78S+.2-H(UR)
+Single! Total for season: 41
+Plate Appearance. Total for season: 313
+
+Action in game on 09/16/2023, Home against CHN
+At bat for Corbin Carroll with a result of S4/G34.2-3;1-2
+Single! Total for season: 42
+Plate Appearance. Total for season: 314
+
+---------------
+Action in game on 09/17/2023, Home against CHN
+At bat for Corbin Carroll with a result of S8/L8S.1-2
+Single! Total for season: 43
+Plate Appearance. Total for season: 315
+
+Action in game on 09/17/2023, Home against CHN
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 29
+Plate Appearance. Total for season: 316
+
+Action in game on 09/17/2023, Home against CHN
+At bat for Corbin Carroll with a result of 43/G4-
+Ball in play but out. Total for season: 140
+Plate Appearance. Total for season: 317
+
+Action in game on 09/17/2023, Home against CHN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 63
+Plate Appearance. Total for season: 318
+
+Action in game on 09/17/2023, Home against CHN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 64
+Plate Appearance. Total for season: 319
+
+---------------
+Action in game on 09/19/2023, Home against SFN
+At bat for Corbin Carroll with a result of S7/G6
+Single! Total for season: 44
+Plate Appearance. Total for season: 320
+
+Action in game on 09/19/2023, Home against SFN
+At bat for Corbin Carroll with a result of D7/G5.3-H;2-H
+Double! Total for season: 14
+Plate Appearance. Total for season: 321
+
+Action in game on 09/19/2023, Home against SFN
+At bat for Corbin Carroll with a result of HP.1-2
+Hit by Pitch. Total for season: 8
+Plate Appearance. Total for season: 322
+
+Action in game on 09/19/2023, Home against SFN
+At bat for Corbin Carroll with a result of 6/L6M
+Ball in play but out. Total for season: 141
+Plate Appearance. Total for season: 323
+
+Action in game on 09/19/2023, Home against SFN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 65
+Plate Appearance. Total for season: 324
+
+---------------
+Action in game on 09/20/2023, Home against SFN
+At bat for Corbin Carroll with a result of S8/G4
+Single! Total for season: 45
+Plate Appearance. Total for season: 325
+
+Action in game on 09/20/2023, Home against SFN
+At bat for Corbin Carroll with a result of S7/L7S
+Single! Total for season: 46
+Plate Appearance. Total for season: 326
+
+Action in game on 09/20/2023, Home against SFN
+At bat for Corbin Carroll with a result of S9/F89S.1-2
+Single! Total for season: 47
+Plate Appearance. Total for season: 327
+
+Action in game on 09/20/2023, Home against SFN
+At bat for Corbin Carroll with a result of HR/F9D
+Home Run! Total for season: 14
+Plate Appearance. Total for season: 328
+
+Action in game on 09/20/2023, Home against SFN
+At bat for Corbin Carroll with a result of 8/L89D
+Ball in play but out. Total for season: 142
+Plate Appearance. Total for season: 329
+
+---------------
+Action in game on 09/29/2023, Home against HOU
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 30
+Plate Appearance. Total for season: 330
+
+Action in game on 09/29/2023, Home against HOU
+At bat for Corbin Carroll with a result of D9/G3
+Double! Total for season: 15
+Plate Appearance. Total for season: 331
+
+Action in game on 09/29/2023, Home against HOU
+At bat for Corbin Carroll with a result of 13/G6MS
+Ball in play but out. Total for season: 143
+Plate Appearance. Total for season: 332
+
+Action in game on 09/29/2023, Home against HOU
+At bat for Corbin Carroll with a result of 36(1)/FO/G3S.B-1
+Ball in play but out. Total for season: 144
+Plate Appearance. Total for season: 333
+
+---------------
+Action in game on 09/30/2023, Home against HOU
+At bat for Corbin Carroll with a result of 8/L78XD+
+Ball in play but out. Total for season: 145
+Plate Appearance. Total for season: 334
+
+Action in game on 09/30/2023, Home against HOU
+At bat for Corbin Carroll with a result of 5/P56
+Ball in play but out. Total for season: 146
+Plate Appearance. Total for season: 335
+
+Action in game on 09/30/2023, Home against HOU
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 66
+Plate Appearance. Total for season: 336
+
+Action in game on 09/30/2023, Home against HOU
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 31
+Plate Appearance. Total for season: 337
+
+Action in game on 09/30/2023, Home against HOU
+At bat for Corbin Carroll with a result of K.BX1(23)
+Strikeout. Total on season: 67
+Plate Appearance. Total for season: 338
+
+---------------
+Action in game on 09/26/2023, Visitor against CHA
+At bat for Corbin Carroll with a result of 7/F7D
+Ball in play but out. Total for season: 147
+Plate Appearance. Total for season: 339
+
+Action in game on 09/26/2023, Visitor against CHA
+At bat for Corbin Carroll with a result of W.1-2
+Walk. Total for season: 32
+Plate Appearance. Total for season: 340
+
+Action in game on 09/26/2023, Visitor against CHA
+At bat for Corbin Carroll with a result of FC/G3.1X2(4E6);B-1
+Plate Appearance. Total for season: 341
+
+Action in game on 09/26/2023, Visitor against CHA
+At bat for Corbin Carroll with a result of 63/G6D
+Ball in play but out. Total for season: 148
+Plate Appearance. Total for season: 342
+
+Action in game on 09/26/2023, Visitor against CHA
+At bat for Corbin Carroll with a result of 9/L9
+Ball in play but out. Total for season: 149
+Plate Appearance. Total for season: 343
+
+---------------
+Action in game on 09/27/2023, Visitor against CHA
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 68
+Plate Appearance. Total for season: 344
+
+Action in game on 09/27/2023, Visitor against CHA
+At bat for Corbin Carroll with a result of D9/L89XD.2-H;1-H
+Double! Total for season: 16
+Plate Appearance. Total for season: 345
+
+Action in game on 09/27/2023, Visitor against CHA
+At bat for Corbin Carroll with a result of 63/G4
+Ball in play but out. Total for season: 150
+Plate Appearance. Total for season: 346
+
+Action in game on 09/27/2023, Visitor against CHA
+At bat for Corbin Carroll with a result of 6/P56D
+Ball in play but out. Total for season: 151
+Plate Appearance. Total for season: 347
+
+---------------
+Action in game on 09/28/2023, Visitor against CHA
+At bat for Corbin Carroll with a result of S6/G56
+Single! Total for season: 48
+Plate Appearance. Total for season: 348
+
+Action in game on 09/28/2023, Visitor against CHA
+At bat for Corbin Carroll with a result of T8/L89XD+
+Triple! Total for season: 9
+Plate Appearance. Total for season: 349
+
+Action in game on 09/28/2023, Visitor against CHA
+At bat for Corbin Carroll with a result of 9/F89
+Ball in play but out. Total for season: 152
+Plate Appearance. Total for season: 350
+
+Action in game on 09/28/2023, Visitor against CHA
+At bat for Corbin Carroll with a result of 63/G6
+Ball in play but out. Total for season: 153
+Plate Appearance. Total for season: 351
+
+---------------
+Action in game on 09/07/2023, Visitor against CHN
+At bat for Corbin Carroll with a result of 7/F7D
+Ball in play but out. Total for season: 154
+Plate Appearance. Total for season: 352
+
+Action in game on 09/07/2023, Visitor against CHN
+At bat for Corbin Carroll with a result of S7/G6.1-3;BX2(74)
+Single! Total for season: 49
+Plate Appearance. Total for season: 353
+
+Action in game on 09/07/2023, Visitor against CHN
+At bat for Corbin Carroll with a result of 3/G3
+Ball in play but out. Total for season: 155
+Plate Appearance. Total for season: 354
+
+Action in game on 09/07/2023, Visitor against CHN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 69
+Plate Appearance. Total for season: 355
+
+Action in game on 09/07/2023, Visitor against CHN
+At bat for Corbin Carroll with a result of S9/G34
+Single! Total for season: 50
+Plate Appearance. Total for season: 356
+
+---------------
+Action in game on 09/08/2023, Visitor against CHN
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 33
+Plate Appearance. Total for season: 357
+
+Action in game on 09/08/2023, Visitor against CHN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 70
+Plate Appearance. Total for season: 358
+
+Action in game on 09/08/2023, Visitor against CHN
+At bat for Corbin Carroll with a result of S7/L7
+Single! Total for season: 51
+Plate Appearance. Total for season: 359
+
+Action in game on 09/08/2023, Visitor against CHN
+At bat for Corbin Carroll with a result of S9/L89.2-H;1-3
+Single! Total for season: 52
+Plate Appearance. Total for season: 360
+
+---------------
+Action in game on 09/09/2023, Visitor against CHN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 71
+Plate Appearance. Total for season: 361
+
+Action in game on 09/09/2023, Visitor against CHN
+At bat for Corbin Carroll with a result of S8/L78D
+Single! Total for season: 53
+Plate Appearance. Total for season: 362
+
+Action in game on 09/09/2023, Visitor against CHN
+At bat for Corbin Carroll with a result of 63/G4MS
+Ball in play but out. Total for season: 156
+Plate Appearance. Total for season: 363
+
+Action in game on 09/09/2023, Visitor against CHN
+At bat for Corbin Carroll with a result of S8/G4.1-3
+Single! Total for season: 54
+Plate Appearance. Total for season: 364
+
+---------------
+Action in game on 09/10/2023, Visitor against CHN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 72
+Plate Appearance. Total for season: 365
+
+Action in game on 09/10/2023, Visitor against CHN
+At bat for Corbin Carroll with a result of 9/L89
+Ball in play but out. Total for season: 157
+Plate Appearance. Total for season: 366
+
+Action in game on 09/10/2023, Visitor against CHN
+At bat for Corbin Carroll with a result of 5/P1S
+Ball in play but out. Total for season: 158
+Plate Appearance. Total for season: 367
+
+Action in game on 09/10/2023, Visitor against CHN
+At bat for Corbin Carroll with a result of S7/L78
+Single! Total for season: 55
+Plate Appearance. Total for season: 368
+
+Action in game on 09/10/2023, Visitor against CHN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 73
+Plate Appearance. Total for season: 369
+
+---------------
+Action in game on 07/21/2023, Visitor against CIN
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 34
+Plate Appearance. Total for season: 370
+
+Action in game on 07/21/2023, Visitor against CIN
+At bat for Corbin Carroll with a result of 5/P56
+Ball in play but out. Total for season: 159
+Plate Appearance. Total for season: 371
+
+Action in game on 07/21/2023, Visitor against CIN
+At bat for Corbin Carroll with a result of 8/F78
+Ball in play but out. Total for season: 160
+Plate Appearance. Total for season: 372
+
+Action in game on 07/21/2023, Visitor against CIN
+At bat for Corbin Carroll with a result of 53/G6S
+Ball in play but out. Total for season: 161
+Plate Appearance. Total for season: 373
+
+---------------
+Action in game on 07/22/2023, Visitor against CIN
+At bat for Corbin Carroll with a result of 8/F8XD
+Ball in play but out. Total for season: 162
+Plate Appearance. Total for season: 374
+
+Action in game on 07/22/2023, Visitor against CIN
+At bat for Corbin Carroll with a result of 13/SH/BG1S-.1-2
+Ball in play but out. Total for season: 163
+Plate Appearance. Total for season: 375
+
+Action in game on 07/22/2023, Visitor against CIN
+At bat for Corbin Carroll with a result of 7/L78
+Ball in play but out. Total for season: 164
+Plate Appearance. Total for season: 376
+
+Action in game on 07/22/2023, Visitor against CIN
+At bat for Corbin Carroll with a result of HR/F9LD
+Home Run! Total for season: 15
+Plate Appearance. Total for season: 377
+
+---------------
+Action in game on 07/23/2023, Visitor against CIN
+At bat for Corbin Carroll with a result of S9/L89S.1-2
+Single! Total for season: 56
+Plate Appearance. Total for season: 378
+
+Action in game on 07/23/2023, Visitor against CIN
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 35
+Plate Appearance. Total for season: 379
+
+Action in game on 07/23/2023, Visitor against CIN
+At bat for Corbin Carroll with a result of HR/F8XD.2-H
+Home Run! Total for season: 16
+Plate Appearance. Total for season: 380
+
+Action in game on 07/23/2023, Visitor against CIN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 74
+Plate Appearance. Total for season: 381
+
+Action in game on 07/23/2023, Visitor against CIN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 75
+Plate Appearance. Total for season: 382
+
+---------------
+Action in game on 04/28/2023, Visitor against COL
+At bat for Corbin Carroll with a result of 8/F8XD
+Ball in play but out. Total for season: 165
+Plate Appearance. Total for season: 383
+
+Action in game on 04/28/2023, Visitor against COL
+At bat for Corbin Carroll with a result of 23/G2-
+Ball in play but out. Total for season: 166
+Plate Appearance. Total for season: 384
+
+Action in game on 04/28/2023, Visitor against COL
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 36
+Plate Appearance. Total for season: 385
+
+Action in game on 04/28/2023, Visitor against COL
+At bat for Corbin Carroll with a result of S8/L8S.1-2
+Single! Total for season: 57
+Plate Appearance. Total for season: 386
+
+---------------
+Action in game on 04/29/2023, Visitor against COL
+At bat for Corbin Carroll with a result of S9/G4.2-H
+Single! Total for season: 58
+Plate Appearance. Total for season: 387
+
+Action in game on 04/29/2023, Visitor against COL
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 76
+Plate Appearance. Total for season: 388
+
+Action in game on 04/29/2023, Visitor against COL
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 77
+Plate Appearance. Total for season: 389
+
+Action in game on 04/29/2023, Visitor against COL
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 78
+Plate Appearance. Total for season: 390
+
+---------------
+Action in game on 08/14/2023, Visitor against COL
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 37
+Plate Appearance. Total for season: 391
+
+Action in game on 08/14/2023, Visitor against COL
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 79
+Plate Appearance. Total for season: 392
+
+Action in game on 08/14/2023, Visitor against COL
+At bat for Corbin Carroll with a result of 43/G4
+Ball in play but out. Total for season: 167
+Plate Appearance. Total for season: 393
+
+Action in game on 08/14/2023, Visitor against COL
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 80
+Plate Appearance. Total for season: 394
+
+---------------
+Action in game on 08/15/2023, Visitor against COL
+At bat for Corbin Carroll with a result of S68/L8S
+Single! Total for season: 59
+Plate Appearance. Total for season: 395
+
+Action in game on 08/15/2023, Visitor against COL
+At bat for Corbin Carroll with a result of 4/L4D
+Ball in play but out. Total for season: 168
+Plate Appearance. Total for season: 396
+
+Action in game on 08/15/2023, Visitor against COL
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 38
+Plate Appearance. Total for season: 397
+
+Action in game on 08/15/2023, Visitor against COL
+At bat for Corbin Carroll with a result of 3/BP2F-/FL
+Ball in play but out. Total for season: 169
+Plate Appearance. Total for season: 398
+
+Action in game on 08/15/2023, Visitor against COL
+At bat for Corbin Carroll with a result of 9/F9LS
+Ball in play but out. Total for season: 170
+Plate Appearance. Total for season: 399
+
+---------------
+Action in game on 08/16/2023, Visitor against COL
+At bat for Corbin Carroll with a result of S84/F89S.2-3;1-2
+Single! Total for season: 60
+Plate Appearance. Total for season: 400
+
+Action in game on 08/16/2023, Visitor against COL
+At bat for Corbin Carroll with a result of S9/L9
+Single! Total for season: 61
+Plate Appearance. Total for season: 401
+
+Action in game on 08/16/2023, Visitor against COL
+At bat for Corbin Carroll with a result of 43/G4
+Ball in play but out. Total for season: 171
+Plate Appearance. Total for season: 402
+
+---------------
+Action in game on 06/09/2023, Visitor against DET
+At bat for Corbin Carroll with a result of HR/F9D
+Home Run! Total for season: 17
+Plate Appearance. Total for season: 403
+
+Action in game on 06/09/2023, Visitor against DET
+At bat for Corbin Carroll with a result of 43/G34
+Ball in play but out. Total for season: 172
+Plate Appearance. Total for season: 404
+
+Action in game on 06/09/2023, Visitor against DET
+At bat for Corbin Carroll with a result of 9/F9S+
+Ball in play but out. Total for season: 173
+Plate Appearance. Total for season: 405
+
+Action in game on 06/09/2023, Visitor against DET
+At bat for Corbin Carroll with a result of HR/F7LD.3-H;2-H(UR);1-H
+Home Run! Total for season: 18
+Plate Appearance. Total for season: 406
+
+Action in game on 06/09/2023, Visitor against DET
+At bat for Corbin Carroll with a result of D9/G3.1-3
+Double! Total for season: 17
+Plate Appearance. Total for season: 407
+
+---------------
+Action in game on 06/10/2023, Visitor against DET
+At bat for Corbin Carroll with a result of 7/F78S
+Ball in play but out. Total for season: 174
+Plate Appearance. Total for season: 408
+
+Action in game on 06/10/2023, Visitor against DET
+At bat for Corbin Carroll with a result of 7/F78S
+Ball in play but out. Total for season: 175
+Plate Appearance. Total for season: 409
+
+Action in game on 06/10/2023, Visitor against DET
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 81
+Plate Appearance. Total for season: 410
+
+Action in game on 06/10/2023, Visitor against DET
+At bat for Corbin Carroll with a result of 7/F7L
+Ball in play but out. Total for season: 176
+Plate Appearance. Total for season: 411
+
+---------------
+Action in game on 06/11/2023, Visitor against DET
+At bat for Corbin Carroll with a result of T9/L89XD+
+Triple! Total for season: 10
+Plate Appearance. Total for season: 412
+
+Action in game on 06/11/2023, Visitor against DET
+At bat for Corbin Carroll with a result of 8/F8XD+
+Ball in play but out. Total for season: 177
+Plate Appearance. Total for season: 413
+
+Action in game on 06/11/2023, Visitor against DET
+At bat for Corbin Carroll with a result of 8/F89D
+Ball in play but out. Total for season: 178
+Plate Appearance. Total for season: 414
+
+Action in game on 06/11/2023, Visitor against DET
+At bat for Corbin Carroll with a result of D7/L7L+
+Double! Total for season: 18
+Plate Appearance. Total for season: 415
+
+Action in game on 06/11/2023, Visitor against DET
+At bat for Corbin Carroll with a result of S8/L78S.2-H;1-2
+Single! Total for season: 62
+Plate Appearance. Total for season: 416
+
+---------------
+Action in game on 03/30/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of 8/F89D.2-3
+Ball in play but out. Total for season: 179
+Plate Appearance. Total for season: 417
+
+Action in game on 03/30/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of 7/L7
+Ball in play but out. Total for season: 180
+Plate Appearance. Total for season: 418
+
+Action in game on 03/30/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of 8/F78D
+Ball in play but out. Total for season: 181
+Plate Appearance. Total for season: 419
+
+---------------
+Action in game on 03/31/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of D9/G3
+Double! Total for season: 19
+Plate Appearance. Total for season: 420
+
+Action in game on 03/31/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of 43/G34.1-2
+Ball in play but out. Total for season: 182
+Plate Appearance. Total for season: 421
+
+Action in game on 03/31/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of 43/G4D
+Ball in play but out. Total for season: 183
+Plate Appearance. Total for season: 422
+
+Action in game on 03/31/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of S3/G3
+Single! Total for season: 63
+Plate Appearance. Total for season: 423
+
+---------------
+Action in game on 04/01/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 82
+Plate Appearance. Total for season: 424
+
+Action in game on 04/01/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of 43/G4
+Ball in play but out. Total for season: 184
+Plate Appearance. Total for season: 425
+
+Action in game on 04/01/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 83
+Plate Appearance. Total for season: 426
+
+---------------
+Action in game on 04/02/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of 8/F8
+Ball in play but out. Total for season: 185
+Plate Appearance. Total for season: 427
+
+Action in game on 04/02/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of S8/L8D+
+Single! Total for season: 64
+Plate Appearance. Total for season: 428
+
+Action in game on 04/02/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of 46(1)3/GDP/G4
+Ball in play but out. Total for season: 186
+Plate Appearance. Total for season: 429
+
+Action in game on 04/02/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of 6(1)/FO/G6M.2-3;B-1
+Ball in play but out. Total for season: 187
+Plate Appearance. Total for season: 430
+
+---------------
+Action in game on 08/28/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of 3/G3
+Ball in play but out. Total for season: 188
+Plate Appearance. Total for season: 431
+
+Action in game on 08/28/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of 43/G34D
+Ball in play but out. Total for season: 189
+Plate Appearance. Total for season: 432
+
+Action in game on 08/28/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of 46(1)/FO/G34+.2-3;B-1
+Ball in play but out. Total for season: 190
+Plate Appearance. Total for season: 433
+
+Action in game on 08/28/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of 43/G34
+Ball in play but out. Total for season: 191
+Plate Appearance. Total for season: 434
+
+---------------
+Action in game on 08/29/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of S8/G4M
+Single! Total for season: 65
+Plate Appearance. Total for season: 435
+
+Action in game on 08/29/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of HR/F8XD+
+Home Run! Total for season: 19
+Plate Appearance. Total for season: 436
+
+Action in game on 08/29/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 84
+Plate Appearance. Total for season: 437
+
+Action in game on 08/29/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of 31/G34
+Ball in play but out. Total for season: 192
+Plate Appearance. Total for season: 438
+
+---------------
+Action in game on 08/30/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of 7/F78
+Ball in play but out. Total for season: 193
+Plate Appearance. Total for season: 439
+
+Action in game on 08/30/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of HP
+Hit by Pitch. Total for season: 9
+Plate Appearance. Total for season: 440
+
+Action in game on 08/30/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 85
+Plate Appearance. Total for season: 441
+
+Action in game on 08/30/2023, Visitor against LAN
+At bat for Corbin Carroll with a result of 13/G1S-
+Ball in play but out. Total for season: 194
+Plate Appearance. Total for season: 442
+
+---------------
+Action in game on 04/14/2023, Visitor against MIA
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 86
+Plate Appearance. Total for season: 443
+
+Action in game on 04/14/2023, Visitor against MIA
+At bat for Corbin Carroll with a result of 13/BG1S-
+Ball in play but out. Total for season: 195
+Plate Appearance. Total for season: 444
+
+Action in game on 04/14/2023, Visitor against MIA
+At bat for Corbin Carroll with a result of S9/G3.1-3
+Single! Total for season: 66
+Plate Appearance. Total for season: 445
+
+Action in game on 04/14/2023, Visitor against MIA
+At bat for Corbin Carroll with a result of S4/G34
+Single! Total for season: 67
+Plate Appearance. Total for season: 446
+
+---------------
+Action in game on 04/15/2023, Visitor against MIA
+At bat for Corbin Carroll with a result of 31/G34
+Ball in play but out. Total for season: 196
+Plate Appearance. Total for season: 447
+
+Action in game on 04/15/2023, Visitor against MIA
+At bat for Corbin Carroll with a result of 43/G4+
+Ball in play but out. Total for season: 197
+Plate Appearance. Total for season: 448
+
+Action in game on 04/15/2023, Visitor against MIA
+At bat for Corbin Carroll with a result of D9/L89XD+
+Double! Total for season: 20
+Plate Appearance. Total for season: 449
+
+Action in game on 04/15/2023, Visitor against MIA
+At bat for Corbin Carroll with a result of 3/G3
+Ball in play but out. Total for season: 198
+Plate Appearance. Total for season: 450
+
+---------------
+Action in game on 04/16/2023, Visitor against MIA
+At bat for Corbin Carroll with a result of E7/L78D+.B-2
+Plate Appearance. Total for season: 451
+
+Action in game on 04/16/2023, Visitor against MIA
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 87
+Plate Appearance. Total for season: 452
+
+Action in game on 04/16/2023, Visitor against MIA
+At bat for Corbin Carroll with a result of HR/F8XD.2-H
+Home Run! Total for season: 20
+Plate Appearance. Total for season: 453
+
+Action in game on 04/16/2023, Visitor against MIA
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 88
+Plate Appearance. Total for season: 454
+
+---------------
+Action in game on 06/19/2023, Visitor against MIL
+At bat for Corbin Carroll with a result of W.1-2
+Walk. Total for season: 39
+Plate Appearance. Total for season: 455
+
+Action in game on 06/19/2023, Visitor against MIL
+At bat for Corbin Carroll with a result of 63/G4M
+Ball in play but out. Total for season: 199
+Plate Appearance. Total for season: 456
+
+Action in game on 06/19/2023, Visitor against MIL
+At bat for Corbin Carroll with a result of 7/F78XD
+Ball in play but out. Total for season: 200
+Plate Appearance. Total for season: 457
+
+Action in game on 06/19/2023, Visitor against MIL
+At bat for Corbin Carroll with a result of 43/G4
+Ball in play but out. Total for season: 201
+Plate Appearance. Total for season: 458
+
+Action in game on 06/19/2023, Visitor against MIL
+At bat for Corbin Carroll with a result of HR/F7D+
+Home Run! Total for season: 21
+Plate Appearance. Total for season: 459
+
+---------------
+Action in game on 06/20/2023, Visitor against MIL
+At bat for Corbin Carroll with a result of S8/G4M.2-H
+Single! Total for season: 68
+Plate Appearance. Total for season: 460
+
+Action in game on 06/20/2023, Visitor against MIL
+At bat for Corbin Carroll with a result of 9/F89D+
+Ball in play but out. Total for season: 202
+Plate Appearance. Total for season: 461
+
+Action in game on 06/20/2023, Visitor against MIL
+At bat for Corbin Carroll with a result of 9/F9LD
+Ball in play but out. Total for season: 203
+Plate Appearance. Total for season: 462
+
+Action in game on 06/20/2023, Visitor against MIL
+At bat for Corbin Carroll with a result of 53/G6
+Ball in play but out. Total for season: 204
+Plate Appearance. Total for season: 463
+
+---------------
+Action in game on 06/21/2023, Visitor against MIL
+At bat for Corbin Carroll with a result of 9/F9L
+Ball in play but out. Total for season: 205
+Plate Appearance. Total for season: 464
+
+Action in game on 06/21/2023, Visitor against MIL
+At bat for Corbin Carroll with a result of 46(1)3/GDP/G4
+Ball in play but out. Total for season: 206
+Plate Appearance. Total for season: 465
+
+Action in game on 06/21/2023, Visitor against MIL
+At bat for Corbin Carroll with a result of 5/P5
+Ball in play but out. Total for season: 207
+Plate Appearance. Total for season: 466
+
+Action in game on 06/21/2023, Visitor against MIL
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 40
+Plate Appearance. Total for season: 467
+
+Action in game on 06/21/2023, Visitor against MIL
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 89
+Plate Appearance. Total for season: 468
+
+---------------
+Action in game on 08/04/2023, Visitor against MIN
+At bat for Corbin Carroll with a result of D9/L89D
+Double! Total for season: 21
+Plate Appearance. Total for season: 469
+
+Action in game on 08/04/2023, Visitor against MIN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 90
+Plate Appearance. Total for season: 470
+
+Action in game on 08/04/2023, Visitor against MIN
+At bat for Corbin Carroll with a result of 8/F89XD
+Ball in play but out. Total for season: 208
+Plate Appearance. Total for season: 471
+
+Action in game on 08/04/2023, Visitor against MIN
+At bat for Corbin Carroll with a result of 6/L6MD+
+Ball in play but out. Total for season: 209
+Plate Appearance. Total for season: 472
+
+---------------
+Action in game on 08/05/2023, Visitor against MIN
+At bat for Corbin Carroll with a result of HP
+Hit by Pitch. Total for season: 10
+Plate Appearance. Total for season: 473
+
+Action in game on 08/05/2023, Visitor against MIN
+At bat for Corbin Carroll with a result of 3/G3
+Ball in play but out. Total for season: 210
+Plate Appearance. Total for season: 474
+
+Action in game on 08/05/2023, Visitor against MIN
+At bat for Corbin Carroll with a result of K.BX1(23)
+Strikeout. Total on season: 91
+Plate Appearance. Total for season: 475
+
+---------------
+Action in game on 08/06/2023, Visitor against MIN
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 41
+Plate Appearance. Total for season: 476
+
+Action in game on 08/06/2023, Visitor against MIN
+At bat for Corbin Carroll with a result of S8/G4M
+Single! Total for season: 69
+Plate Appearance. Total for season: 477
+
+Action in game on 08/06/2023, Visitor against MIN
+At bat for Corbin Carroll with a result of S7/P56D.2-3
+Single! Total for season: 70
+Plate Appearance. Total for season: 478
+
+Action in game on 08/06/2023, Visitor against MIN
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 42
+Plate Appearance. Total for season: 479
+
+Action in game on 08/06/2023, Visitor against MIN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 92
+Plate Appearance. Total for season: 480
+
+---------------
+Action in game on 09/22/2023, Visitor against NYA
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 93
+Plate Appearance. Total for season: 481
+
+Action in game on 09/22/2023, Visitor against NYA
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 94
+Plate Appearance. Total for season: 482
+
+Action in game on 09/22/2023, Visitor against NYA
+At bat for Corbin Carroll with a result of 2/P2F/FL
+Ball in play but out. Total for season: 211
+Plate Appearance. Total for season: 483
+
+Action in game on 09/22/2023, Visitor against NYA
+At bat for Corbin Carroll with a result of 8/L78XD+
+Ball in play but out. Total for season: 212
+Plate Appearance. Total for season: 484
+
+---------------
+Action in game on 09/24/2023, Visitor against NYA
+At bat for Corbin Carroll with a result of S8/L8+.1-3;B-2(E8)
+Single! Total for season: 71
+Plate Appearance. Total for season: 485
+
+Action in game on 09/24/2023, Visitor against NYA
+At bat for Corbin Carroll with a result of 6/L6
+Ball in play but out. Total for season: 213
+Plate Appearance. Total for season: 486
+
+Action in game on 09/24/2023, Visitor against NYA
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 95
+Plate Appearance. Total for season: 487
+
+Action in game on 09/24/2023, Visitor against NYA
+At bat for Corbin Carroll with a result of D5/F7LS
+Double! Total for season: 22
+Plate Appearance. Total for season: 488
+
+Action in game on 09/24/2023, Visitor against NYA
+At bat for Corbin Carroll with a result of 2/P2F/FL/BINT
+Ball in play but out. Total for season: 214
+Plate Appearance. Total for season: 489
+
+---------------
+Action in game on 09/25/2023, Visitor against NYA
+At bat for Corbin Carroll with a result of 9/L9LD
+Ball in play but out. Total for season: 215
+Plate Appearance. Total for season: 490
+
+Action in game on 09/25/2023, Visitor against NYA
+At bat for Corbin Carroll with a result of S17/G4MS
+Single! Total for season: 72
+Plate Appearance. Total for season: 491
+
+Action in game on 09/25/2023, Visitor against NYA
+At bat for Corbin Carroll with a result of 43/G34
+Ball in play but out. Total for season: 216
+Plate Appearance. Total for season: 492
+
+Action in game on 09/25/2023, Visitor against NYA
+At bat for Corbin Carroll with a result of S8/L8
+Single! Total for season: 73
+Plate Appearance. Total for season: 493
+
+Action in game on 09/25/2023, Visitor against NYA
+At bat for Corbin Carroll with a result of S7/L7S.3-H;2-3;1-2
+Single! Total for season: 74
+Plate Appearance. Total for season: 494
+
+---------------
+Action in game on 09/11/2023, Visitor against NYN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 96
+Plate Appearance. Total for season: 495
+
+Action in game on 09/11/2023, Visitor against NYN
+At bat for Corbin Carroll with a result of 3/L34
+Ball in play but out. Total for season: 217
+Plate Appearance. Total for season: 496
+
+Action in game on 09/11/2023, Visitor against NYN
+At bat for Corbin Carroll with a result of 8/F8XD
+Ball in play but out. Total for season: 218
+Plate Appearance. Total for season: 497
+
+Action in game on 09/11/2023, Visitor against NYN
+At bat for Corbin Carroll with a result of 43/G34
+Ball in play but out. Total for season: 219
+Plate Appearance. Total for season: 498
+
+Action in game on 09/11/2023, Visitor against NYN
+At bat for Corbin Carroll with a result of 31/G3.2-3
+Ball in play but out. Total for season: 220
+Plate Appearance. Total for season: 499
+
+---------------
+Action in game on 09/12/2023, Visitor against NYN
+At bat for Corbin Carroll with a result of 63/G6M
+Ball in play but out. Total for season: 221
+Plate Appearance. Total for season: 500
+
+Action in game on 09/12/2023, Visitor against NYN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 97
+Plate Appearance. Total for season: 501
+
+Action in game on 09/12/2023, Visitor against NYN
+At bat for Corbin Carroll with a result of 43/G4D
+Ball in play but out. Total for season: 222
+Plate Appearance. Total for season: 502
+
+Action in game on 09/12/2023, Visitor against NYN
+At bat for Corbin Carroll with a result of 5/P5SF/FL
+Ball in play but out. Total for season: 223
+Plate Appearance. Total for season: 503
+
+Action in game on 09/12/2023, Visitor against NYN
+At bat for Corbin Carroll with a result of 56(1)3/GDP/G56S
+Ball in play but out. Total for season: 224
+Plate Appearance. Total for season: 504
+
+---------------
+Action in game on 09/14/2023, Visitor against NYN
+At bat for Corbin Carroll with a result of 8/F8
+Ball in play but out. Total for season: 225
+Plate Appearance. Total for season: 505
+
+Action in game on 09/14/2023, Visitor against NYN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 98
+Plate Appearance. Total for season: 506
+
+Action in game on 09/14/2023, Visitor against NYN
+At bat for Corbin Carroll with a result of 43/G34D.1-2
+Ball in play but out. Total for season: 226
+Plate Appearance. Total for season: 507
+
+Action in game on 09/14/2023, Visitor against NYN
+At bat for Corbin Carroll with a result of S7/F7S
+Single! Total for season: 75
+Plate Appearance. Total for season: 508
+
+---------------
+Action in game on 05/15/2023, Visitor against OAK
+At bat for Corbin Carroll with a result of 3/P34S
+Ball in play but out. Total for season: 227
+Plate Appearance. Total for season: 509
+
+Action in game on 05/15/2023, Visitor against OAK
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 43
+Plate Appearance. Total for season: 510
+
+Action in game on 05/15/2023, Visitor against OAK
+At bat for Corbin Carroll with a result of 6/SF/F78S.3-H
+Ball in play but out. Total for season: 228
+Plate Appearance. Total for season: 511
+
+Action in game on 05/15/2023, Visitor against OAK
+At bat for Corbin Carroll with a result of S7/L7D+
+Single! Total for season: 76
+Plate Appearance. Total for season: 512
+
+Action in game on 05/15/2023, Visitor against OAK
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 99
+Plate Appearance. Total for season: 513
+
+---------------
+Action in game on 05/16/2023, Visitor against OAK
+At bat for Corbin Carroll with a result of 43/G34
+Ball in play but out. Total for season: 229
+Plate Appearance. Total for season: 514
+
+Action in game on 05/16/2023, Visitor against OAK
+At bat for Corbin Carroll with a result of 31/G34
+Ball in play but out. Total for season: 230
+Plate Appearance. Total for season: 515
+
+Action in game on 05/16/2023, Visitor against OAK
+At bat for Corbin Carroll with a result of W.1-2
+Walk. Total for season: 44
+Plate Appearance. Total for season: 516
+
+Action in game on 05/16/2023, Visitor against OAK
+At bat for Corbin Carroll with a result of D7/L7L
+Double! Total for season: 23
+Plate Appearance. Total for season: 517
+
+Action in game on 05/16/2023, Visitor against OAK
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 45
+Plate Appearance. Total for season: 518
+
+Action in game on 05/16/2023, Visitor against OAK
+At bat for Corbin Carroll with a result of IW
+Walk. Total for season: 46
+Plate Appearance. Total for season: 519
+
+---------------
+Action in game on 05/17/2023, Visitor against OAK
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 100
+Plate Appearance. Total for season: 520
+
+Action in game on 05/17/2023, Visitor against OAK
+At bat for Corbin Carroll with a result of 3/G3
+Ball in play but out. Total for season: 231
+Plate Appearance. Total for season: 521
+
+Action in game on 05/17/2023, Visitor against OAK
+At bat for Corbin Carroll with a result of HR/F8XD.1-H
+Home Run! Total for season: 22
+Plate Appearance. Total for season: 522
+
+Action in game on 05/17/2023, Visitor against OAK
+At bat for Corbin Carroll with a result of 43/G34.2-3;1-2
+Ball in play but out. Total for season: 232
+Plate Appearance. Total for season: 523
+
+---------------
+Action in game on 05/22/2023, Visitor against PHI
+At bat for Corbin Carroll with a result of 43/G34.1-2
+Ball in play but out. Total for season: 233
+Plate Appearance. Total for season: 524
+
+Action in game on 05/22/2023, Visitor against PHI
+At bat for Corbin Carroll with a result of 5/L56
+Ball in play but out. Total for season: 234
+Plate Appearance. Total for season: 525
+
+Action in game on 05/22/2023, Visitor against PHI
+At bat for Corbin Carroll with a result of 46(1)/FO/G34.B-1
+Ball in play but out. Total for season: 235
+Plate Appearance. Total for season: 526
+
+Action in game on 05/22/2023, Visitor against PHI
+At bat for Corbin Carroll with a result of 5/P5F/FL
+Ball in play but out. Total for season: 236
+Plate Appearance. Total for season: 527
+
+Action in game on 05/22/2023, Visitor against PHI
+At bat for Corbin Carroll with a result of 7/F7S
+Ball in play but out. Total for season: 237
+Plate Appearance. Total for season: 528
+
+---------------
+Action in game on 05/23/2023, Visitor against PHI
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 101
+Plate Appearance. Total for season: 529
+
+Action in game on 05/23/2023, Visitor against PHI
+At bat for Corbin Carroll with a result of D7/L7D+
+Double! Total for season: 24
+Plate Appearance. Total for season: 530
+
+Action in game on 05/23/2023, Visitor against PHI
+At bat for Corbin Carroll with a result of D9/G3
+Double! Total for season: 25
+Plate Appearance. Total for season: 531
+
+Action in game on 05/23/2023, Visitor against PHI
+At bat for Corbin Carroll with a result of S7/L7LS.3-H;1-2
+Single! Total for season: 77
+Plate Appearance. Total for season: 532
+
+---------------
+Action in game on 05/24/2023, Visitor against PHI
+At bat for Corbin Carroll with a result of D8/L78XD+.1-3
+Double! Total for season: 26
+Plate Appearance. Total for season: 533
+
+Action in game on 05/24/2023, Visitor against PHI
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 47
+Plate Appearance. Total for season: 534
+
+Action in game on 05/24/2023, Visitor against PHI
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 102
+Plate Appearance. Total for season: 535
+
+Action in game on 05/24/2023, Visitor against PHI
+At bat for Corbin Carroll with a result of 46(1)/FO/G34.B-1
+Ball in play but out. Total for season: 238
+Plate Appearance. Total for season: 536
+
+Action in game on 05/24/2023, Visitor against PHI
+At bat for Corbin Carroll with a result of 8/F8D
+Ball in play but out. Total for season: 239
+Plate Appearance. Total for season: 537
+
+---------------
+Action in game on 05/19/2023, Visitor against PIT
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 48
+Plate Appearance. Total for season: 538
+
+Action in game on 05/19/2023, Visitor against PIT
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 103
+Plate Appearance. Total for season: 539
+
+Action in game on 05/19/2023, Visitor against PIT
+At bat for Corbin Carroll with a result of 7/F78
+Ball in play but out. Total for season: 240
+Plate Appearance. Total for season: 540
+
+Action in game on 05/19/2023, Visitor against PIT
+At bat for Corbin Carroll with a result of HP
+Hit by Pitch. Total for season: 11
+Plate Appearance. Total for season: 541
+
+---------------
+Action in game on 05/20/2023, Visitor against PIT
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 104
+Plate Appearance. Total for season: 542
+
+Action in game on 05/20/2023, Visitor against PIT
+At bat for Corbin Carroll with a result of 8/L8D+
+Ball in play but out. Total for season: 241
+Plate Appearance. Total for season: 543
+
+Action in game on 05/20/2023, Visitor against PIT
+At bat for Corbin Carroll with a result of S64/G6.3-H;2-3
+Single! Total for season: 78
+Plate Appearance. Total for season: 544
+
+Action in game on 05/20/2023, Visitor against PIT
+At bat for Corbin Carroll with a result of S9/G34+
+Single! Total for season: 79
+Plate Appearance. Total for season: 545
+
+---------------
+Action in game on 05/21/2023, Visitor against PIT
+At bat for Corbin Carroll with a result of HR/F9LD
+Home Run! Total for season: 23
+Plate Appearance. Total for season: 546
+
+Action in game on 05/21/2023, Visitor against PIT
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 49
+Plate Appearance. Total for season: 547
+
+Action in game on 05/21/2023, Visitor against PIT
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 105
+Plate Appearance. Total for season: 548
+
+Action in game on 05/21/2023, Visitor against PIT
+At bat for Corbin Carroll with a result of W.1-2
+Walk. Total for season: 50
+Plate Appearance. Total for season: 549
+
+Action in game on 05/21/2023, Visitor against PIT
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 51
+Plate Appearance. Total for season: 550
+
+---------------
+Action in game on 04/03/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of S8/L78+.1-2
+Single! Total for season: 80
+Plate Appearance. Total for season: 551
+
+Action in game on 04/03/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 106
+Plate Appearance. Total for season: 552
+
+Action in game on 04/03/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of HR/L9D
+Home Run! Total for season: 24
+Plate Appearance. Total for season: 553
+
+Action in game on 04/03/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of S7/G6
+Single! Total for season: 81
+Plate Appearance. Total for season: 554
+
+---------------
+Action in game on 04/04/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of 4/P34D
+Ball in play but out. Total for season: 242
+Plate Appearance. Total for season: 555
+
+Action in game on 04/04/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 107
+Plate Appearance. Total for season: 556
+
+Action in game on 04/04/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 108
+Plate Appearance. Total for season: 557
+
+Action in game on 04/04/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of 9/F89S
+Ball in play but out. Total for season: 243
+Plate Appearance. Total for season: 558
+
+Action in game on 04/04/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 109
+Plate Appearance. Total for season: 559
+
+---------------
+Action in game on 08/17/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of 9/L9D+
+Ball in play but out. Total for season: 244
+Plate Appearance. Total for season: 560
+
+Action in game on 08/17/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 52
+Plate Appearance. Total for season: 561
+
+Action in game on 08/17/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of 43/G34
+Ball in play but out. Total for season: 245
+Plate Appearance. Total for season: 562
+
+Action in game on 08/17/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 110
+Plate Appearance. Total for season: 563
+
+---------------
+Action in game on 08/18/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of 7/F7D
+Ball in play but out. Total for season: 246
+Plate Appearance. Total for season: 564
+
+Action in game on 08/18/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of 43/G34
+Ball in play but out. Total for season: 247
+Plate Appearance. Total for season: 565
+
+Action in game on 08/18/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of 56(1)/FO/G56.2-3;B-1
+Ball in play but out. Total for season: 248
+Plate Appearance. Total for season: 566
+
+Action in game on 08/18/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of 7/F78D/DP.1X2(74)
+Ball in play but out. Total for season: 249
+Plate Appearance. Total for season: 567
+
+---------------
+Action in game on 08/19/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of D8/L78XD+
+Double! Total for season: 27
+Plate Appearance. Total for season: 568
+
+Action in game on 08/19/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of HP
+Hit by Pitch. Total for season: 12
+Plate Appearance. Total for season: 569
+
+Action in game on 08/19/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of 31/G34-.1-2
+Ball in play but out. Total for season: 250
+Plate Appearance. Total for season: 570
+
+Action in game on 08/19/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of S9/L89
+Single! Total for season: 82
+Plate Appearance. Total for season: 571
+
+Action in game on 08/19/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 111
+Plate Appearance. Total for season: 572
+
+Action in game on 08/19/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of S8/L89
+Single! Total for season: 83
+Plate Appearance. Total for season: 573
+
+Action in game on 08/19/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of 5/P56S
+Ball in play but out. Total for season: 251
+Plate Appearance. Total for season: 574
+
+Action in game on 08/19/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of S4/G4.3-H;2-3;1-2
+Single! Total for season: 84
+Plate Appearance. Total for season: 575
+
+Action in game on 08/19/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of 3/G3
+Ball in play but out. Total for season: 252
+Plate Appearance. Total for season: 576
+
+Action in game on 08/19/2023, Visitor against SDN
+At bat for Corbin Carroll with a result of S9/G34
+Single! Total for season: 85
+Plate Appearance. Total for season: 577
+
+---------------
+Action in game on 06/23/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of S8/G4M
+Single! Total for season: 86
+Plate Appearance. Total for season: 578
+
+Action in game on 06/23/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of 6/P4MS
+Ball in play but out. Total for season: 253
+Plate Appearance. Total for season: 579
+
+Action in game on 06/23/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of 36(1)/FO/G3.3-H;B-1
+Ball in play but out. Total for season: 254
+Plate Appearance. Total for season: 580
+
+Action in game on 06/23/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of D6/F8S
+Double! Total for season: 28
+Plate Appearance. Total for season: 581
+
+---------------
+Action in game on 06/24/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 112
+Plate Appearance. Total for season: 582
+
+Action in game on 06/24/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of 7/L78D+
+Ball in play but out. Total for season: 255
+Plate Appearance. Total for season: 583
+
+Action in game on 06/24/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of FC6/G4M.2-3;1-2;B-1
+Plate Appearance. Total for season: 584
+
+Action in game on 06/24/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 113
+Plate Appearance. Total for season: 585
+
+Action in game on 06/24/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of 6/P6D
+Ball in play but out. Total for season: 256
+Plate Appearance. Total for season: 586
+
+---------------
+Action in game on 06/25/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 114
+Plate Appearance. Total for season: 587
+
+Action in game on 06/25/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of 7/F78XD
+Ball in play but out. Total for season: 257
+Plate Appearance. Total for season: 588
+
+Action in game on 06/25/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of 31/G3
+Ball in play but out. Total for season: 258
+Plate Appearance. Total for season: 589
+
+Action in game on 06/25/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of 7/F7S
+Ball in play but out. Total for season: 259
+Plate Appearance. Total for season: 590
+
+Action in game on 06/25/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 115
+Plate Appearance. Total for season: 591
+
+---------------
+Action in game on 07/31/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of K.BX1(23)
+Strikeout. Total on season: 116
+Plate Appearance. Total for season: 592
+
+Action in game on 07/31/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of 63/G6
+Ball in play but out. Total for season: 260
+Plate Appearance. Total for season: 593
+
+Action in game on 07/31/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of S9/L89.2-H
+Single! Total for season: 87
+Plate Appearance. Total for season: 594
+
+Action in game on 07/31/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 117
+Plate Appearance. Total for season: 595
+
+Action in game on 07/31/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of 13/SH/BG2-.2-3
+Ball in play but out. Total for season: 261
+Plate Appearance. Total for season: 596
+
+---------------
+Action in game on 08/01/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of 3/G3
+Ball in play but out. Total for season: 262
+Plate Appearance. Total for season: 597
+
+Action in game on 08/01/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of 23/G23-
+Ball in play but out. Total for season: 263
+Plate Appearance. Total for season: 598
+
+Action in game on 08/01/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of 8/L8D+
+Ball in play but out. Total for season: 264
+Plate Appearance. Total for season: 599
+
+Action in game on 08/01/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of 9/F89D
+Ball in play but out. Total for season: 265
+Plate Appearance. Total for season: 600
+
+---------------
+Action in game on 08/02/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of 63/G4MS.3-H
+Ball in play but out. Total for season: 266
+Plate Appearance. Total for season: 601
+
+Action in game on 08/02/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of 3/G3+
+Ball in play but out. Total for season: 267
+Plate Appearance. Total for season: 602
+
+Action in game on 08/02/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of 13/G2-
+Ball in play but out. Total for season: 268
+Plate Appearance. Total for season: 603
+
+Action in game on 08/02/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of 9/F89XD
+Ball in play but out. Total for season: 269
+Plate Appearance. Total for season: 604
+
+---------------
+Action in game on 08/03/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of S8/L8
+Single! Total for season: 88
+Plate Appearance. Total for season: 605
+
+Action in game on 08/03/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of 36(1)1/GDP/G3S
+Ball in play but out. Total for season: 270
+Plate Appearance. Total for season: 606
+
+Action in game on 08/03/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 53
+Plate Appearance. Total for season: 607
+
+Action in game on 08/03/2023, Visitor against SFN
+At bat for Corbin Carroll with a result of 5/P5F/FL
+Ball in play but out. Total for season: 271
+Plate Appearance. Total for season: 608
+
+---------------
+Action in game on 04/17/2023, Visitor against SLN
+At bat for Corbin Carroll with a result of 3/L3+
+Ball in play but out. Total for season: 272
+Plate Appearance. Total for season: 609
+
+Action in game on 04/17/2023, Visitor against SLN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 118
+Plate Appearance. Total for season: 610
+
+Action in game on 04/17/2023, Visitor against SLN
+At bat for Corbin Carroll with a result of W.2-3;1-2
+Walk. Total for season: 54
+Plate Appearance. Total for season: 611
+
+Action in game on 04/17/2023, Visitor against SLN
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 119
+Plate Appearance. Total for season: 612
+
+---------------
+Action in game on 04/19/2023, Visitor against SLN
+At bat for Corbin Carroll with a result of 31/G3+.2-3
+Ball in play but out. Total for season: 273
+Plate Appearance. Total for season: 613
+
+Action in game on 04/19/2023, Visitor against SLN
+At bat for Corbin Carroll with a result of DGR/F7L.1-3
+Double! Total for season: 29
+Plate Appearance. Total for season: 614
+
+Action in game on 04/19/2023, Visitor against SLN
+At bat for Corbin Carroll with a result of D9/F9D+
+Double! Total for season: 30
+Plate Appearance. Total for season: 615
+
+Action in game on 04/19/2023, Visitor against SLN
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 55
+Plate Appearance. Total for season: 616
+
+Action in game on 04/19/2023, Visitor against SLN
+At bat for Corbin Carroll with a result of W
+Walk. Total for season: 56
+Plate Appearance. Total for season: 617
+
+---------------
+Action in game on 05/03/2023, Visitor against TEX
+At bat for Corbin Carroll with a result of S8/L8
+Single! Total for season: 89
+Plate Appearance. Total for season: 618
+
+Action in game on 05/03/2023, Visitor against TEX
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 120
+Plate Appearance. Total for season: 619
+
+---------------
+Action in game on 07/14/2023, Visitor against TOR
+At bat for Corbin Carroll with a result of S8/L8.1X3(845);B-2
+Single! Total for season: 90
+Plate Appearance. Total for season: 620
+
+Action in game on 07/14/2023, Visitor against TOR
+At bat for Corbin Carroll with a result of 3/G3.2-3
+Ball in play but out. Total for season: 274
+Plate Appearance. Total for season: 621
+
+Action in game on 07/14/2023, Visitor against TOR
+At bat for Corbin Carroll with a result of S7/L78
+Single! Total for season: 91
+Plate Appearance. Total for season: 622
+
+Action in game on 07/14/2023, Visitor against TOR
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 121
+Plate Appearance. Total for season: 623
+
+---------------
+Action in game on 07/15/2023, Visitor against TOR
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 122
+Plate Appearance. Total for season: 624
+
+Action in game on 07/15/2023, Visitor against TOR
+At bat for Corbin Carroll with a result of 43/G34
+Ball in play but out. Total for season: 275
+Plate Appearance. Total for season: 625
+
+Action in game on 07/15/2023, Visitor against TOR
+At bat for Corbin Carroll with a result of 8/F8XD
+Ball in play but out. Total for season: 276
+Plate Appearance. Total for season: 626
+
+Action in game on 07/15/2023, Visitor against TOR
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 123
+Plate Appearance. Total for season: 627
+
+---------------
+Action in game on 07/16/2023, Visitor against TOR
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 124
+Plate Appearance. Total for season: 628
+
+Action in game on 07/16/2023, Visitor against TOR
+At bat for Corbin Carroll with a result of 43/G4+
+Ball in play but out. Total for season: 277
+Plate Appearance. Total for season: 629
+
+Action in game on 07/16/2023, Visitor against TOR
+At bat for Corbin Carroll with a result of 13/BG23-
+Ball in play but out. Total for season: 278
+Plate Appearance. Total for season: 630
+
+Action in game on 07/16/2023, Visitor against TOR
+At bat for Corbin Carroll with a result of 64(1)/FO/G4.B-1
+Ball in play but out. Total for season: 279
+Plate Appearance. Total for season: 631
+
+---------------
+Action in game on 06/06/2023, Visitor against WAS
+At bat for Corbin Carroll with a result of 5/P6S
+Ball in play but out. Total for season: 280
+Plate Appearance. Total for season: 632
+
+Action in game on 06/06/2023, Visitor against WAS
+At bat for Corbin Carroll with a result of K
+Strikeout. Total on season: 125
+Plate Appearance. Total for season: 633
+
+Action in game on 06/06/2023, Visitor against WAS
+At bat for Corbin Carroll with a result of HP
+Hit by Pitch. Total for season: 13
+Plate Appearance. Total for season: 634
+
+Action in game on 06/06/2023, Visitor against WAS
+At bat for Corbin Carroll with a result of W.1-2
+Walk. Total for season: 57
+Plate Appearance. Total for season: 635
+
+Action in game on 06/06/2023, Visitor against WAS
+At bat for Corbin Carroll with a result of S6/G56
+Single! Total for season: 92
+Plate Appearance. Total for season: 636
+
+---------------
+Action in game on 06/07/2023, Visitor against WAS
+At bat for Corbin Carroll with a result of S1/BG23.2-3
+Single! Total for season: 93
+Plate Appearance. Total for season: 637
+
+Action in game on 06/07/2023, Visitor against WAS
+At bat for Corbin Carroll with a result of 8/L78D
+Ball in play but out. Total for season: 281
+Plate Appearance. Total for season: 638
+
+Action in game on 06/07/2023, Visitor against WAS
+At bat for Corbin Carroll with a result of S9/L9D+.BX2(96)
+Single! Total for season: 94
+Plate Appearance. Total for season: 639
+
+Action in game on 06/07/2023, Visitor against WAS
+At bat for Corbin Carroll with a result of S7/F78
+Single! Total for season: 95
+Plate Appearance. Total for season: 640
+
+Action in game on 06/07/2023, Visitor against WAS
+At bat for Corbin Carroll with a result of HR/F78XD.1-H
+Home Run! Total for season: 25
+Plate Appearance. Total for season: 641
+
+---------------
+Action in game on 06/22/2023, Visitor against WAS
+At bat for Corbin Carroll with a result of 36(1)/FO/G3.B-1
+Ball in play but out. Total for season: 282
+Plate Appearance. Total for season: 642
+
+Action in game on 06/22/2023, Visitor against WAS
+At bat for Corbin Carroll with a result of S9/L9S
+Single! Total for season: 96
+Plate Appearance. Total for season: 643
+
+Action in game on 06/22/2023, Visitor against WAS
+At bat for Corbin Carroll with a result of 7/F7
+Ball in play but out. Total for season: 283
+Plate Appearance. Total for season: 644
+
+Action in game on 06/22/2023, Visitor against WAS
+At bat for Corbin Carroll with a result of 8/F8
+Ball in play but out. Total for season: 284
+Plate Appearance. Total for season: 645
+
+---------------
+{'Singles': 96, 'Doubles': 30, 'Triples': 10, 'Home Runs': 25, 'Hits': 161, 'Walks': 57, 'Plate Appearances': 645, 'Strikeouts': 125, 'At Bats': 560, 'Hit By Pitch': 13, 'Out': 284}

@@ -33,3 +33,10 @@ def above_threshold(game):
 
 def teams_have_h2h(h2h, game):
     return h2h[game["home"]] > 0 and h2h[game["visitor"]] > 0
+
+def format_date(date):
+    year = date[:4] # REMEMBER: right side not inclusive, format is 20230705, first 4 accessed by :4
+    month = date[4:6] # Left side is inclusive
+    day = date[6:8]
+    formatted = str(month) + "/" + str(day) + "/" + str(year)
+    return formatted

@@ -10,15 +10,18 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
     for line in lines:
         #print(line)
         if line.startswith("id,"):
+            #print()
+            #print(line)
+            #print()
             i += 1
             games.append(game)
             game = []
             #print(f"GAME {i}")
         else:
             game.append(line)
+    games.append(game)
     #games = games[:2] #TEMP chamge to games = games[1:]
     games = games[1:]
-
     for game in games:
         date, visteam, hometeam = "", "", ""
         infoitems = dict()
@@ -292,15 +295,17 @@ def main():
     print("-" * 50, end="\n\n\n")
 
     """
-    print("LOADING PLAY BY PLAY - ARI AND LAN")
+    print("LOADING PLAY BY PLAY - ARI AND NYA")
     print("-" * 50)
-    pbp_log = parse_pbp()
-    print(pbp_log)
-    #parse_pbp("pbp/2023LAN.EVN")
+    #pbp_log = parse_pbp()
+    #print(pbp_log)
+    parse_pbp("pbp/2023NYA.EVA")
+    for game in season_pbp:
+        print(game)
     print("LOADED")
     print("-" * 50, end="\n\n\n")
     """
-
+    
     print("LOADING PLAY BY PLAY - ALL TEAMS")
     print("-" * 50)
     for pbp in PBP_FILES:
@@ -321,10 +326,16 @@ def main():
 
     print("TEST PRINTS")
     print("-" * 50)
+    print(season_pbp["20230924NYAARI"].home_lineup)
+    print('break')
+    print(season_pbp["20230725ARISLN"].batters)
     print(season_pbp["20230930ARIHOU"].home_lineup)
     print(players["carrc005"].name)
     print("1 is: " + str(bool(1)))
+    print("Corbin Carroll batting totals:")
     print(players["carrc005"].get_batting_totals(DEFAULT_YE))
+
+    """
     max_hrs = 0
     max_total = 0
     max_player = 0
@@ -338,7 +349,7 @@ def main():
     print("PLAYER WITH MOST HOME RUNS")
     print(max_total)
     print(max_player.name + " had the most home runs in 2023")
-
+    """
     """
     input_player = input("Player: ")
     input_player = input_player
