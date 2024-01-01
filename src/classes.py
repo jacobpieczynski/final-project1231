@@ -21,10 +21,12 @@ class Player:
     def get_batting_totals(self, date):
         if self.hits > 0 or self.pas > 0:
             self.reset_stats()
+        games = 0 # TEMP FOR TEST
         for gameid in season_pbp:
             game = season_pbp[gameid]
             # Finds all games the player played in within the date range
             if self.id in game.batters and game.date < date:
+                games += 1
                 side = "Home"
                 if self.team == game.visteam:
                     side = "Visitor"
@@ -33,52 +35,59 @@ class Player:
                     # Each play in the inning
                     for play in game.pbp[inning][side]:
                         # Checks for an at bat by the given player
-                        if play.batter == self.id and not play.play.startswith("SB") and not play.play.startswith("NP") and not play.play.startswith("WP") and not play.play.startswith("DI") and not play.play.startswith("CS") and not play.play.startswith("BK") and not play.play.startswith("OA") and not play.play.startswith("PB") and not play.play.startswith("PO"): # Prevents base running from being recorded as action
+                        if play.batter == self.id and not play.play.startswith("SB") and not play.play.startswith("CI") and not play.play.startswith("NP") and not play.play.startswith("WP") and not play.play.startswith("DI") and not play.play.startswith("CS") and not play.play.startswith("BK") and not play.play.startswith("OA") and not play.play.startswith("PB") and not play.play.startswith("PO"): # Prevents base running from being recorded as action
                             opponent = game.hometeam # TESTING ONLY
                             if side == "Home":
                                 opponent = game.visteam
-                            print("Action in game on " + format_date(game.date) + ", " + side + " against " + opponent)
-                            print("At bat for " + self.name + " with a result of " + play.play)
+                            #print("Action in game on " + format_date(game.date) + ", " + side + " against " + opponent)
+                            #print("At bat for " + self.name + " with a result of " + play.play)
                             if play.play.startswith("S"):
                                 self.singles += 1
                                 self.hits += 1
                                 self.abs += 1
-                                print("Single! Total for season: " + str(self.singles))
+                                #print("Single! Total for season: " + str(self.singles))
                             elif play.play.startswith("D"):
                                 self.doubles += 1
                                 self.hits += 1
                                 self.abs += 1
-                                print("Double! Total for season: " + str(self.doubles))
+                                #print("Double! Total for season: " + str(self.doubles))
                             elif play.play.startswith("T"):
                                 self.triples += 1
                                 self.hits += 1
                                 self.abs += 1
-                                print("Triple! Total for season: " + str(self.triples))
+                                #print("Triple! Total for season: " + str(self.triples))
                             elif play.play.startswith("HR"):
                                 self.hrs += 1
                                 self.hits += 1
                                 self.abs += 1
-                                print("Home Run! Total for season: " + str(self.hrs))
+                                #print("Home Run! Total for season: " + str(self.hrs))
                             elif play.play.startswith("W") or play.play.startswith("IW"):
                                 self.walks += 1
-                                print("Walk. Total for season: " + str(self.walks))
+                                #print("Walk. Total for season: " + str(self.walks))
                             elif play.play.startswith("K") or play.play.startswith("K+WP"):
                                 self.ks += 1
                                 self.abs += 1
-                                print("Strikeout. Total on season: " + str(self.ks))
+                                #print("Strikeout. Total on season: " + str(self.ks))
                             elif play.play.startswith("HP"):
                                 self.hbp += 1
-                                print("Hit by Pitch. Total for season: " + str(self.hbp))
+                                #print("Hit by Pitch. Total for season: " + str(self.hbp))
                             elif play.play[0].isnumeric():
                                 self.outs += 1
                                 if "/SH" not in play.play and "/SF" not in play.play:
                                     self.abs += 1
-                                print("Ball in play but out. Total for season: " + str(self.outs))
+                                #print("Ball in play but out. Total for season: " + str(self.outs))
+                            elif play.play.startswith("E"):
+                                self.abs += 1
+                                #print("Reached on defensive Error.")
+                            elif play.play.startswith("FC"):
+                                self.abs += 1
+                                #print("Fielder's choice.")
                             # CERTAINLY NOT ACCURATE - doesn't account for baserunning plays causing a batter to have two entries in the PBP (see line 3764 on ARI.evn i think)
                             self.pas += 1
-                            print("Plate Appearance. Total for season: " + str(self.pas))
-                            print()
-                print("-" * 15)
+                            #print("Plate Appearance. Total for season: " + str(self.pas))
+                            #print()
+                #print("-" * 15)
+        #print(games)
         return {"Singles": self.singles, "Doubles": self.doubles, "Triples": self.triples, "Home Runs": self.hrs, "Hits": self.hits, "Walks": self.walks, "Plate Appearances": self.pas, "Strikeouts": self.ks, "At Bats": self.abs, "Hit By Pitch": self.hbp, "Out": self.outs}
                     #print(inning)
                     #print(game.pbp[inning][side])

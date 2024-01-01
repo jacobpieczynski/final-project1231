@@ -334,6 +334,8 @@ def main():
     print("1 is: " + str(bool(1)))
     print("Corbin Carroll batting totals:")
     print(players["carrc005"].get_batting_totals(DEFAULT_YE))
+    print("Original:")
+    print({'Singles': 96, 'Doubles': 30, 'Triples': 10, 'Home Runs': 25, 'Hits': 161, 'Walks': 57, 'Plate Appearances': 645, 'Strikeouts': 125, 'At Bats': 560, 'Hit By Pitch': 13, 'Out': 284})
 
     """
     max_hrs = 0
@@ -350,7 +352,6 @@ def main():
     print(max_total)
     print(max_player.name + " had the most home runs in 2023")
     """
-    """
     input_player = input("Player: ")
     input_player = input_player
     input_id = 0
@@ -362,7 +363,6 @@ def main():
             break
     if input_id == 0:
         print("Player not found")
-    """
 main()
 
 
