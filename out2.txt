@@ -1,0 +1,34 @@
+LOADING GAME LOG
+--------------------------------------------------
+LOADED
+--------------------------------------------------
+
+
+LOADING PLAY BY PLAY - ALL TEAMS
+--------------------------------------------------
+LOADED
+--------------------------------------------------
+
+
+STATISTICS
+--------------------------------------------------
+The home team won 1056 games (49.35%) and visitors won 1084 games. The favorite won 55.42% of games and the underdog won 44.58% of 2140 games
+ARL03 had the most home runs this season with a total of 256.0
+Most successful home teams (by number of wins): [('LAN', 53), ('TBA', 53), ('ATL', 52), ('TEX', 50), ('BAL', 49), ('MIL', 49), ('PHI', 49), ('MIN', 47), ('MIA', 46), ('CHN', 45), ('SEA', 45), ('SFN', 45), ('SDN', 44), ('ARI', 43), ('NYN', 43), ('TOR', 43), ('CLE', 42), ('NYA', 42), ('BOS', 39), ('HOU', 39), ('PIT', 39), ('ANA', 38), ('CIN', 38), ('COL', 37), ('DET', 37), ('SLN', 35), ('WAS', 34), ('KCA', 33), ('CHA', 31), ('OAK', 26)]
+Most successful home teams (by percent of wins): [('COL', 62.71), ('KCA', 58.93), ('NYN', 57.33), ('SFN', 56.96), ('TEX', 55.56), ('CLE', 55.26), ('MIA', 54.76), ('PHI', 54.44), ('CHN', 54.22), ('TBA', 54.08), ('MIN', 54.02), ('SDN', 53.66), ('MIL', 53.26), ('LAN', 53.0), ('ANA', 52.05), ('OAK', 52.0), ('PIT', 51.32), ('NYA', 51.22), ('ARI', 51.19), ('SEA', 51.14), ('CHA', 50.82), ('ATL', 50.0), ('BOS', 50.0), ('SLN', 49.3), ('BAL', 48.51), ('TOR', 48.31), ('WAS', 47.89), ('DET', 47.44), ('CIN', 46.34), ('HOU', 43.33)]
+3
+H2H Importance: ANA: 44.19%, ARI: 54.0%, ATL: 66.13%, BAL: 62.26%, BOS: 45.83%, CHA: 41.94%, CHN: 58.06%, CIN: 40.54%, CLE: 43.59%, COL: 50.0%, DET: 62.79%, HOU: 58.97%, KCA: 44.44%, LAN: 58.7%, MIA: 48.57%, MIL: 59.62%, MIN: 52.38%, NYA: 47.37%, NYN: 44.44%, OAK: 50.0%, PHI: 58.97%, PIT: 52.5%, SDN: 48.65%, SEA: 65.12%, SFN: 48.89%, SLN: 36.67%, TBA: 60.0%, TEX: 59.26%, TOR: 45.45%, WAS: 60.87%, 
+H2H Advantage won 600 out of 1159 total games. This is 51.77%
+433 of 722 games won when a team has both the h2h and record advantage. This is equal to 59.97%
+--------------------------------------------------
+
+
+TEST PRINTS
+--------------------------------------------------
+[[carrc005, 'Corbin Carroll', 1, '9'], [martk001, 'Ketel Marte', 2, '4'], [phamt001, 'Tommy Pham', 3, '10'], [walkc002, 'Christian Walker', 4, '3'], [thoma004, 'Alek Thomas', 5, '8'], [gurrl001, 'Lourdes Gurriel Jr.', 6, '7'], [longe001, 'Evan Longoria', 7, '5'], [moreg001, 'Gabriel Moreno', 8, '2'], [perdg001, 'Geraldo Perdomo', 9, '6']]
+Corbin Carroll
+1 is: True
+{'Singles': 97, 'Doubles': 31, 'Triples': 9, 'Home Runs': 25, 'Hits': 162, 'Walks': 62, 'At Bats': 712}
+PLAYER WITH MOST HOME RUNS
+{'Singles': 112, 'Doubles': 28, 'Triples': 3, 'Home Runs': 54, 'Hits': 197, 'Walks': 102, 'At Bats': 840}
+Matt Olson had the most home runs in 2023
