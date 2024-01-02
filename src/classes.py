@@ -164,7 +164,7 @@ class Pitcher:
         return self.get_pitching_totals(date)["IP"]
     
     def get_era(self, date):
-        return (self.get_er(date) * 9) / self.get_ip(date)
+        return round((self.get_er(date) * 9) / self.get_ip(date), 2)
 
     def reset_stats(self):
         self.er, self.ip, self.game_er = 0, 0, 0
@@ -188,8 +188,8 @@ class Pitcher:
         self.inning_exit = exit
 
     def calc_ip(self):
-        game_ip = self.inning_exit - self.inning_entered
-        self.ip += game_ip
+        game_ip = round(self.inning_exit - self.inning_entered, 2)
+        self.ip = round(self.ip + game_ip, 2)
         self.reset_outing()
         return game_ip
     

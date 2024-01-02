@@ -18,7 +18,7 @@ def parse_roster(logname="ros/SEA2023.ROS"):
         else:
             players[player["id"]] = Player(player["id"], name, player["team"])
 
-        # Shohei Ohtani Exception (Listed as DH)
+        # Shohei Ohtani Exception (Listed as DH) - Jacob Pieczynski's Shohei Rule
         if "ohtas001" not in pitchers:
             pitchers["ohtas001"] = Pitcher("ohtas001", "Shohei Ohtani", "ANA")
 
@@ -51,8 +51,8 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
         home_lineup = [None] * 9
         home_pitchers = list()
         visiting_pitchers = list()
-        h_inning_enter, h_inning_exit, current_inning = 1.0, 1.0, 1.0
-        v_inning_enter, v_inning_exit = 1.0, 1.0
+        h_inning_enter, h_inning_exit, current_inning = 0.0, 0.0, 0.0
+        v_inning_enter, v_inning_exit = 0.0, 0.0
         h_current_pitcher, v_current_pitcher = None, None
         #h_start_ip, v_start_ip, h_partial_ip, v_partial_ip, curr_inning = 1, 1, 0, 0, 1
         # Sorts through every game, then separates each stat "item" by the commas
@@ -100,8 +100,8 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                     # Starting Pitcher
                     else:
                         v_current_pitcher = pitchers[player_id]
-                        visiting_pitchers.append(v_current_pitcher)
                         v_current_pitcher.set_outing_start(v_inning_enter)
+                        print(f"Visitng starting pitcher: {v_current_pitcher.name}. Entering in the {v_inning_enter}")
                 # Home
                 else:
                     # Not a pitcher
@@ -114,8 +114,8 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                     # Starting Pitcher
                     else:
                         h_current_pitcher = pitchers[player_id]
-                        home_pitchers.append(h_current_pitcher)
                         h_current_pitcher.set_outing_start(h_inning_enter)
+                        print(f"Home starting pitcher: {h_current_pitcher.name}. Entering in the {h_inning_enter}")
                 #print(visitor_lineup)
                 #print(home_lineup, end="\n\n")
             elif info[0] == "play" or info[0] == "sub" or info[0] == "com":
@@ -127,27 +127,40 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                         print("Play record contains too few data items")
                         return
                     inning = float(info[1])
-                    if inning > current_inning:
-                        current_inning = inning - 1
-                        if is_home:
-                            v_inning_exit = current_inning
-                        else:
-                            h_inning_exit = current_inning
                     is_home = int(info[2])
                     batter = info[3]
                     count = info[4] # Num of balls-strikes at the time of the hit
                     pitches = info[5]
                     play = info[6]
+                    if inning - 1 > current_inning:
+                        current_inning = inning - 1
+                        print()
+                        print(f"is home: {is_home}")
+                        if is_home:
+                            v_inning_exit = current_inning
+                            print(f"New inning, home batting? New exit v: {v_inning_exit}")
+                            print(info)
+                        else:
+                            h_inning_exit = current_inning
+                            print(f"New inning, visitor batting? New exit h: {h_inning_exit}")
+                            print(info)
                     #print(f"{inning}, {is_home}, {batter}, {count}, {balls}, {strikes}, {pitches}, {play}")
                     # "Top" of the inning - visitng team goes bats first
                     play_obj = Play(inning, is_home, batter, count, pitches, play)
                     # To find the fraction of the inning completed
                     if play[0].isnumeric() or play.startswith("K") or play.startswith("CS"): # Checks for groundout, strikeout, or caught stealing
                         # If the play causes an out, the other team's pitch inning should increase
+                        factor = (1 / 3)
+                        if "GDP" in play or "LDP" in play:
+                            factor = (2 / 3)
                         if is_home:
-                            v_inning_exit += 0.33
+                            v_inning_exit += factor
+                            print(f"Home play? New v exit: {v_inning_exit}")
+                            print(info)
                         else:
-                            h_inning_exit += 0.33
+                            h_inning_exit += factor
+                            print(f"Visitor play? New h exit: {h_inning_exit}")
+                            print(info)
                     #print(play_obj.__repr__())
                     season_pbp[gameid].add_play(inning, is_home, play_obj)
                     current_play = play_obj
@@ -165,26 +178,34 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                             if player_id not in pitchers:
                                 print("Player not in pitchers")
                                 return
+                            print(f"Exiting home pitcher: {h_current_pitcher.name} leaving in {h_inning_exit} after a total of {h_inning_exit - h_inning_enter}")
+                            home_pitchers.append(h_current_pitcher)
                             h_current_pitcher.set_outing_end(h_inning_exit)
                             h_current_pitcher = pitchers[player_id]
+                            h_inning_enter = h_inning_exit
                             h_current_pitcher.set_outing_start(h_inning_exit)
                             print(str(h_inning_exit) + " inning - new pitcher: " + h_current_pitcher.name)
                         else:
                             if player_id not in pitchers:
                                 print("Player not in pitchers")
                                 return
+                            print(f"Exiting visit pitcher: {v_current_pitcher.name} leaving in {v_inning_exit} after a total of {v_inning_exit - v_inning_enter}")
+                            visiting_pitchers.append(v_current_pitcher)
                             v_current_pitcher.set_outing_end(v_inning_exit)
                             v_current_pitcher = pitchers[player_id]
+                            v_inning_enter = v_inning_exit
                             v_current_pitcher.set_outing_start(v_inning_exit)
                             print(str(v_inning_exit) + "inning - new pitcher: " + v_current_pitcher.name)
             # Data at the end - ERAS of respective pitchers
             elif info[0] == "data":
                 data[info[2]] = info[3]
+                print("Sorting data")
                 if info[2] in pitchers:
                     try:
                         #print(type(pitchers[info[2]]))
                         #print(info[2])
                         pitchers[info[2]].set_game_er(int(info[3]))
+                        print(f"Data ER for {pitchers[info[2]].name} is {int(info[3])}")
                     # REMOVE AFTER TESTING
                     except KeyError:
                         print("Key error: ")
@@ -203,17 +224,23 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
             print(home_pitchers)
             print(visiting_pitchers)
         else:
-            h_current_pitcher.set_outing_end(current_inning)
-            v_current_pitcher.set_outing_end(current_inning)
+            print(f"Final outing end - home: {current_inning}, test maybe new visit? {v_inning_exit}")
+            h_current_pitcher.set_outing_end(h_inning_exit)
+            home_pitchers.append(h_current_pitcher)
+            v_current_pitcher.set_outing_end(v_inning_exit)
+            visiting_pitchers.append(v_current_pitcher)
 
+        print(f"Home pitchers: {home_pitchers}")
         for pitcher in home_pitchers:
             game_ip = pitcher.calc_ip()
+            print(f"Home {pitcher.name} pitched {game_ip} innings with {pitcher.get_game_er()} er")
             season_pbp[gameid].add_pitcher(pitchers[pitcher.id], game_ip, pitcher.get_game_er(), "Home")
             #pitchers[pitcher
             # .id].set_temp_ip(0)
             pitchers[pitcher.id].set_game_er(0)
         for pitcher in visiting_pitchers:
             game_ip = pitcher.calc_ip()
+            print(f"Visitor {pitcher.name} pitched {game_ip} innings with {pitcher.get_game_er()} er")
             season_pbp[gameid].add_pitcher(pitchers[pitcher.id], game_ip, pitcher.get_game_er(), "Visitor")
             #pitchers[pitcher.id].set_temp_ip(0)
             pitchers[pitcher.id].set_game_er(0)
@@ -419,11 +446,11 @@ def main():
     print("-" * 50, end="\n\n\n")
 
     """
-    print("LOADING PLAY BY PLAY - ARI AND NYA")
+    print("LOADING PLAY BY PLAY - ARI")
     print("-" * 50)
-    #pbp_log = parse_pbp()
+    pbp_log = parse_pbp()
     #print(pbp_log)
-    parse_pbp("pbp/2023NYA.EVA")
+    #parse_pbp("pbp/2023NYA.EVA")
     for game in season_pbp:
         print(game)
     print("LOADED")
@@ -436,7 +463,7 @@ def main():
         parse_pbp(pbp)
     print("LOADED")
     print("-" * 50, end="\n\n\n")
-
+    
     print("STATISTICS")
     print("-" * 50)
     winpct(game_log)
@@ -450,10 +477,10 @@ def main():
 
     print("TEST PRINTS")
     print("-" * 50)
-    print(season_pbp["20230924NYAARI"].home_lineup)
+    #print(season_pbp["20230614ARIPHI"].home_lineup)
     print('break')
-    print(season_pbp["20230725ARISLN"].batters)
-    print(season_pbp["20230930ARIHOU"].home_lineup)
+    #print(season_pbp["20230725ARISLN"].batters)
+    #print(season_pbp["20230930ARIHOU"].home_lineup)
     print(players["carrc005"].name)
     print("1 is: " + str(bool(1)))
     print("Corbin Carroll batting totals:")
@@ -461,10 +488,14 @@ def main():
     print("Zac Gallen Pitching Totals:")
     #print(pitchers)
     print(pitchers["gallz001"].get_pitching_totals(DEFAULT_YE))
+    print(pitchers["gallz001"].get_era(DEFAULT_YE))
     print("Kevin Ginkel Pitching Totals:")
     #print(pitchers)
     print(pitchers["ginkk001"].get_pitching_totals(DEFAULT_YE))
-    
+    print(pitchers["ginkk001"].get_era(DEFAULT_YE))
+    print('Blake Snell Pitching Totals:')
+    print(pitchers["snelb001"].get_pitching_totals(DEFAULT_YE))
+    print(pitchers["snelb001"].get_era(DEFAULT_YE))
     
     """
     max_hrs = 0
@@ -527,4 +558,5 @@ CURRENT ISSUES:
 For some reason doesn't read the last game in a seasonpbp log, ends the game with the date and then None. Maybe only reading like half the game? <-- Could have been bad return value from funcation - check later
 Minor issue: Comment is seeing the , in the comment as a different value type and not including whole comment
 Medium: May be an issue in the recording of hits, SO, etc. Check all the simple play prefixes so you don't fuck it up
+Minor issue: Problem still with inning calculation because of floating point error. I'm seeing actual innings pitched over the season +/- 2 and ERA seems to be within +/-0.3 
 """
