@@ -120,6 +120,81 @@ class Player:
 
     def __repr__(self):
         return self.id
+    
+class Pitcher:
+    def __init__(self, id, name, team):
+        self.id = id
+        self.name = name
+        self.team = team
+        self.reset_stats()
+        self.reset_outing()
+
+    def get_pitching_totals(self, date):
+        if self.er or self.ip > 0:
+            self.reset_stats()
+        for gameid in season_pbp:
+            if season_pbp[gameid].date < date:
+                side = "Visitor"
+                in_game = False
+                for pitcher in season_pbp[gameid].pitchers["Home"]:
+                    if self.id == pitcher[1]:
+                        side = "Home"
+                        in_game = True
+                        break
+                if not in_game:
+                    for pitcher in season_pbp[gameid].pitchers["Visitor"]:
+                        if self.id == pitcher[1]:
+                            in_game = True
+                            break
+                if in_game:
+                    for pitcher in season_pbp[gameid].pitchers[side]:
+                        if self.id == pitcher[1]:
+                            #print(type(pitcher))
+                            #print(pitcher[3]())
+                            self.ip += float(pitcher[2])
+                            self.er += int(pitcher[3])
+                            #print(f"{self.name} played at {side} on {format_date(season_pbp[gameid].date)}. He pitched {pitcher[2]} innings and gave up {pitcher[3]} runs")
+            
+        return {"ER": self.er, "IP": self.ip}
+
+    def get_er(self, date):
+        return self.get_pitching_totals(date)["ER"]
+    
+    def get_ip(self, date):
+        return self.get_pitching_totals(date)["IP"]
+    
+    def get_era(self, date):
+        return (self.get_er(date) * 9) / self.get_ip(date)
+
+    def reset_stats(self):
+        self.er, self.ip, self.game_er = 0, 0, 0
+        return True
+    
+    def reset_outing(self):
+        self.inning_entered, self.inning_exit = 0, 0,
+        return True
+    
+    def set_game_er(self, er):
+        self.game_er = er
+        return True
+    
+    def get_game_er(self):
+        return self.game_er
+
+    def set_outing_start(self, start):
+        self.inning_entered = start
+        
+    def set_outing_end(self, exit):
+        self.inning_exit = exit
+
+    def calc_ip(self):
+        game_ip = self.inning_exit - self.inning_entered
+        self.ip += game_ip
+        self.reset_outing()
+        return game_ip
+    
+    def __repr__(self):
+        return self.id
 
 class Game_PBP:
     def __init__(self, gameid, visteam, hometeam, site, date, starttime, daynight, innnings, inputtime, wp, lp, save,
@@ -141,6 +216,7 @@ class Game_PBP:
         self.pbp = dict()
         for i in range(1, 20): # Hacky way to do this, I don't think a game has ever gone beyond 30 innings
             self.pbp[i] = {"Visitor": [], "Home": []}
+        self.pitchers = {"Visitor": [], "Home": []}
 
         # I'm still not sure why items are retaining the quotes around it - "Corbin Carroll" - could cause issues
         self.batters = []
@@ -158,6 +234,11 @@ class Game_PBP:
 
     def add_batter(self, batter):
         self.batters.append(batter)
+        return True
+
+    def add_pitcher(self, Pitcher, ip, er, side):
+        self.pitchers[side].append([Pitcher.name, Pitcher.id, ip, er])
+        return True
 
     def __repr__(self):
         repr = f"Game {self.gameid} created!"

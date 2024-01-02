@@ -1,6 +1,27 @@
 from const import *
 from classes import *
 
+def parse_roster(logname="ros/SEA2023.ROS"):
+    # Gets the list of players
+    lines = (line.rstrip('\n') for line in open(logname))
+
+    for athlete in lines:
+        player = dict()
+        #print(athlete)
+        info = athlete.rsplit(',')
+        #print(info)
+        for i in range(len(ROSTER_CAT)):
+            player[ROSTER_CAT[i]] = info[i]
+        name = player["fname"] + " " + player["lname"]
+        if player["position"] == "P":
+            pitchers[player["id"]] = Pitcher(player["id"], name, player["team"])
+        else:
+            players[player["id"]] = Player(player["id"], name, player["team"])
+
+        # Shohei Ohtani Exception (Listed as DH)
+        if "ohtas001" not in pitchers:
+            pitchers["ohtas001"] = Pitcher("ohtas001", "Shohei Ohtani", "ANA")
+
 def parse_pbp(logname="pbp/2023ARI.evn"):
     # Splits the text file into games
     lines = (line.rstrip('\n') for line in open(logname))
@@ -28,6 +49,12 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
         data = dict()
         visitor_lineup = [None] * 9 # Baseball lineups are ALWAYS length 9, const is ok
         home_lineup = [None] * 9
+        home_pitchers = list()
+        visiting_pitchers = list()
+        h_inning_enter, h_inning_exit, current_inning = 1.0, 1.0, 1.0
+        v_inning_enter, v_inning_exit = 1.0, 1.0
+        h_current_pitcher, v_current_pitcher = None, None
+        #h_start_ip, v_start_ip, h_partial_ip, v_partial_ip, curr_inning = 1, 1, 0, 0, 1
         # Sorts through every game, then separates each stat "item" by the commas
         for info in game:
             info = info.rsplit(',')
@@ -65,15 +92,30 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                     # Is not a pitcher <-- DO SOMETHING ELSE?
                     if lineup_spot != 0:
                         if player_id not in players:
-                            players[player_id] = Player(player_id, player_name, visteam)
+                            # Error checking
+                            if player_id not in pitchers:
+                                print("Player not in players line 88")
+                                return
                         visitor_lineup[lineup_spot - 1] = [players[player_id], player_name, lineup_spot, player_position] # Each "position" in the lineup array contains an array with the Player object, batting order num, and player's position
+                    # Starting Pitcher
+                    else:
+                        v_current_pitcher = pitchers[player_id]
+                        visiting_pitchers.append(v_current_pitcher)
+                        v_current_pitcher.set_outing_start(v_inning_enter)
                 # Home
                 else:
                     # Not a pitcher
                     if lineup_spot != 0:
                         if player_id not in players:
-                            players[player_id] = Player(player_id, player_name, hometeam)
+                            if player_id not in pitchers:
+                                print("Player not in players line 99")
+                                return
                         home_lineup[lineup_spot - 1] = [players[player_id], player_name, lineup_spot, player_position]
+                    # Starting Pitcher
+                    else:
+                        h_current_pitcher = pitchers[player_id]
+                        home_pitchers.append(h_current_pitcher)
+                        h_current_pitcher.set_outing_start(h_inning_enter)
                 #print(visitor_lineup)
                 #print(home_lineup, end="\n\n")
             elif info[0] == "play" or info[0] == "sub" or info[0] == "com":
@@ -84,7 +126,13 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                     if len(info) < 7:
                         print("Play record contains too few data items")
                         return
-                    inning = int(info[1])
+                    inning = float(info[1])
+                    if inning > current_inning:
+                        current_inning = inning - 1
+                        if is_home:
+                            v_inning_exit = current_inning
+                        else:
+                            h_inning_exit = current_inning
                     is_home = int(info[2])
                     batter = info[3]
                     count = info[4] # Num of balls-strikes at the time of the hit
@@ -93,6 +141,13 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                     #print(f"{inning}, {is_home}, {batter}, {count}, {balls}, {strikes}, {pitches}, {play}")
                     # "Top" of the inning - visitng team goes bats first
                     play_obj = Play(inning, is_home, batter, count, pitches, play)
+                    # To find the fraction of the inning completed
+                    if play[0].isnumeric() or play.startswith("K") or play.startswith("CS"): # Checks for groundout, strikeout, or caught stealing
+                        # If the play causes an out, the other team's pitch inning should increase
+                        if is_home:
+                            v_inning_exit += 0.33
+                        else:
+                            h_inning_exit += 0.33
                     #print(play_obj.__repr__())
                     season_pbp[gameid].add_play(inning, is_home, play_obj)
                     current_play = play_obj
@@ -102,9 +157,67 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                         season_pbp[gameid].add_batter(batter)
                 elif info[0] == "com":
                     current_play.add_comment(info[1])
+                elif info[0] == "sub":
+                    if info[1] in pitchers:
+                        is_home = int(info[3])
+                        player_id = info[1]
+                        if is_home:
+                            if player_id not in pitchers:
+                                print("Player not in pitchers")
+                                return
+                            h_current_pitcher.set_outing_end(h_inning_exit)
+                            h_current_pitcher = pitchers[player_id]
+                            h_current_pitcher.set_outing_start(h_inning_exit)
+                            print(str(h_inning_exit) + " inning - new pitcher: " + h_current_pitcher.name)
+                        else:
+                            if player_id not in pitchers:
+                                print("Player not in pitchers")
+                                return
+                            v_current_pitcher.set_outing_end(v_inning_exit)
+                            v_current_pitcher = pitchers[player_id]
+                            v_current_pitcher.set_outing_start(v_inning_exit)
+                            print(str(v_inning_exit) + "inning - new pitcher: " + v_current_pitcher.name)
             # Data at the end - ERAS of respective pitchers
             elif info[0] == "data":
                 data[info[2]] = info[3]
+                if info[2] in pitchers:
+                    try:
+                        #print(type(pitchers[info[2]]))
+                        #print(info[2])
+                        pitchers[info[2]].set_game_er(int(info[3]))
+                    # REMOVE AFTER TESTING
+                    except KeyError:
+                        print("Key error: ")
+                        print(info[2])
+                        for line in game:
+                            print(line)
+                        print()
+
+        # Ending pitcher
+        #print(v_current_pitcher)
+        #print("ll")
+        if v_current_pitcher == None or h_current_pitcher == None:
+            print("What the fuck, no pitcher? Shohei Ohtani rule?")
+            for line in game:
+                print(line)
+            print(home_pitchers)
+            print(visiting_pitchers)
+        else:
+            h_current_pitcher.set_outing_end(current_inning)
+            v_current_pitcher.set_outing_end(current_inning)
+
+        for pitcher in home_pitchers:
+            game_ip = pitcher.calc_ip()
+            season_pbp[gameid].add_pitcher(pitchers[pitcher.id], game_ip, pitcher.get_game_er(), "Home")
+            #pitchers[pitcher
+            # .id].set_temp_ip(0)
+            pitchers[pitcher.id].set_game_er(0)
+        for pitcher in visiting_pitchers:
+            game_ip = pitcher.calc_ip()
+            season_pbp[gameid].add_pitcher(pitchers[pitcher.id], game_ip, pitcher.get_game_er(), "Visitor")
+            #pitchers[pitcher.id].set_temp_ip(0)
+            pitchers[pitcher.id].set_game_er(0)
+                
     return True
 
 def parse_log(logname="gl/gl2023.txt"):
@@ -287,6 +400,17 @@ def rec_and_h2h_adv(game_log):
     print(f"{wins} of {games} games won when a team has both the h2h and record advantage. This is equal to {round(wins / games * 100, 2)}%")
 
 def main():
+    print("LOADING ROSTER")
+    print("-" * 50)
+    for ros in ROS_FILES:
+        parse_roster(ros)
+    print("pitchers:")
+    print(pitchers)
+    print("players:")
+    print(players)
+    print("LOADED")
+    print("-" * 50, end="\n\n\n")
+
     print("LOADING GAME LOG")
     print("-" * 50)
     game_log = parse_log()
@@ -334,9 +458,14 @@ def main():
     print("1 is: " + str(bool(1)))
     print("Corbin Carroll batting totals:")
     print(players["carrc005"].get_batting_totals(DEFAULT_YE))
-    print("Original:")
-    print({'Singles': 96, 'Doubles': 30, 'Triples': 10, 'Home Runs': 25, 'Hits': 161, 'Walks': 57, 'Plate Appearances': 645, 'Strikeouts': 125, 'At Bats': 560, 'Hit By Pitch': 13, 'Out': 284})
-
+    print("Zac Gallen Pitching Totals:")
+    #print(pitchers)
+    print(pitchers["gallz001"].get_pitching_totals(DEFAULT_YE))
+    print("Kevin Ginkel Pitching Totals:")
+    #print(pitchers)
+    print(pitchers["ginkk001"].get_pitching_totals(DEFAULT_YE))
+    
+    
     """
     max_hrs = 0
     max_total = 0
@@ -352,17 +481,19 @@ def main():
     print(max_total)
     print(max_player.name + " had the most home runs in 2023")
     """
+    """
     input_player = input("Player: ")
     input_player = input_player
     input_id = 0
     for player in players:
         if players[player].name == input_player:
             input_id = players[player].id
-            print("YOINKED")
+            print(f"\n{input_player} found: ")
             print(players[input_id].get_batting_totals(DEFAULT_YE))
             break
     if input_id == 0:
         print("Player not found")
+    """
 main()
 
 
@@ -387,6 +518,8 @@ Make it a dict including all their statistics from the game and update with each
 Turn the game logs into an object - will make it easier to control and use
 
 Potentially combine the player.get_hits() into a "hitting statistics until date" and return a dictionary to select the stat you want
+
+Add something to note players changing teams
 """
 
 """
