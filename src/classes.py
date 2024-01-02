@@ -188,7 +188,7 @@ class Pitcher:
         self.inning_exit = exit
 
     def calc_ip(self):
-        game_ip = round(self.inning_exit - self.inning_entered, 2)
+        game_ip = round((self.inning_exit - self.inning_entered) / 3, 2)
         self.ip = round(self.ip + game_ip, 2)
         self.reset_outing()
         return game_ip

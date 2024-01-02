@@ -132,8 +132,8 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                     count = info[4] # Num of balls-strikes at the time of the hit
                     pitches = info[5]
                     play = info[6]
-                    if inning - 1 > current_inning:
-                        current_inning = inning - 1
+                    if (inning - 1) * 3 > current_inning:
+                        current_inning = (inning - 1) * 3
                         print()
                         print(f"is home: {is_home}")
                         if is_home:
@@ -150,9 +150,9 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                     # To find the fraction of the inning completed
                     if play[0].isnumeric() or play.startswith("K") or play.startswith("CS"): # Checks for groundout, strikeout, or caught stealing
                         # If the play causes an out, the other team's pitch inning should increase
-                        factor = (1 / 3)
+                        factor = 1
                         if "GDP" in play or "LDP" in play:
-                            factor = (2 / 3)
+                            factor = 2
                         if is_home:
                             v_inning_exit += factor
                             print(f"Home play? New v exit: {v_inning_exit}")
