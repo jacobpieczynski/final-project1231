@@ -164,6 +164,11 @@ class Pitcher:
         return self.get_pitching_totals(date)["IP"]
     
     def get_era(self, date):
+        if self.get_ip(date) == 0:
+            if self.get_er(date) > 0:
+                print("SHIT")
+                return self.get_er(date)
+            return 0
         return round((self.get_er(date) * 9) / self.get_ip(date), 2)
 
     def reset_stats(self):

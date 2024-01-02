@@ -101,7 +101,7 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                     else:
                         v_current_pitcher = pitchers[player_id]
                         v_current_pitcher.set_outing_start(v_inning_enter)
-                        print(f"Visitng starting pitcher: {v_current_pitcher.name}. Entering in the {v_inning_enter}")
+                        #print(f"Visitng starting pitcher: {v_current_pitcher.name}. Entering in the {v_inning_enter}")
                 # Home
                 else:
                     # Not a pitcher
@@ -115,7 +115,7 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                     else:
                         h_current_pitcher = pitchers[player_id]
                         h_current_pitcher.set_outing_start(h_inning_enter)
-                        print(f"Home starting pitcher: {h_current_pitcher.name}. Entering in the {h_inning_enter}")
+                        #print(f"Home starting pitcher: {h_current_pitcher.name}. Entering in the {h_inning_enter}")
                 #print(visitor_lineup)
                 #print(home_lineup, end="\n\n")
             elif info[0] == "play" or info[0] == "sub" or info[0] == "com":
@@ -134,16 +134,16 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                     play = info[6]
                     if (inning - 1) * 3 > current_inning:
                         current_inning = (inning - 1) * 3
-                        print()
-                        print(f"is home: {is_home}")
+                        #print()
+                        #print(f"is home: {is_home}")
                         if is_home:
                             v_inning_exit = current_inning
-                            print(f"New inning, home batting? New exit v: {v_inning_exit}")
-                            print(info)
+                            #print(f"New inning, home batting? New exit v: {v_inning_exit}")
+                            #print(info)
                         else:
                             h_inning_exit = current_inning
-                            print(f"New inning, visitor batting? New exit h: {h_inning_exit}")
-                            print(info)
+                            #print(f"New inning, visitor batting? New exit h: {h_inning_exit}")
+                            #print(info)
                     #print(f"{inning}, {is_home}, {batter}, {count}, {balls}, {strikes}, {pitches}, {play}")
                     # "Top" of the inning - visitng team goes bats first
                     play_obj = Play(inning, is_home, batter, count, pitches, play)
@@ -155,12 +155,12 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                             factor = 2
                         if is_home:
                             v_inning_exit += factor
-                            print(f"Home play? New v exit: {v_inning_exit}")
-                            print(info)
+                            #print(f"Home play? New v exit: {v_inning_exit}")
+                            #print(info)
                         else:
                             h_inning_exit += factor
-                            print(f"Visitor play? New h exit: {h_inning_exit}")
-                            print(info)
+                            #print(f"Visitor play? New h exit: {h_inning_exit}")
+                            #print(info)
                     #print(play_obj.__repr__())
                     season_pbp[gameid].add_play(inning, is_home, play_obj)
                     current_play = play_obj
@@ -178,34 +178,34 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                             if player_id not in pitchers:
                                 print("Player not in pitchers")
                                 return
-                            print(f"Exiting home pitcher: {h_current_pitcher.name} leaving in {h_inning_exit} after a total of {h_inning_exit - h_inning_enter}")
+                            #print(f"Exiting home pitcher: {h_current_pitcher.name} leaving in {h_inning_exit} after a total of {h_inning_exit - h_inning_enter}")
                             home_pitchers.append(h_current_pitcher)
                             h_current_pitcher.set_outing_end(h_inning_exit)
                             h_current_pitcher = pitchers[player_id]
                             h_inning_enter = h_inning_exit
                             h_current_pitcher.set_outing_start(h_inning_exit)
-                            print(str(h_inning_exit) + " inning - new pitcher: " + h_current_pitcher.name)
+                            #print(str(h_inning_exit) + " inning - new pitcher: " + h_current_pitcher.name)
                         else:
                             if player_id not in pitchers:
                                 print("Player not in pitchers")
                                 return
-                            print(f"Exiting visit pitcher: {v_current_pitcher.name} leaving in {v_inning_exit} after a total of {v_inning_exit - v_inning_enter}")
+                            #print(f"Exiting visit pitcher: {v_current_pitcher.name} leaving in {v_inning_exit} after a total of {v_inning_exit - v_inning_enter}")
                             visiting_pitchers.append(v_current_pitcher)
                             v_current_pitcher.set_outing_end(v_inning_exit)
                             v_current_pitcher = pitchers[player_id]
                             v_inning_enter = v_inning_exit
                             v_current_pitcher.set_outing_start(v_inning_exit)
-                            print(str(v_inning_exit) + "inning - new pitcher: " + v_current_pitcher.name)
+                            #print(str(v_inning_exit) + "inning - new pitcher: " + v_current_pitcher.name)
             # Data at the end - ERAS of respective pitchers
             elif info[0] == "data":
                 data[info[2]] = info[3]
-                print("Sorting data")
+                #print("Sorting data")
                 if info[2] in pitchers:
                     try:
                         #print(type(pitchers[info[2]]))
                         #print(info[2])
                         pitchers[info[2]].set_game_er(int(info[3]))
-                        print(f"Data ER for {pitchers[info[2]].name} is {int(info[3])}")
+                        #print(f"Data ER for {pitchers[info[2]].name} is {int(info[3])}")
                     # REMOVE AFTER TESTING
                     except KeyError:
                         print("Key error: ")
@@ -218,29 +218,30 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
         #print(v_current_pitcher)
         #print("ll")
         if v_current_pitcher == None or h_current_pitcher == None:
-            print("What the fuck, no pitcher? Shohei Ohtani rule?")
+            #print("What the fuck, no pitcher? Shohei Ohtani rule?")
             for line in game:
-                print(line)
-            print(home_pitchers)
-            print(visiting_pitchers)
+                pass
+                #print(line)
+            #print(home_pitchers)
+            #print(visiting_pitchers)
         else:
-            print(f"Final outing end - home: {current_inning}, test maybe new visit? {v_inning_exit}")
+            #print(f"Final outing end - home: {current_inning}, test maybe new visit? {v_inning_exit}")
             h_current_pitcher.set_outing_end(h_inning_exit)
             home_pitchers.append(h_current_pitcher)
             v_current_pitcher.set_outing_end(v_inning_exit)
             visiting_pitchers.append(v_current_pitcher)
 
-        print(f"Home pitchers: {home_pitchers}")
+        #print(f"Home pitchers: {home_pitchers}")
         for pitcher in home_pitchers:
             game_ip = pitcher.calc_ip()
-            print(f"Home {pitcher.name} pitched {game_ip} innings with {pitcher.get_game_er()} er")
+            #print(f"Home {pitcher.name} pitched {game_ip} innings with {pitcher.get_game_er()} er")
             season_pbp[gameid].add_pitcher(pitchers[pitcher.id], game_ip, pitcher.get_game_er(), "Home")
             #pitchers[pitcher
             # .id].set_temp_ip(0)
             pitchers[pitcher.id].set_game_er(0)
         for pitcher in visiting_pitchers:
             game_ip = pitcher.calc_ip()
-            print(f"Visitor {pitcher.name} pitched {game_ip} innings with {pitcher.get_game_er()} er")
+            #print(f"Visitor {pitcher.name} pitched {game_ip} innings with {pitcher.get_game_er()} er")
             season_pbp[gameid].add_pitcher(pitchers[pitcher.id], game_ip, pitcher.get_game_er(), "Visitor")
             #pitchers[pitcher.id].set_temp_ip(0)
             pitchers[pitcher.id].set_game_er(0)
@@ -426,6 +427,41 @@ def rec_and_h2h_adv(game_log):
                     games += 1
     print(f"{wins} of {games} games won when a team has both the h2h and record advantage. This is equal to {round(wins / games * 100, 2)}%")
 
+# Finds the percentage of games where the starting pitcher with the better ERA won
+def starting_era_h2h(game_log):
+    home, visitor = "", ""
+    total_games, games_w_era_benefit, v_games_w_ben, h_games_w_ben, v_favorite, h_favorite = 0, 0, 0, 0, 0, 0
+    for game in game_log:
+        #print(game)
+        #print(f"HOME, AWAY on DATE = {game['home']}, {game['visitor']}, {game['date']}")
+        home, visitor = game["home"], game["visitor"]
+        date = game["date"]
+        home_starter_id, visitor_starter_id = game["hspid"], game["vspid"]
+        if home_starter_id not in pitchers or visitor_starter_id not in pitchers:
+            #print(f"{home_starter_id} home and {visitor_starter_id} away missing in game {visitor} at {home}")
+            #print("Home or visting starter is not in the pitchers list - presumably a position player")
+            pass
+        else:
+            #print(f"Home starter: {home_starter_id}, away: {visitor_starter_id}")
+            home_era, visitor_era = pitchers[home_starter_id].get_era(date), pitchers[visitor_starter_id].get_era(date)
+            if home_era < visitor_era:
+                total_games += 1
+                h_favorite += 1
+                if game["hscore"] > game["vscore"]:
+                    games_w_era_benefit += 1
+                    h_games_w_ben += 1
+            elif visitor_era < home_era:
+                total_games += 1
+                v_favorite += 1
+                if game["vscore"] > game["hscore"]:
+                    v_games_w_ben += 1
+                    games_w_era_benefit += 1
+
+    print(f"ERA Importance: The visiting pitcher won {v_games_w_ben} of {v_favorite} total games where favored ({round(v_games_w_ben / v_favorite * 100, 2)}%). The Home pitcher won {h_games_w_ben} of {h_favorite} total games where favored ({round(h_games_w_ben / h_favorite * 100, 2)}%). The team with the better ERA won {games_w_era_benefit} of {total_games} total games ({round(games_w_era_benefit / total_games * 100, 2)}%)")
+        
+
+    #print(game)
+
 def main():
     print("LOADING ROSTER")
     print("-" * 50)
@@ -473,6 +509,7 @@ def main():
     h2h_adv(game_log)
     test_bets(game_log)
     rec_and_h2h_adv(game_log)
+    starting_era_h2h(game_log)
     print("-" * 50, end="\n\n\n")
 
     print("TEST PRINTS")
@@ -496,6 +533,7 @@ def main():
     print('Blake Snell Pitching Totals:')
     print(pitchers["snelb001"].get_pitching_totals(DEFAULT_YE))
     print(pitchers["snelb001"].get_era(DEFAULT_YE))
+    print(len(CATEGORIES))
     
     """
     max_hrs = 0
