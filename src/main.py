@@ -6,6 +6,7 @@ def parse_roster(logname="ros/SEA2023.ROS"):
     # Gets the list of players
     lines = (line.rstrip('\n') for line in open(logname))
 
+    # Sorts through each player and creates an appopraite object for them
     for athlete in lines:
         player = dict()
         #print(athlete)
@@ -14,6 +15,7 @@ def parse_roster(logname="ros/SEA2023.ROS"):
         for i in range(len(ROSTER_CAT)):
             player[ROSTER_CAT[i]] = info[i]
         name = player["fname"] + " " + player["lname"]
+        # Sorts pitchers and catchers
         if player["position"] == "P":
             pitchers[player["id"]] = Pitcher(player["id"], name, player["team"])
         else:
@@ -29,6 +31,7 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
     games = []
     game = []
     i = 0
+    # Gets the list of games
     for line in lines:
         #print(line)
         if line.startswith("id,"):
@@ -44,6 +47,7 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
     games.append(game)
     #games = games[:2] #TEMP chamge to games = games[1:]
     games = games[1:]
+    # Looks through each game and collects the data
     for game in games:
         date, visteam, hometeam = "", "", ""
         infoitems = dict()
@@ -56,6 +60,7 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
         v_inning_enter, v_inning_exit = 0.0, 0.0
         h_current_pitcher, v_current_pitcher = None, None
         #h_start_ip, v_start_ip, h_partial_ip, v_partial_ip, curr_inning = 1, 1, 0, 0, 1
+
         # Sorts through every game, then separates each stat "item" by the commas
         for info in game:
             info = info.rsplit(',')
@@ -68,7 +73,10 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                 hometeam = info[2]
             elif info[1] == "date":
                 date = ''.join(info[2].rsplit('/'))
-            # Gets the random bits of metadata used in a game, slightly inefficient but it shoudl work
+            # Based on the .EV logs, the first "start" line signifies the end of the metadata collection. Increases efficiency
+            elif info[0] == "start":
+                break
+            # Gets the random bits of metadata used in a game, slightly inefficient but it should work
             else:
                 if info[0] == "info":
                     infoitems[info[1]] = info[2]
@@ -80,7 +88,7 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
         # Necessary data
         for info in game:
             info = info.rsplit(',')
-            # Creates the lineup
+            # Creates the starting lineups
             if info[0] == "start":
                 player_id = info[1]
                 player_name = info[2].strip('"')
@@ -90,8 +98,9 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
 
                 # Visitor
                 if not is_home:
-                    # Is not a pitcher <-- DO SOMETHING ELSE?
+                    # Is not a pitcher, signified by a lineup spot other than 0 <-- DO SOMETHING ELSE?
                     if lineup_spot != 0:
+                        # All players should be loaded by parse_roster
                         if player_id not in players:
                             # Error checking
                             if player_id not in pitchers:
@@ -121,10 +130,13 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                         #print(f"Home starting pitcher: {h_current_pitcher.name}. Entering in the {h_inning_enter}")
                 #print(visitor_lineup)
                 #print(home_lineup, end="\n\n")
+            # "Action" information
             elif info[0] == "play" or info[0] == "sub" or info[0] == "com":
+                # Creates a new game if necessary
                 if gameid not in season_pbp:
                     season_pbp[gameid] = Game_PBP(gameid, visteam, hometeam, infoitems["site"], date, infoitems["starttime"], infoitems["daynight"], infoitems["innings"], infoitems["inputtime"], infoitems["wp"], infoitems["lp"], infoitems["save"], visitor_lineup, home_lineup, data) # Will need to add PBP info
                     #print(season_pbp[gameid].__repr__())
+                # Signfies a play. This will increase both pitcher and player statistics
                 if info[0] == "play":
                     if len(info) < 7:
                         print("Play record contains too few data items")
@@ -135,6 +147,7 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                     count = info[4] # Num of balls-strikes at the time of the hit
                     pitches = info[5]
                     play = info[6]
+                    # Signifies the start of a new inning and updates the data accordingly, still some inaccuracies
                     if (inning - 1) * 3 > current_inning:
                         current_inning = (inning - 1) * 3
                         #print()
@@ -150,6 +163,7 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                     #print(f"{inning}, {is_home}, {batter}, {count}, {balls}, {strikes}, {pitches}, {play}")
                     # "Top" of the inning - visitng team goes bats first
                     play_obj = Play(inning, is_home, batter, count, pitches, play)
+
                     # To find the fraction of the inning completed
                     if play[0].isnumeric() or play.startswith("K") or play.startswith("CS"): # Checks for groundout, strikeout, or caught stealing
                         # If the play causes an out, the other team's pitch inning should increase
@@ -168,7 +182,8 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                             
                     # Increases the pitchers hits and walks:
                     if not v_current_pitcher or not h_current_pitcher:
-                        print("WTF? No pitcher?")
+                        pass
+                        # print("WTF? No pitcher?") # <-- INVESTIGATE THIS
                     elif play.startswith("W") and not play.startswith("WP"):
                         # If the batter is on the home team, the visiting pitcher gets the hit/walk 
                         if not is_home:
@@ -197,9 +212,12 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                     if batter not in season_pbp[gameid].batters:
                         # Add function to get the batter's id and check if he is in the list of players
                         season_pbp[gameid].add_batter(batter)
+                # Increases comments. Not super important, currently an issue with it not including the full comment due to commas being read as a new line item. COULD THIS BE FIXED BY DOING INFO[1:]?
                 elif info[0] == "com":
                     current_play.add_comment(info[1])
+                # Shows a substitute in the lineup. Can be either a batter, position player, or pitcher
                 elif info[0] == "sub":
+                    # If the name is in pitchers, we have to update the innings pitched calculation
                     if info[1] in pitchers:
                         is_home = int(info[3])
                         player_id = info[1]
@@ -225,6 +243,9 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                             v_inning_enter = v_inning_exit
                             v_current_pitcher.set_outing_start(v_inning_exit)
                             #print(str(v_inning_exit) + "inning - new pitcher: " + v_current_pitcher.name)
+                    # Checks if the sub is in the player list. Could do something with this in the future, but nothing necessary at the moment
+                    elif info[1] in players:
+                        pass
             # Data at the end - ERAS of respective pitchers
             elif info[0] == "data":
                 data[info[2]] = info[3]
@@ -235,6 +256,7 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                         #print(info[2])
                         pitchers[info[2]].set_game_er(int(info[3]))
                         #print(f"Data ER for {pitchers[info[2]].name} is {int(info[3])}")
+
                     # REMOVE AFTER TESTING
                     except KeyError:
                         print("Key error: ")
@@ -244,15 +266,15 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                         print()
 
         # Ending pitcher
-        #print(v_current_pitcher)
-        #print("ll")
         if v_current_pitcher == None or h_current_pitcher == None:
+            # Another situation where I'm not sure why there isn't a current pitcher. Doesn't seem to happen often
             #print("What the fuck, no pitcher? Shohei Ohtani rule?")
             for line in game:
                 pass
                 #print(line)
             #print(home_pitchers)
             #print(visiting_pitchers)
+        # Sets the outing end to the current point in the game <-- Maybe this is where the error is?
         else:
             #print(f"Final outing end - home: {current_inning}, test maybe new visit? {v_inning_exit}")
             h_current_pitcher.set_outing_end(h_inning_exit)
@@ -260,7 +282,7 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
             v_current_pitcher.set_outing_end(v_inning_exit)
             visiting_pitchers.append(v_current_pitcher)
 
-        #print(f"Home pitchers: {home_pitchers}")
+        # Sets teh statistics for each pitcher at the end of a game
         for pitcher in home_pitchers:
             game_ip = pitcher.calc_ip()
             #print(f"Home {pitcher.name} pitched {game_ip} innings with {pitcher.get_game_er()} er")
@@ -281,6 +303,7 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
     
     return True
 
+# Parses the gamelog. This includes more metadata than the pbp
 def parse_log(logname="gl/gl2023.txt"):
     games = (game.rstrip('\n') for game in open(logname))
     game_date = "20230330"
@@ -311,8 +334,8 @@ def parse_log(logname="gl/gl2023.txt"):
 
     return game_arr
 
+# Finds how often the team with the better winning percentage wins a game
 def winpct(game_log):
-    # Finds how often the team with the better winning percentage wins a game
     gamecount = 0 #TMP
     homewins = 0
     visitorwins = 0
@@ -328,13 +351,16 @@ def winpct(game_log):
                     dayidx = max(day-1, 0)
                     break
             homerec, vrec = season_record[DATES[dayidx]][game["home"]], season_record[DATES[dayidx]][game["visitor"]]
+            # Finds who was favored in the game based on record
             if homerec > vrec:
                 homewins += 1
+                # If hscore >, it contributes to the hypothesis
                 if game["hscore"] > game["vscore"]:
                     favoredwins += 1
                 else:
                     underdogwins += 1
                 #print(f"{game["home"]} was favored over {game["visitor"]} with a {homerec} to {vrec} win record on {game["date"]} w/ record from {DATES[dayidx]}")
+            # Does the same in reverse for visitng favorites
             else:
                 visitorwins += 1
                 if game["vscore"] > game["hscore"]:
@@ -343,6 +369,7 @@ def winpct(game_log):
                     underdogwins += 1
     print(f"The home team won {homewins} games ({round(homewins/gamecount * 100,2)}%) and visitors won {visitorwins} games. The favorite won {round((favoredwins / gamecount)*100,2)}% of games and the underdog won {round((underdogwins / gamecount) * 100,2)}% of {gamecount} games")
 
+# Collects the total number of home runs in each park in a year - Tries to find a park benefit factor, but needs fleshing out
 def park_most_hr(game_log):
     parks = dict()
     for game in game_log:
@@ -359,6 +386,7 @@ def park_most_hr(game_log):
     print(f"{park_key} had the most home runs this season with a total of {max_hr}")
     #print(parks)
 
+# Finds which teams did best at their home park - Tries to find a home advantage factor
 def most_home_success(game_log):
     home_wins = dict()
     pct_wins = dict()
@@ -374,6 +402,7 @@ def most_home_success(game_log):
     print(f"Most successful home teams (by number of wins): {sorted(home_wins.items(), key=lambda x:x[1], reverse=True)}")
     print(f"Most successful home teams (by percent of wins): {sorted(pct_wins.items(), key=lambda x:x[1], reverse=True)}")
 
+# Compares the head to head performance of two teams
 def head_to_head(team1, team2, game_log, end_date="20231231"): # IF THERE ARE ERRORS - get rid of placeholder for end_date. Other than that, I changed nothing -- Creates a placeholder for all games in a given year
     gamect = 0 #TEMP
     team1_wins, team2_wins = 0, 0
@@ -395,6 +424,7 @@ def head_to_head(team1, team2, game_log, end_date="20231231"): # IF THERE ARE ER
     return {team1: team1_wins, team2: team2_wins}
 
 # CHECK FOR EQUATION ACCURACY
+# Calculates the head to head advantage. Home much does previous success over a team matter?
 def h2h_adv(game_log):
     teams_fav_rec = dict()
     for team in TEAMS:
@@ -470,16 +500,20 @@ def starting_era_h2h(game_log):
         home, visitor = game["home"], game["visitor"]
         date = game["date"]
         home_starter_id, visitor_starter_id = game["hspid"], game["vspid"]
+        # Error checking, all pitchers should be in the pitchers object
         if home_starter_id not in pitchers or visitor_starter_id not in pitchers:
             #print(f"{home_starter_id} home and {visitor_starter_id} away missing in game {visitor} at {home}")
             #print("Home or visting starter is not in the pitchers list - presumably a position player")
             pass
         else:
             #print(f"Home starter: {home_starter_id}, away: {visitor_starter_id}")
+            # Calculates the home and visitor era for the starters
             home_era, visitor_era = pitchers[home_starter_id].get_era(date), pitchers[visitor_starter_id].get_era(date)
+            # If there is a home advantage (lower era = better)
             if home_era < visitor_era:
                 total_games += 1
                 h_favorite += 1
+                # If the home team wins, contributes to the idea of era benefits - Proved in CSV 
                 if game["hscore"] > game["vscore"]:
                     games_w_era_benefit += 1
                     h_games_w_ben += 1
@@ -492,6 +526,7 @@ def starting_era_h2h(game_log):
 
     print(f"ERA Importance: The visiting pitcher won {v_games_w_ben} of {v_favorite} total games where favored ({round(v_games_w_ben / v_favorite * 100, 2)}%). The Home pitcher won {h_games_w_ben} of {h_favorite} total games where favored ({round(h_games_w_ben / h_favorite * 100, 2)}%). The team with the better ERA won {games_w_era_benefit} of {total_games} total games ({round(games_w_era_benefit / total_games * 100, 2)}%)")
         
+# Calculates the weighted average era for a team
 def weighted_avg_era():
     teams = dict()
     teams_avg = dict()
@@ -501,11 +536,13 @@ def weighted_avg_era():
         er = totals["ER"]
         ip = totals["IP"]
         player_team = pitchers[pitcher].team
+        # Adds the pitchers totals to their respective team
         if player_team not in teams:
             teams[player_team] = [0, 0]
         teams[pitchers[pitcher].team][0] += er
         teams[pitchers[pitcher].team][1] += ip
     
+    # Gets the results - team average era compared to wins
     for team in teams:
         team_era = round((teams[team][0] * 9) / teams[team][1], 2)
         if team not in teams_avg:
@@ -657,6 +694,7 @@ Add something to note players changing teams
 CURRENT ISSUES:
 For some reason doesn't read the last game in a seasonpbp log, ends the game with the date and then None. Maybe only reading like half the game? <-- Could have been bad return value from funcation - check later
 Minor issue: Comment is seeing the , in the comment as a different value type and not including whole comment
-Medium: May be an issue in the recording of hits, SO, etc. Check all the simple play prefixes so you don't fuck it up
-Minor issue: Problem still with inning calculation because of floating point error. I'm seeing actual innings pitched over the season +/- 2 and ERA seems to be within +/-0.3 
+RESOLVED? Medium: May be an issue in the recording of hits, SO, etc. Check all the simple play prefixes so you don't fuck it up 
+Minor issue: Problem still with IP calculation. I'm seeing actual innings pitched over the season +/- 2 and ERA seems to be within +/-0.3 (due to IP error). This also affects other statistics such as WHIP
+Minor issue: Why is there no pitcher recognized on many WHIP calculations?
 """
