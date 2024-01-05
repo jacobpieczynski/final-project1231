@@ -1,5 +1,6 @@
 from const import *
 from classes import *
+from write import write_csv
 
 def parse_roster(logname="ros/SEA2023.ROS"):
     # Gets the list of players
@@ -101,6 +102,7 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                     else:
                         v_current_pitcher = pitchers[player_id]
                         v_current_pitcher.set_outing_start(v_inning_enter)
+                        v_current_pitcher.started()
                         #print(f"Visitng starting pitcher: {v_current_pitcher.name}. Entering in the {v_inning_enter}")
                 # Home
                 else:
@@ -115,6 +117,7 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                     else:
                         h_current_pitcher = pitchers[player_id]
                         h_current_pitcher.set_outing_start(h_inning_enter)
+                        h_current_pitcher.started()
                         #print(f"Home starting pitcher: {h_current_pitcher.name}. Entering in the {h_inning_enter}")
                 #print(visitor_lineup)
                 #print(home_lineup, end="\n\n")
@@ -245,7 +248,7 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
             season_pbp[gameid].add_pitcher(pitchers[pitcher.id], game_ip, pitcher.get_game_er(), "Visitor")
             #pitchers[pitcher.id].set_temp_ip(0)
             pitchers[pitcher.id].set_game_er(0)
-                
+    
     return True
 
 def parse_log(logname="gl/gl2023.txt"):
@@ -459,8 +462,32 @@ def starting_era_h2h(game_log):
 
     print(f"ERA Importance: The visiting pitcher won {v_games_w_ben} of {v_favorite} total games where favored ({round(v_games_w_ben / v_favorite * 100, 2)}%). The Home pitcher won {h_games_w_ben} of {h_favorite} total games where favored ({round(h_games_w_ben / h_favorite * 100, 2)}%). The team with the better ERA won {games_w_era_benefit} of {total_games} total games ({round(games_w_era_benefit / total_games * 100, 2)}%)")
         
-
-    #print(game)
+def weighted_avg_era():
+    teams = dict()
+    teams_avg = dict()
+    results = []
+    for pitcher in pitchers:
+        totals = pitchers[pitcher].get_pitching_totals(DEFAULT_YE)
+        er = totals["ER"]
+        ip = totals["IP"]
+        player_team = pitchers[pitcher].team
+        if player_team not in teams:
+            teams[player_team] = [0, 0]
+        teams[pitchers[pitcher].team][0] += er
+        teams[pitchers[pitcher].team][1] += ip
+    
+    for team in teams:
+        team_era = round((teams[team][0] * 9) / teams[team][1], 2)
+        if team not in teams_avg:
+            teams_avg[team] = dict()
+        teams_avg[team]["ERA"] = team_era
+        wins = SEASON_END[team]
+        teams_avg[team]["Wins"] = wins
+        teams_avg[team]["Team"] = team
+        results.append([team, team_era, wins])
+    
+    write_csv(teams_avg)
+    return results
 
 def main():
     print("LOADING ROSTER")
@@ -468,9 +495,9 @@ def main():
     for ros in ROS_FILES:
         parse_roster(ros)
     print("pitchers:")
-    print(pitchers)
+    #print(pitchers)
     print("players:")
-    print(players)
+    #print(players)
     print("LOADED")
     print("-" * 50, end="\n\n\n")
 
@@ -509,7 +536,7 @@ def main():
     h2h_adv(game_log)
     test_bets(game_log)
     rec_and_h2h_adv(game_log)
-    starting_era_h2h(game_log)
+    #starting_era_h2h(game_log) <-- Takes a shit ton of processing time
     print("-" * 50, end="\n\n\n")
 
     print("TEST PRINTS")
@@ -533,7 +560,9 @@ def main():
     print('Blake Snell Pitching Totals:')
     print(pitchers["snelb001"].get_pitching_totals(DEFAULT_YE))
     print(pitchers["snelb001"].get_era(DEFAULT_YE))
-    print(len(CATEGORIES))
+    print(f"len(CATEGORIES): {len(CATEGORIES)}")
+
+    print(weighted_avg_era())
     
     """
     max_hrs = 0

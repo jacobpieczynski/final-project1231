@@ -150,18 +150,21 @@ class Pitcher:
                     for pitcher in season_pbp[gameid].pitchers[side]:
                         if self.id == pitcher[1]:
                             #print(type(pitcher))
-                            #print(pitcher[3]())
+                            #print(pitcher)
                             self.ip += float(pitcher[2])
                             self.er += int(pitcher[3])
+                            # If they are the first pitcher in the array, they are the starter
+                            if season_pbp[gameid].pitchers[side][0][1] == self.id:
+                                self.starts += 1
                             #print(f"{self.name} played at {side} on {format_date(season_pbp[gameid].date)}. He pitched {pitcher[2]} innings and gave up {pitcher[3]} runs")
             
-        return {"ER": self.er, "IP": self.ip}
+        return {"ER": self.er, "IP": round(self.ip / 3, 2), "Starts": self.starts}
 
     def get_er(self, date):
         return self.get_pitching_totals(date)["ER"]
     
     def get_ip(self, date):
-        return self.get_pitching_totals(date)["IP"]
+        return self.get_pitching_totals(date)["IP"] # Multiple of 3
     
     def get_era(self, date):
         if self.get_ip(date) == 0:
@@ -172,7 +175,8 @@ class Pitcher:
         return round((self.get_er(date) * 9) / self.get_ip(date), 2)
 
     def reset_stats(self):
-        self.er, self.ip, self.game_er = 0, 0, 0
+        self.start = False
+        self.er, self.ip, self.game_er, self.starts = 0, 0, 0, 0
         return True
     
     def reset_outing(self):
@@ -192,11 +196,17 @@ class Pitcher:
     def set_outing_end(self, exit):
         self.inning_exit = exit
 
+    def started(self):
+        self.start = True
+
+    def did_start(self):
+        return self.start
+
     def calc_ip(self):
-        game_ip = round((self.inning_exit - self.inning_entered) / 3, 2)
-        self.ip = round(self.ip + game_ip, 2)
+        game_ip = self.inning_exit - self.inning_entered
+        self.ip = self.ip + game_ip
         self.reset_outing()
-        return game_ip
+        return game_ip # Multiple of 3 (for floating point issues)
     
     def __repr__(self):
         return self.id
