@@ -122,6 +122,7 @@ class Player:
         return self.id
     
 class Pitcher:
+    # NOTE: all pitching statistics such as ER and WHIP will be slightly off do to a small error in calculating IP. This shouldn't have any major effect
     def __init__(self, id, name, team):
         self.id = id
         self.name = name
@@ -153,12 +154,14 @@ class Pitcher:
                             #print(pitcher)
                             self.ip += float(pitcher[2])
                             self.er += int(pitcher[3])
+                            self.walks += int(pitcher[4])
+                            self.hits += int(pitcher[5])
                             # If they are the first pitcher in the array, they are the starter
                             if season_pbp[gameid].pitchers[side][0][1] == self.id:
                                 self.starts += 1
                             #print(f"{self.name} played at {side} on {format_date(season_pbp[gameid].date)}. He pitched {pitcher[2]} innings and gave up {pitcher[3]} runs")
             
-        return {"ER": self.er, "IP": round(self.ip / 3, 2), "Starts": self.starts}
+        return {"ER": self.er, "IP": round(self.ip / 3, 2), "Starts": self.starts, "Walks": self.walks, "Hits": self.hits, "WHIP": self.calc_whip()}
 
     def get_er(self, date):
         return self.get_pitching_totals(date)["ER"]
@@ -176,7 +179,7 @@ class Pitcher:
 
     def reset_stats(self):
         self.start = False
-        self.er, self.ip, self.game_er, self.starts = 0, 0, 0, 0
+        self.er, self.ip, self.game_er, self.starts, self.game_walks, self.game_hits, self.walks, self.hits = 0, 0, 0, 0, 0, 0, 0, 0
         return True
     
     def reset_outing(self):
@@ -189,6 +192,20 @@ class Pitcher:
     
     def get_game_er(self):
         return self.game_er
+    
+    def get_game_walks(self):
+        return self.game_walks
+    
+    def get_game_hits(self):
+        return self.game_hits
+    
+    def set_game_walks(self, walks):
+        self.game_walks = walks
+        return True
+    
+    def set_game_hits(self, hits):
+        self.game_hits = hits
+        return True
 
     def set_outing_start(self, start):
         self.inning_entered = start
@@ -207,6 +224,11 @@ class Pitcher:
         self.ip = self.ip + game_ip
         self.reset_outing()
         return game_ip # Multiple of 3 (for floating point issues)
+    
+    # Walks and Hits per Inning Pitched
+    def calc_whip(self):
+        wh = self.walks + self.hits
+        return round(wh * 3/ self.ip, 3) # Multiplied by 3 to account for IP factor
     
     def __repr__(self):
         return self.id
@@ -251,8 +273,8 @@ class Game_PBP:
         self.batters.append(batter)
         return True
 
-    def add_pitcher(self, Pitcher, ip, er, side):
-        self.pitchers[side].append([Pitcher.name, Pitcher.id, ip, er])
+    def add_pitcher(self, Pitcher, ip, er, walks, hits, side):
+        self.pitchers[side].append([Pitcher.name, Pitcher.id, ip, er, walks, hits])
         return True
 
     def __repr__(self):

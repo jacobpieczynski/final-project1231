@@ -165,6 +165,32 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                             #print(f"Visitor play? New h exit: {h_inning_exit}")
                             #print(info)
                     #print(play_obj.__repr__())
+                            
+                    # Increases the pitchers hits and walks:
+                    if not v_current_pitcher or not h_current_pitcher:
+                        print("WTF? No pitcher?")
+                    elif play.startswith("W") and not play.startswith("WP"):
+                        # If the batter is on the home team, the visiting pitcher gets the hit/walk 
+                        if not is_home:
+                            #print(home_pitchers)
+                            #print(f"Increasing {h_current_pitcher.name} walks by one in {play}")
+                            current_walks = h_current_pitcher.get_game_walks()
+                            h_current_pitcher.set_game_walks(current_walks + 1)
+                        else:
+                            #print(visiting_pitchers)
+                            #print(f"Increasing {v_current_pitcher.name} walks by one in {play}")
+                            current_walks = v_current_pitcher.get_game_walks()
+                            v_current_pitcher.set_game_walks(current_walks + 1)
+                    # All possible hits
+                    elif play.startswith("S") or play.startswith("D") or play.startswith("T") or play.startswith("HR"):
+                        # All possible baserunning stats that could be mistaken for hits
+                        if not play.startswith("SB") and not play.startswith("DI"):
+                            if is_home:
+                                current_hits = v_current_pitcher.get_game_hits()
+                                v_current_pitcher.set_game_hits(current_hits + 1)
+                            else:
+                                current_hits = h_current_pitcher.get_game_hits()
+                                h_current_pitcher.set_game_hits(current_hits + 1)
                     season_pbp[gameid].add_play(inning, is_home, play_obj)
                     current_play = play_obj
 
@@ -238,16 +264,20 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
         for pitcher in home_pitchers:
             game_ip = pitcher.calc_ip()
             #print(f"Home {pitcher.name} pitched {game_ip} innings with {pitcher.get_game_er()} er")
-            season_pbp[gameid].add_pitcher(pitchers[pitcher.id], game_ip, pitcher.get_game_er(), "Home")
+            season_pbp[gameid].add_pitcher(pitchers[pitcher.id], game_ip, pitcher.get_game_er(), pitcher.get_game_walks(), pitcher.get_game_hits(), "Home")
             #pitchers[pitcher
             # .id].set_temp_ip(0)
             pitchers[pitcher.id].set_game_er(0)
+            pitchers[pitcher.id].set_game_walks(0)
+            pitchers[pitcher.id].set_game_hits(0)
         for pitcher in visiting_pitchers:
             game_ip = pitcher.calc_ip()
             #print(f"Visitor {pitcher.name} pitched {game_ip} innings with {pitcher.get_game_er()} er")
-            season_pbp[gameid].add_pitcher(pitchers[pitcher.id], game_ip, pitcher.get_game_er(), "Visitor")
+            season_pbp[gameid].add_pitcher(pitchers[pitcher.id], game_ip, pitcher.get_game_er(), pitcher.get_game_walks(), pitcher.get_game_hits(), "Visitor")
             #pitchers[pitcher.id].set_temp_ip(0)
             pitchers[pitcher.id].set_game_er(0)
+            pitchers[pitcher.id].set_game_walks(0)
+            pitchers[pitcher.id].set_game_hits(0)
     
     return True
 
@@ -561,8 +591,11 @@ def main():
     print(pitchers["snelb001"].get_pitching_totals(DEFAULT_YE))
     print(pitchers["snelb001"].get_era(DEFAULT_YE))
     print(f"len(CATEGORIES): {len(CATEGORIES)}")
+    print('Paul Sewald Pitching Totals: <-- His stats are somewhat off and I\'m not sure why. Maybe because of the trade? The other pitchers seem fine')
+    print(pitchers["sewap001"].get_pitching_totals(DEFAULT_YE))
+    print(pitchers["sewap001"].get_era(DEFAULT_YE))
 
-    print(weighted_avg_era())
+    #rint(weighted_avg_era())
     
     """
     max_hrs = 0

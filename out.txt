@@ -14,6 +14,77 @@ LOADED
 
 LOADING PLAY BY PLAY - ALL TEAMS
 --------------------------------------------------
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
+WTF? No pitcher?
 LOADED
 --------------------------------------------------
 
@@ -39,13 +110,15 @@ Corbin Carroll
 Corbin Carroll batting totals:
 {'Singles': 96, 'Doubles': 30, 'Triples': 10, 'Home Runs': 25, 'Hits': 161, 'Walks': 57, 'Plate Appearances': 645, 'Strikeouts': 125, 'At Bats': 565, 'Hit By Pitch': 13, 'Out': 284}
 Zac Gallen Pitching Totals:
-{'ER': 81, 'IP': 209.0, 'Starts': 34}
+{'ER': 81, 'IP': 209.0, 'Starts': 34, 'Walks': 47, 'Hits': 188, 'WHIP': 1.124}
 3.49
 Kevin Ginkel Pitching Totals:
-{'ER': 18, 'IP': 64.67, 'Starts': 0}
+{'ER': 18, 'IP': 64.67, 'Starts': 0, 'Walks': 23, 'Hits': 41, 'WHIP': 0.99}
 2.51
 Blake Snell Pitching Totals:
-{'ER': 45, 'IP': 178.67, 'Starts': 32}
+{'ER': 45, 'IP': 178.67, 'Starts': 32, 'Walks': 99, 'Hits': 115, 'WHIP': 1.198}
 2.27
 len(CATEGORIES): 160
-[['ANA', 4.67, 73], ['KCA', 5.42, 56], ['TBA', 3.91, 98], ['CLE', 4.11, 76], ['SEA', 4.1, 88], ['MIA', 4.07, 84], ['SLN', 5.18, 71], ['BAL', 3.81, 101], ['BOS', 4.46, 78], ['ARI', 4.55, 84], ['MIL', 3.67, 92], ['SDN', 3.93, 82], ['NYA', 4.01, 82], ['CHA', 4.88, 61], ['ATL', 4.02, 104], ['COL', 5.56, 59], ['TEX', 4.15, 90], ['MIN', 3.97, 87], ['OAK', 5.38, 50], ['NYN', 4.33, 75], ['LAN', 4.32, 100], ['SFN', 4.05, 79], ['HOU', 3.98, 90], ['PIT', 4.69, 76], ['CHN', 4.1, 83], ['CIN', 4.74, 82], ['DET', 4.23, 78], ['PHI', 3.98, 90], ['WAS', 5.08, 71], ['TOR', 3.82, 89]]
+Paul Sewald Pitching Totals:
+{'ER': 21, 'IP': 61.33, 'Starts': 0, 'Walks': 23, 'Hits': 50, 'WHIP': 1.19}
+3.08
