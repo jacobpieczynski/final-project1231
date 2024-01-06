@@ -179,12 +179,16 @@ class Pitcher:
                             self.er += int(pitcher[3])
                             self.walks += int(pitcher[4])
                             self.hits += int(pitcher[5])
+                            self.batters += int(pitcher[6])
+                            self.ks += int(pitcher[7])
                             # If they are the first pitcher in the array, they are the starter
                             if season_pbp[gameid].pitchers[side][0][1] == self.id:
                                 self.starts += 1
                             #print(f"{self.name} played at {side} on {format_date(season_pbp[gameid].date)}. He pitched {pitcher[2]} innings and gave up {pitcher[3]} runs")
+                                
+        whip = round((self.walks + self.hits) / self.ip, 3)
             
-        return {"ER": self.er, "IP": round(self.ip / 3, 2), "Starts": self.starts, "Walks": self.walks, "Hits": self.hits, "WHIP": self.calc_whip()}
+        return {"ER": self.er, "IP": round(self.ip / 3, 2), "Starts": self.starts, "Walks": self.walks, "Hits": self.hits, "WHIP": whip, "Batters": self.batters, "Strikeouts": self.ks}
 
     def get_er(self, date):
         return self.get_pitching_totals(date)["ER"]
@@ -194,12 +198,18 @@ class Pitcher:
         return self.get_pitching_totals(date)["Walks"]  
     def get_hits(self, date):
         return self.get_pitching_totals(date)["Hits"]
+    def get_batters(self, date):
+        return self.get_pitching_totals(date)["Batters"]
+    def get_game_batters(self):
+        return self.game_batters
     def get_game_er(self):
         return self.game_er
     def get_game_walks(self):
         return self.game_walks  
     def get_game_hits(self):
         return self.game_hits
+    def get_game_ks(self):
+        return self.game_ks
       
     def get_era(self, date):
         if self.get_ip(date) == 0:
@@ -208,33 +218,27 @@ class Pitcher:
                 return self.get_er(date)
             return 0
         return round((self.get_er(date) * 9) / self.get_ip(date), 2)
-
-    def reset_stats(self):
-        self.start = False
-        self.er, self.ip, self.game_er, self.starts, self.game_walks, self.game_hits, self.walks, self.hits = 0, 0, 0, 0, 0, 0, 0, 0
-        return True
     
-    def reset_outing(self):
-        self.inning_entered, self.inning_exit = 0, 0,
-        return True
-    
+    # Set functions
     def set_game_er(self, er):
         self.game_er = er
         return True
-    
     def set_game_walks(self, walks):
         self.game_walks = walks
         return True
-    
     def set_game_hits(self, hits):
         self.game_hits = hits
         return True
-
     def set_outing_start(self, start):
         self.inning_entered = start
         
     def set_outing_end(self, exit):
         self.inning_exit = exit
+    def set_game_batters(self, batters):
+        self.game_batters = batters
+        return True
+    def set_game_ks(self, ks):
+        self.game_ks = ks
 
     def started(self):
         self.start = True
@@ -249,9 +253,41 @@ class Pitcher:
         return game_ip # Multiple of 3 (for floating point issues)
     
     # Walks and Hits per Inning Pitched
-    def calc_whip(self):
-        wh = self.walks + self.hits
-        return round(wh * 3/ self.ip, 3) # Multiplied by 3 to account for IP factor
+    def calc_whip(self, date):
+        totals = self.get_pitching_totals(date)
+        wh = totals["Walks"] + totals["Hits"]
+        ip = totals["IP"]
+        return round(wh * 3/ ip, 3) # Multiplied by 3 to account for IP factor
+    
+    # Strikeouts per batter - NOT K9 stat
+    def calc_so_rate(self, date):
+        totals = self.get_pitching_totals(date)
+        ks = totals["Strikeouts"]
+        bf = totals["Batters"]
+        return round(ks / bf, 3)
+    
+    # K9 - (9 * SO) / IP
+    def calc_k9(self, date):
+        totals = self.get_pitching_totals(date)
+        ks = totals["Strikeouts"]
+        ip = totals["IP"]
+        return round((9 * ks) / ip, 1)
+    
+    def calc_bb9(self, date):
+        totals = self.get_pitching_totals(date)
+        bbs = totals["Walks"]
+        ip = totals["IP"]
+        return round((9 * bbs) / ip, 1)
+    
+    # Maintenance Functions
+    def reset_stats(self):
+        self.start = False
+        self.er, self.ip, self.game_er, self.starts, self.game_walks, self.game_hits, self.walks, self.hits, self.batters, self.game_batters, self.ks, self.game_ks = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        return True
+    
+    def reset_outing(self):
+        self.inning_entered, self.inning_exit = 0, 0,
+        return True
     
     def __repr__(self):
         return self.id
@@ -296,8 +332,8 @@ class Game_PBP:
         self.batters.append(batter)
         return True
 
-    def add_pitcher(self, Pitcher, ip, er, walks, hits, side):
-        self.pitchers[side].append([Pitcher.name, Pitcher.id, ip, er, walks, hits])
+    def add_pitcher(self, Pitcher, ip, er, walks, hits, batters, ks, side):
+        self.pitchers[side].append([Pitcher.name, Pitcher.id, ip, er, walks, hits, batters, ks])
         return True
 
     def __repr__(self):

@@ -132,6 +132,9 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                 #print(home_lineup, end="\n\n")
             # "Action" information
             elif info[0] == "play" or info[0] == "sub" or info[0] == "com":
+                if not h_current_pitcher or not v_current_pitcher and info[0] != "version":
+                    v_current_pitcher
+                    break
                 # Creates a new game if necessary
                 if gameid not in season_pbp:
                     season_pbp[gameid] = Game_PBP(gameid, visteam, hometeam, infoitems["site"], date, infoitems["starttime"], infoitems["daynight"], infoitems["innings"], infoitems["inputtime"], infoitems["wp"], infoitems["lp"], infoitems["save"], visitor_lineup, home_lineup, data) # Will need to add PBP info
@@ -172,10 +175,16 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                             factor = 2
                         if is_home:
                             v_inning_exit += factor
+                            if play.startswith("K"):
+                                current_ks = v_current_pitcher.get_game_ks()
+                                v_current_pitcher.set_game_ks(current_ks + 1)
                             #print(f"Home play? New v exit: {v_inning_exit}")
                             #print(info)
                         else:
                             h_inning_exit += factor
+                            if play.startswith("K"):
+                                current_ks = h_current_pitcher.get_game_ks()
+                                h_current_pitcher.set_game_ks(current_ks + 1)
                             #print(f"Visitor play? New h exit: {h_inning_exit}")
                             #print(info)
                     #print(play_obj.__repr__())
@@ -191,11 +200,17 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                             #print(f"Increasing {h_current_pitcher.name} walks by one in {play}")
                             current_walks = h_current_pitcher.get_game_walks()
                             h_current_pitcher.set_game_walks(current_walks + 1)
+                            current_batters = h_current_pitcher.get_game_batters()
+                            h_current_pitcher.set_game_batters(current_batters + 1)
+                            print(f"Walk by {h_current_pitcher.name} in {info}")
                         else:
                             #print(visiting_pitchers)
                             #print(f"Increasing {v_current_pitcher.name} walks by one in {play}")
                             current_walks = v_current_pitcher.get_game_walks()
                             v_current_pitcher.set_game_walks(current_walks + 1)
+                            current_batters = v_current_pitcher.get_game_batters()
+                            v_current_pitcher.set_game_batters(current_batters + 1)
+                            print(f"Walk by {v_current_pitcher.name} in {info}")
                     # All possible hits
                     elif play.startswith("S") or play.startswith("D") or play.startswith("T") or play.startswith("HR"):
                         # All possible baserunning stats that could be mistaken for hits
@@ -203,9 +218,23 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                             if is_home:
                                 current_hits = v_current_pitcher.get_game_hits()
                                 v_current_pitcher.set_game_hits(current_hits + 1)
+                                current_batters = v_current_pitcher.get_game_batters()
+                                v_current_pitcher.set_game_batters(current_batters + 1)
                             else:
                                 current_hits = h_current_pitcher.get_game_hits()
                                 h_current_pitcher.set_game_hits(current_hits + 1)
+                                current_batters = h_current_pitcher.get_game_batters()
+                                h_current_pitcher.set_game_batters(current_batters + 1)
+                    # Misc plays to increase batters faced
+                    elif play.startswith("E") or play.startswith("HP") or play[0].isnumeric() or play.startswith("K") or play.startswith("FC") or play.startswith("IW") or play.startswith("C/"):
+                        if is_home:
+                            current_batters = v_current_pitcher.get_game_batters()
+                            v_current_pitcher.set_game_batters(current_batters + 1)
+                        else:
+                            current_batters = h_current_pitcher.get_game_batters()
+                            h_current_pitcher.set_game_batters(current_batters + 1)
+                    elif not play.startswith("NP") and not play.startswith("WP") and not play.startswith("CS"):
+                        print(play[0:2])
                     season_pbp[gameid].add_play(inning, is_home, play_obj)
                     current_play = play_obj
 
@@ -286,20 +315,25 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
         for pitcher in home_pitchers:
             game_ip = pitcher.calc_ip()
             #print(f"Home {pitcher.name} pitched {game_ip} innings with {pitcher.get_game_er()} er")
-            season_pbp[gameid].add_pitcher(pitchers[pitcher.id], game_ip, pitcher.get_game_er(), pitcher.get_game_walks(), pitcher.get_game_hits(), "Home")
+            season_pbp[gameid].add_pitcher(pitchers[pitcher.id], game_ip, pitcher.get_game_er(), pitcher.get_game_walks(), pitcher.get_game_hits(), pitcher.get_game_batters(), pitcher.get_game_ks(), "Home")
             #pitchers[pitcher
             # .id].set_temp_ip(0)
+            # Create a function to reset all temp variables
             pitchers[pitcher.id].set_game_er(0)
             pitchers[pitcher.id].set_game_walks(0)
             pitchers[pitcher.id].set_game_hits(0)
+            pitchers[pitcher.id].set_game_batters(0)
+            pitchers[pitcher.id].set_game_ks(0)
         for pitcher in visiting_pitchers:
             game_ip = pitcher.calc_ip()
             #print(f"Visitor {pitcher.name} pitched {game_ip} innings with {pitcher.get_game_er()} er")
-            season_pbp[gameid].add_pitcher(pitchers[pitcher.id], game_ip, pitcher.get_game_er(), pitcher.get_game_walks(), pitcher.get_game_hits(), "Visitor")
+            season_pbp[gameid].add_pitcher(pitchers[pitcher.id], game_ip, pitcher.get_game_er(), pitcher.get_game_walks(), pitcher.get_game_hits(), pitcher.get_game_batters(), pitcher.get_game_ks(), "Visitor")
             #pitchers[pitcher.id].set_temp_ip(0)
             pitchers[pitcher.id].set_game_er(0)
             pitchers[pitcher.id].set_game_walks(0)
             pitchers[pitcher.id].set_game_hits(0)
+            pitchers[pitcher.id].set_game_batters(0)
+            pitchers[pitcher.id].set_game_ks(0)
     
     return True
 
@@ -644,7 +678,7 @@ def main():
     #print(pitchers)
     print(pitchers["gallz001"].get_pitching_totals(DEFAULT_YE))
     print(pitchers["gallz001"].get_era(DEFAULT_YE))
-    print("Kevin Ginkel Pitching Totals:")
+    print("Kevin Ginkel Pitching Totals: <-- One too many batters (should be 254)")
     #print(pitchers)
     print(pitchers["ginkk001"].get_pitching_totals(DEFAULT_YE))
     print(pitchers["ginkk001"].get_era(DEFAULT_YE))
@@ -723,7 +757,7 @@ Minor issue: Problem still with IP calculation. I'm seeing actual innings pitche
 Minor issue: Why is there no pitcher recognized on many WHIP calculations?
 
 TODO:
-Pitcher strikout and (maybe) walk rate - need to calc batters faced
+Pitcher strikout and (maybe) walk rate - need to calc batters faced <-- Done
 On Base Percentage  <-- Done
 Slugging Percentage <-- Done
 OBS <-- Done
