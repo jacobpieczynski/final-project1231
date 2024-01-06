@@ -75,6 +75,8 @@ class Player:
                                 self.outs += 1
                                 if "/SH" not in play.play and "/SF" not in play.play:
                                     self.abs += 1
+                                elif "SF" in play.play:
+                                    self.sacs += 1
                                 #print("Ball in play but out. Total for season: " + str(self.outs))
                             elif play.play.startswith("E"):
                                 self.abs += 1
@@ -88,7 +90,7 @@ class Player:
                             #print()
                 #print("-" * 15)
         #print(games)
-        return {"Singles": self.singles, "Doubles": self.doubles, "Triples": self.triples, "Home Runs": self.hrs, "Hits": self.hits, "Walks": self.walks, "Plate Appearances": self.pas, "Strikeouts": self.ks, "At Bats": self.abs, "Hit By Pitch": self.hbp, "Out": self.outs}
+        return {"Singles": self.singles, "Doubles": self.doubles, "Triples": self.triples, "Home Runs": self.hrs, "Hits": self.hits, "Walks": self.walks, "Plate Appearances": self.pas, "Strikeouts": self.ks, "At Bats": self.abs, "Hit By Pitch": self.hbp, "Out": self.outs, "Sacs": self.sacs}
                     #print(inning)
                     #print(game.pbp[inning][side])
     def get_singles(self, date):
@@ -111,11 +113,32 @@ class Player:
         return self.get_batting_totals(date)["Hit By Pitch"]
 
     # Player Calculations
-    def avg(self, date):
-        return round(self.hits(date, DEFAULT_YE) / self.abs(date, DEFAULT_YE), 3)
+    def calc_avg(self, date): # <-- This can't be right, right?
+        totals = self.get_batting_totals(date)
+        hits = totals["Singles"] + totals["Doubles"] + totals["Triples"] + totals["Home Runs"]
+        abs = totals["At Bats"]
+        return round(hits / abs, 3)
+    
+    def calc_slg(self, date):
+        totals = self.get_batting_totals(date)
+        slg_sum = totals["Singles"] + (totals["Doubles"] * 2) + (totals["Triples"] * 3) + (totals["Home Runs"] * 4)
+        abs = totals["At Bats"]
+        return round(slg_sum / abs, 3)
+    
+    def calc_obp(self, date):
+        totals = self.get_batting_totals(date)
+        hits = totals["Singles"] + totals["Doubles"] + totals["Triples"] + totals["Home Runs"]
+        walks = totals["Walks"]
+        hbp = totals["Hit By Pitch"]
+        abs = totals["At Bats"]
+        sacs = totals["Sacs"]
+        return round((hits + walks + hbp) / (abs + sacs + hbp + walks), 3)
+    
+    def calc_ops(self, date):
+        return round(self.calc_obp(date) + self.calc_slg(date), 3)
     
     def reset_stats(self):
-        self.hits, self.singles, self.doubles, self.triples, self.hrs, self.pas, self.ks, self.abs, self.hbp, self.walks, self.outs = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        self.hits, self.singles, self.doubles, self.triples, self.hrs, self.pas, self.ks, self.abs, self.hbp, self.walks, self.outs, self.sacs = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
         return True
 
     def __repr__(self):
@@ -165,10 +188,19 @@ class Pitcher:
 
     def get_er(self, date):
         return self.get_pitching_totals(date)["ER"]
-    
     def get_ip(self, date):
         return self.get_pitching_totals(date)["IP"] # Multiple of 3
-    
+    def get_walks(self, date):
+        return self.get_pitching_totals(date)["Walks"]  
+    def get_hits(self, date):
+        return self.get_pitching_totals(date)["Hits"]
+    def get_game_er(self):
+        return self.game_er
+    def get_game_walks(self):
+        return self.game_walks  
+    def get_game_hits(self):
+        return self.game_hits
+      
     def get_era(self, date):
         if self.get_ip(date) == 0:
             if self.get_er(date) > 0:
@@ -189,15 +221,6 @@ class Pitcher:
     def set_game_er(self, er):
         self.game_er = er
         return True
-    
-    def get_game_er(self):
-        return self.game_er
-    
-    def get_game_walks(self):
-        return self.game_walks
-    
-    def get_game_hits(self):
-        return self.game_hits
     
     def set_game_walks(self, walks):
         self.game_walks = walks

@@ -331,7 +331,6 @@ def parse_log(logname="gl/gl2023.txt"):
         else:
             team_wins[games_dict["home"]] += 1
         game_arr.append(games_dict)
-
     return game_arr
 
 # Finds how often the team with the better winning percentage wins a game
@@ -527,7 +526,7 @@ def starting_era_h2h(game_log):
     print(f"ERA Importance: The visiting pitcher won {v_games_w_ben} of {v_favorite} total games where favored ({round(v_games_w_ben / v_favorite * 100, 2)}%). The Home pitcher won {h_games_w_ben} of {h_favorite} total games where favored ({round(h_games_w_ben / h_favorite * 100, 2)}%). The team with the better ERA won {games_w_era_benefit} of {total_games} total games ({round(games_w_era_benefit / total_games * 100, 2)}%)")
         
 # Calculates the weighted average era for a team
-def weighted_avg_era():
+def weighted_avg_era_and_whip():
     teams = dict()
     teams_avg = dict()
     results = []
@@ -535,26 +534,46 @@ def weighted_avg_era():
         totals = pitchers[pitcher].get_pitching_totals(DEFAULT_YE)
         er = totals["ER"]
         ip = totals["IP"]
+        walks = totals["Walks"]
+        hits = totals["Hits"]
         player_team = pitchers[pitcher].team
         # Adds the pitchers totals to their respective team
         if player_team not in teams:
-            teams[player_team] = [0, 0]
+            teams[player_team] = [0, 0, 0, 0]
         teams[pitchers[pitcher].team][0] += er
         teams[pitchers[pitcher].team][1] += ip
+        teams[pitchers[pitcher].team][2] += walks
+        teams[pitchers[pitcher].team][3] += hits
     
     # Gets the results - team average era compared to wins
     for team in teams:
         team_era = round((teams[team][0] * 9) / teams[team][1], 2)
+        team_whip = round((teams[team][2] + teams[team][3]) / teams[team][1], 3)
         if team not in teams_avg:
             teams_avg[team] = dict()
         teams_avg[team]["ERA"] = team_era
+        teams_avg[team]["WHIP"] = team_whip
         wins = SEASON_END[team]
         teams_avg[team]["Wins"] = wins
         teams_avg[team]["Team"] = team
-        results.append([team, team_era, wins])
+        results.append([team, team_era, wins, team_whip])
     
     write_csv(teams_avg)
     return results
+
+# Gets a team's run differention
+def run_diff(team, game_log, date):
+    #if team not in game_log
+    team_dif = 0
+    for game in game_log:
+        if game['date'] < date and team in (game['home'], game['visitor']):
+            if team == game['home']:
+                differential = game['hscore'] - game['vscore']
+                team_dif += differential
+            else:
+                differential = game['vscore'] - game['hscore']
+                team_dif += differential
+    return team_dif
 
 def main():
     print("LOADING ROSTER")
@@ -600,6 +619,7 @@ def main():
     park_most_hr(game_log)
     most_home_success(game_log)
     print(head_to_head("ARI", "LAN", game_log, "20230408")["ARI"])
+    print(run_diff("ARI", game_log, DEFAULT_YE))
     h2h_adv(game_log)
     test_bets(game_log)
     rec_and_h2h_adv(game_log)
@@ -616,6 +636,10 @@ def main():
     print("1 is: " + str(bool(1)))
     print("Corbin Carroll batting totals:")
     print(players["carrc005"].get_batting_totals(DEFAULT_YE))
+    print(players["carrc005"].calc_avg(DEFAULT_YE))
+    print(players["carrc005"].calc_slg(DEFAULT_YE))
+    print(players["carrc005"].calc_obp(DEFAULT_YE))
+    print(players["carrc005"].calc_ops(DEFAULT_YE))
     print("Zac Gallen Pitching Totals:")
     #print(pitchers)
     print(pitchers["gallz001"].get_pitching_totals(DEFAULT_YE))
@@ -632,7 +656,7 @@ def main():
     print(pitchers["sewap001"].get_pitching_totals(DEFAULT_YE))
     print(pitchers["sewap001"].get_era(DEFAULT_YE))
 
-    #rint(weighted_avg_era())
+    print(weighted_avg_era_and_whip())
     
     """
     max_hrs = 0
@@ -697,4 +721,17 @@ Minor issue: Comment is seeing the , in the comment as a different value type an
 RESOLVED? Medium: May be an issue in the recording of hits, SO, etc. Check all the simple play prefixes so you don't fuck it up 
 Minor issue: Problem still with IP calculation. I'm seeing actual innings pitched over the season +/- 2 and ERA seems to be within +/-0.3 (due to IP error). This also affects other statistics such as WHIP
 Minor issue: Why is there no pitcher recognized on many WHIP calculations?
+
+TODO:
+Pitcher strikout and (maybe) walk rate - need to calc batters faced
+On Base Percentage  <-- Done
+Slugging Percentage <-- Done
+OBS <-- Done
+Run Differential <-- Done
+Team weighted batting average/slg/obs?
+Pitcher/Hitter matchups
+Recent performance - last 10 games
+Ballpark factor
+Major injuries?? (sounds super intensive, may need to wait)
+Team's historical performance (in similar conditions?)
 """
