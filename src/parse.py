@@ -366,3 +366,29 @@ def parse_log(logname="gl/gl2023.txt"):
             team_wins[games_dict["home"]] += 1
         game_arr.append(games_dict)
     return game_arr
+
+def sort_games(game_log):
+    for game in game_log:
+        # Adds the team to the array
+        if game['visitor'] not in sorted_game_dates:
+            sorted_game_dates[game['visitor']] = []
+        if game['home'] not in sorted_game_dates:
+            sorted_game_dates[game['home']] = []
+        
+        # Adds the game to the array, in order of date
+        sorted_game_dates[game['home']].append(game)
+        sorted_game_dates[game['visitor']].append(game)
+
+def get_last_game_dates(num, team, date="20231231"):
+    prior_games = []
+    for game in sorted_game_dates[team]:
+        if game['date'] < date:
+            prior_games.append(game)
+        else:
+            break
+    if len(prior_games) <= num:
+        return prior_games
+    else:
+        #len(prior_games[-num:]))
+        return prior_games[-num:]
+    # Can add player statistics here

@@ -84,6 +84,11 @@ def main():
     print(pitchers["sewap001"].get_pitching_totals(DEFAULT_YE))
     print(pitchers["sewap001"].get_era(DEFAULT_YE))
 
+    sort_games(game_log)
+
+    prior_performance = get_last_game_dates(PRIOR_RANGE, "ARI", "20230705")
+    print(recent_performance(prior_performance, "ARI"))
+    recent_benefit(game_log)
     print(weighted_avg_era_and_whip())
     
     """

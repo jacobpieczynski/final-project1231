@@ -18,14 +18,14 @@ class Player:
         self.team = team
         self.reset_stats()
     
-    def get_batting_totals(self, date):
+    def get_batting_totals(self, date, start_date=SEASON_START):
         if self.hits > 0 or self.pas > 0:
             self.reset_stats()
         games = 0 # TEMP FOR TEST
         for gameid in season_pbp:
             game = season_pbp[gameid]
             # Finds all games the player played in within the date range
-            if self.id in game.batters and game.date < date:
+            if self.id in game.batters and game.date <= date and game.date >= start_date:
                 games += 1
                 side = "Home"
                 if self.team == game.visteam:
@@ -89,44 +89,44 @@ class Player:
                             #print("Plate Appearance. Total for season: " + str(self.pas))
                             #print()
                 #print("-" * 15)
-        #print(games)
+        #print(f"{self.name}'s game count: {games}")
         return {"Singles": self.singles, "Doubles": self.doubles, "Triples": self.triples, "Home Runs": self.hrs, "Hits": self.hits, "Walks": self.walks, "Plate Appearances": self.pas, "Strikeouts": self.ks, "At Bats": self.abs, "Hit By Pitch": self.hbp, "Out": self.outs, "Sacs": self.sacs}
                     #print(inning)
                     #print(game.pbp[inning][side])
-    def get_singles(self, date):
-        return self.get_batting_totals(date)["Singles"]
-    def get_doubles(self, date):
-        return self.get_batting_totals(date)["Doubles"]
-    def get_triples(self, date):
-        return self.get_batting_totals(date)["Triples"]
-    def get_hrs(self, date):
-        return self.get_batting_totals(date)["Home Runs"]
-    def get_hits(self, date):
-        return self.get_batting_totals(date)["Hits"]
-    def get_walks(self, date):
-        return self.get_batting_totals(date)["Walks"]
-    def get_pas(self, date):
-        return self.get_batting_totals(date)["Plate Appearances"]
-    def get_ks(self, date):
-        return self.get_batting_totals(date)["Strikeouts"]
-    def get_hbp(self, date):
-        return self.get_batting_totals(date)["Hit By Pitch"]
+    def get_singles(self, date, start_date=SEASON_START):
+        return self.get_batting_totals(date, start_date)["Singles"]
+    def get_doubles(self, date, start_date=SEASON_START):
+        return self.get_batting_totals(date, start_date)["Doubles"]
+    def get_triples(self, date, start_date=SEASON_START):
+        return self.get_batting_totals(date, start_date)["Triples"]
+    def get_hrs(self, date, start_date=SEASON_START):
+        return self.get_batting_totals(date, start_date)["Home Runs"]
+    def get_hits(self, date, start_date=SEASON_START):
+        return self.get_batting_totals(date, start_date)["Hits"]
+    def get_walks(self, date, start_date=SEASON_START):
+        return self.get_batting_totals(date, start_date)["Walks"]
+    def get_pas(self, date, start_date=SEASON_START):
+        return self.get_batting_totals(date, start_date)["Plate Appearances"]
+    def get_ks(self, date, start_date=SEASON_START):
+        return self.get_batting_totals(date, start_date)["Strikeouts"]
+    def get_hbp(self, date, start_date=SEASON_START):
+        return self.get_batting_totals(date, start_date)["Hit By Pitch"]
 
     # Player Calculations
-    def calc_avg(self, date): # <-- This can't be right, right?
-        totals = self.get_batting_totals(date)
+    def calc_avg(self, date, start_date=SEASON_START): # <-- This can't be right, right?
+        totals = self.get_batting_totals(date, start_date)
         hits = totals["Singles"] + totals["Doubles"] + totals["Triples"] + totals["Home Runs"]
         abs = totals["At Bats"]
         return round(hits / abs, 3)
     
-    def calc_slg(self, date):
-        totals = self.get_batting_totals(date)
+    def calc_slg(self, date, start_date=SEASON_START):
+        totals = self.get_batting_totals(date, start_date)
         slg_sum = totals["Singles"] + (totals["Doubles"] * 2) + (totals["Triples"] * 3) + (totals["Home Runs"] * 4)
         abs = totals["At Bats"]
         return round(slg_sum / abs, 3)
     
-    def calc_obp(self, date):
-        totals = self.get_batting_totals(date)
+    def calc_obp(self, date, start_date=SEASON_START):
+        totals = self.get_batting_totals(date, start_date)
         hits = totals["Singles"] + totals["Doubles"] + totals["Triples"] + totals["Home Runs"]
         walks = totals["Walks"]
         hbp = totals["Hit By Pitch"]
@@ -153,11 +153,11 @@ class Pitcher:
         self.reset_stats()
         self.reset_outing()
 
-    def get_pitching_totals(self, date):
+    def get_pitching_totals(self, date, start_date=SEASON_START):
         if self.er or self.ip > 0:
             self.reset_stats()
         for gameid in season_pbp:
-            if season_pbp[gameid].date < date:
+            if season_pbp[gameid].date <= date and season_pbp[gameid].date >= start_date:
                 side = "Visitor"
                 in_game = False
                 for pitcher in season_pbp[gameid].pitchers["Home"]:
@@ -186,20 +186,20 @@ class Pitcher:
                                 self.starts += 1
                             #print(f"{self.name} played at {side} on {format_date(season_pbp[gameid].date)}. He pitched {pitcher[2]} innings and gave up {pitcher[3]} runs")
                                 
-        whip = round((self.walks + self.hits) / self.ip, 3)
+        whip = round((self.walks + self.hits) * 3 / self.ip, 3)
             
         return {"ER": self.er, "IP": round(self.ip / 3, 2), "Starts": self.starts, "Walks": self.walks, "Hits": self.hits, "WHIP": whip, "Batters": self.batters, "Strikeouts": self.ks}
 
-    def get_er(self, date):
-        return self.get_pitching_totals(date)["ER"]
-    def get_ip(self, date):
-        return self.get_pitching_totals(date)["IP"] # Multiple of 3
-    def get_walks(self, date):
-        return self.get_pitching_totals(date)["Walks"]  
-    def get_hits(self, date):
-        return self.get_pitching_totals(date)["Hits"]
-    def get_batters(self, date):
-        return self.get_pitching_totals(date)["Batters"]
+    def get_er(self, date, start_date=SEASON_START):
+        return self.get_pitching_totals(date, start_date)["ER"]
+    def get_ip(self, date, start_date=SEASON_START):
+        return self.get_pitching_totals(date, start_date)["IP"] # Multiple of 3
+    def get_walks(self, date, start_date=SEASON_START):
+        return self.get_pitching_totals(date, start_date)["Walks"]  
+    def get_hits(self, date, start_date=SEASON_START):
+        return self.get_pitching_totals(date, start_date)["Hits"]
+    def get_batters(self, date, start_date=SEASON_START):
+        return self.get_pitching_totals(date, start_date)["Batters"]
     def get_game_batters(self):
         return self.game_batters
     def get_game_er(self):
@@ -253,28 +253,28 @@ class Pitcher:
         return game_ip # Multiple of 3 (for floating point issues)
     
     # Walks and Hits per Inning Pitched
-    def calc_whip(self, date):
-        totals = self.get_pitching_totals(date)
+    def calc_whip(self, date, start_date=SEASON_START):
+        totals = self.get_pitching_totals(date, start_date)
         wh = totals["Walks"] + totals["Hits"]
         ip = totals["IP"]
         return round(wh * 3/ ip, 3) # Multiplied by 3 to account for IP factor
     
     # Strikeouts per batter - NOT K9 stat
-    def calc_so_rate(self, date):
-        totals = self.get_pitching_totals(date)
+    def calc_so_rate(self, date, start_date=SEASON_START):
+        totals = self.get_pitching_totals(date, start_date)
         ks = totals["Strikeouts"]
         bf = totals["Batters"]
         return round(ks / bf, 3)
     
     # K9 - (9 * SO) / IP
-    def calc_k9(self, date):
-        totals = self.get_pitching_totals(date)
+    def calc_k9(self, date, start_date=SEASON_START):
+        totals = self.get_pitching_totals(date, start_date)
         ks = totals["Strikeouts"]
         ip = totals["IP"]
         return round((9 * ks) / ip, 1)
     
-    def calc_bb9(self, date):
-        totals = self.get_pitching_totals(date)
+    def calc_bb9(self, date, start_date=SEASON_START):
+        totals = self.get_pitching_totals(date, start_date)
         bbs = totals["Walks"]
         ip = totals["IP"]
         return round((9 * bbs) / ip, 1)

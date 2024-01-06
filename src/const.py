@@ -18,7 +18,9 @@ ROS_FILES = ['ros/ANA2023.ROS', 'ros/ARI2023.ROS', 'ros/ATL2023.ROS', 'ros/BAL20
 SEASON_END = {'ANA': 73, 'ARI': 84, 'ATL': 104, 'BAL': 101, 'BOS': 78, 'CHA': 61, 'CHN': 83, 'CIN': 82, 'CLE': 76, 'COL': 59, 'DET': 78, 'HOU': 90, 'KCA': 56, 'LAN': 100, 'MIA': 84, 'MIL': 92, 'MIN': 87, 'NYA': 82, 'NYN': 75, 'OAK': 50, 'PHI': 90, 'PIT': 76, 'SDN': 82, 'SEA': 88, 'SFN': 79, 'SLN': 71, 'TBA': 98, 'TEX': 90, 'TOR': 89, 'WAS': 71}
 ROSTER_CAT = ['id', 'lname', 'fname', 'bats', 'fields', 'team', 'position'] # CHECK ORDER OF BATS AND FIELDS
 GAME_THRESHOLD = 20
+PRIOR_RANGE = 10
 DEFAULT_YE = "20231231"
+SEASON_START = "20230315"
 
 team_wins = dict()
 season_record = dict() # USEAGE: season_record[game_date][team]
@@ -26,6 +28,7 @@ season_pbp = dict() # USEAGE: season_pbp[gameid] <-- MAY NEED TO CHANGE
 players = dict() # USEAGE: players[playerid]
 pitchers = dict() # USEAGE: pitchers[playerid]
 game_log = [] # List of all games
+sorted_game_dates = dict() # USEAGE sorted_game_dates[TEAM]
 
 for team in TEAMS:
     team_wins[team] = 0

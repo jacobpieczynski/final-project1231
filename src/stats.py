@@ -1,5 +1,6 @@
 from const import *
 from classes import *
+from parse import *
 from write import write_csv
 
 # Finds how often the team with the better winning percentage wins a game
@@ -243,3 +244,47 @@ def run_diff(team, game_log, date):
                 differential = game['vscore'] - game['hscore']
                 team_dif += differential
     return team_dif
+
+# Finds the rate that teams with the better recent record win
+def recent_benefit(game_log):
+    better_h_perf, better_v_perf, h_better_wins, v_better_wins, total_adv_wins, games = 0, 0, 0, 0, 0, 0
+    for game in game_log:
+        if above_threshold(game):
+            games += 1
+            h_winner = game['hscore'] > game['vscore']
+            h_recent = recent_performance(get_last_game_dates(PRIOR_RANGE, game['home'], game['date']), game['home'])
+            v_recent = recent_performance(get_last_game_dates(PRIOR_RANGE, game['visitor'], game['date']), game['visitor'])
+            h_adv = h_recent['Wins'] > v_recent['Wins']
+            if h_adv:
+                better_h_perf += 1
+            else:
+                better_v_perf += 1
+
+            if h_winner and h_adv:
+                h_better_wins += 1
+                total_adv_wins += 1
+            elif not h_winner and not h_adv:
+                v_better_wins += 1
+                total_adv_wins += 1
+    print(f"In {games} games, the team with the recency advantage won {total_adv_wins} games ({round(total_adv_wins / games * 100, 2)}%). The home team had the recency advantage in {better_h_perf} games and won {h_better_wins} ({round(h_better_wins / better_h_perf * 100, 2)}%) of them. The visiting team had the recency advantage in {better_v_perf} games and won {v_better_wins} ({round(v_better_wins / better_v_perf * 100, 2)}%) of them.")
+    
+
+# Finds the recent performance of a team
+def recent_performance(last_games, team):
+    wins, losses = 0, 0
+    first_date, last_date = last_games[0]["date"], last_games[-1]["date"]
+
+    for game in last_games:
+        h_winner = game['hscore'] > game['vscore']
+        is_home = game['home'] == team
+        gameid = game['date'] + game['home'] + game['visitor']
+
+        if is_home and h_winner:
+            wins += 1
+        elif not is_home and not h_winner:
+            wins += 1
+        else:
+            losses += 1
+    #corbin = players["carrc005"].get_batting_totals(last_date, first_date)
+    #print(players["carrc005"].calc_avg(last_date, first_date))
+    return {"Wins": wins, "Losses": losses}
