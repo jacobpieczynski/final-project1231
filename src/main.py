@@ -90,6 +90,7 @@ def main():
     print(recent_performance(prior_performance, "ARI"))
     recent_benefit(game_log)
     print(weighted_avg_era_and_whip())
+    print(pitcher_vs_hitter("carrc005", "sengk001"))
     
     """
     max_hrs = 0
@@ -163,7 +164,8 @@ OBS <-- Done
 Run Differential <-- Done
 Team weighted batting average/slg/obs?
 Pitcher/Hitter matchups
-Recent performance - last 10 games
+Handedness? 
+Recent performance - last 10 games <-- Done
 Ballpark factor
 Major injuries?? (sounds super intensive, may need to wait)
 Team's historical performance (in similar conditions?)

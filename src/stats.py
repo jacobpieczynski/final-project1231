@@ -288,3 +288,37 @@ def recent_performance(last_games, team):
     #corbin = players["carrc005"].get_batting_totals(last_date, first_date)
     #print(players["carrc005"].calc_avg(last_date, first_date))
     return {"Wins": wins, "Losses": losses}
+
+# Collects statistics from prior pitcher/hitter matchups
+def pitcher_vs_hitter(hitter, pitcher, date=DEFAULT_YE):
+    h2h_abs = []
+    results = dict()
+    key_list = []
+    has_pitcher = False
+    for gameid in season_pbp:
+        game = season_pbp[gameid]
+        if hitter in game.batters:
+            # Searches for the pitcher in the list
+            for pitchid in game.pitchers["Visitor"]:
+                if pitcher == pitchid[1]:
+                    has_pitcher = True
+                    break
+            if not has_pitcher:
+                for pitchid in game.pitchers["Home"]:
+                    if pitcher == pitchid[1]:
+                        has_pitcher = True
+                        break
+            if has_pitcher:
+                h2h_abs.append(game)
+    
+    for game in h2h_abs:
+        stats = players[hitter].get_batting_totals(game.date, game.date, pitcher)
+        if key_list == []:
+            key_list = stats.keys()
+        for key in key_list:
+            if key in results:
+                results[key] += stats[key]
+            else:
+                results[key] = stats[key]
+
+    return results

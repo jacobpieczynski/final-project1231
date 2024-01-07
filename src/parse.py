@@ -81,7 +81,7 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                     infoitems[info[1]] = info[2]
         gameid = date + hometeam + visteam
 
-        current_play = Play(None, None, None, None, None, None) # Will be used to put subs and comments in their respective innings
+        current_play = Play(None, None, None, None, None, None, None) # Will be used to put subs and comments in their respective innings
 
         # Create a game object
         # Necessary data
@@ -164,7 +164,9 @@ def parse_pbp(logname="pbp/2023ARI.evn"):
                             #print(info)
                     #print(f"{inning}, {is_home}, {batter}, {count}, {balls}, {strikes}, {pitches}, {play}")
                     # "Top" of the inning - visitng team goes bats first
-                    play_obj = Play(inning, is_home, batter, count, pitches, play)
+                    play_obj = Play(inning, is_home, batter, count, pitches, play, h_current_pitcher)
+                    if is_home:
+                        play_obj = Play(inning, is_home, batter, count, pitches, play, v_current_pitcher)
 
                     # To find the fraction of the inning completed
                     if play[0].isnumeric() or play.startswith("K") or play.startswith("CS"): # Checks for groundout, strikeout, or caught stealing
