@@ -53,6 +53,7 @@ def park_most_hr(game_log):
             max_hr = parks[park]
             park_key = park
     print(f"{park_key} had the most home runs this season with a total of {max_hr}")
+    return parks
     #print(parks)
 
 # Finds which teams did best at their home park - Tries to find a home advantage factor
