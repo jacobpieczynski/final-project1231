@@ -18,6 +18,7 @@ def main():
     print("LOADING GAME LOG")
     print("-" * 50)
     game_log = parse_log()
+    random_game_guesser(game_log)
     #print(game_log)
     print("LOADED")
     print("-" * 50, end="\n\n\n")
@@ -163,7 +164,8 @@ Slugging Percentage <-- Done
 OBS <-- Done
 Run Differential <-- Done
 Team weighted batting average/slg/obs?
-Pitcher/Hitter matchups
+Pitcher/Hitter matchups <-- Done
+    Compared to avg function - 2 params, "h2h" stat and the overall stat list, find  pct difference
 Handedness? 
 Recent performance - last 10 games <-- Done
 Ballpark factor

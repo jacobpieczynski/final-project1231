@@ -1,5 +1,6 @@
 from const import *
 from classes import * 
+from random import choice
 
 def parse_roster(logname="ros/SEA2023.ROS"):
     # Gets the list of players
@@ -394,3 +395,20 @@ def get_last_game_dates(num, team, date="20231231"):
         #len(prior_games[-num:]))
         return prior_games[-num:]
     # Can add player statistics here
+
+# Should be about 50%, as a "baseline" for testing the model
+def random_game_guesser(game_log):
+    options = [0, 1]
+    wins, losses, games = 0, 0, 0
+    for game in game_log:
+        rand_guess = choice(options)
+        h_win = game['hscore'] > game['vscore']
+        games += 1
+        if h_win and rand_guess == 0:
+            wins += 1
+        elif not h_win and rand_guess == 1:
+            wins += 1
+        else:
+            losses += 1
+
+    print(f"Out of {games} games, the computer correctly guessed {wins} games ({round(wins / games * 100, 2)}%) and lost {losses} games ({round(losses / games * 100, 2)}%)")
