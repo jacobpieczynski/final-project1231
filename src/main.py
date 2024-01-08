@@ -94,6 +94,9 @@ def main():
     print(pitcher_vs_hitter("carrc005", "sengk001"))
     print(lineup_stats(season_pbp["20230705ARINYN"].visitor_lineup, "20230705"))
     print(team_batting_averages(season_pbp["20230705ARINYN"].visitor_lineup, "20230705"))
+
+    print("\n\n")
+    comp_team_avg(game_log)
     
     """
     max_hrs = 0
@@ -173,4 +176,6 @@ Recent performance - last 10 games <-- Done
 Ballpark factor
 Major injuries?? (sounds super intensive, may need to wait)
 Team's historical performance (in similar conditions?)
+
+FIXED Change get_batting/pitching totals to a global class variable. Then make all the get functions reference this result instead of calling get_totals each time
 """

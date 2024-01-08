@@ -1,0 +1,26 @@
+Just batting
+Out of 2140 games, based on team batting averages, the model correctly guessed 1247 games (58.27%). 893 were incorrectly guessed (41.73%)
+
+Batting and Pitching <-- You dumb fuck, you checked if era and whip were greater
+Out of 2140 games, based on team batting averages, the model correctly guessed 1204 games (56.26%). 936 were incorrectly guessed (43.74%)
+
+Batting and pitching - Fucked if stmt logic - 349 secs
+Out of 2140 games, based on team batting averages, the model correctly guessed 1251 games (58.46%). 889 were incorrectly guessed (41.54%)
+
+Batting and pitching - should be correct - 390 secs
+Out of 2140 games, based on team batting averages, the model correctly guessed 1276 games (59.63%). 864 were incorrectly guessed (40.37%)
+
+Batting and pitching - batter optimization - 121 secs
+Out of 2140 games, based on team batting averages, the model correctly guessed 1274 games (59.53%). 866 were incorrectly guessed (40.47%)
+
+Batting and pitching - added pitcher optimization - 97 secs
+Out of 2140 games, based on team batting averages, the model correctly guessed 1274 games (59.53%). 866 were incorrectly guessed (40.47%)
+
+Batting and pitching - reduced pitching importance - 101 secs
+Out of 2140 games, based on team batting averages, the model correctly guessed 1248 games (58.32%). 892 were incorrectly guessed (41.68%)
+
+Batting and pitching - Updated batting_results global var - 95 secs
+Out of 2140 games, based on team batting averages, the model correctly guessed 1251 games (58.46%). 889 were incorrectly guessed (41.54%)
+
+Batting and pitching - updated pitching_results global var - 97 secs - Same results as above, but that is exactly what was expected
+Out of 2140 games, based on team batting averages, the model correctly guessed 1251 games (58.46%). 889 were incorrectly guessed (41.54%)
