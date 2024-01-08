@@ -92,6 +92,8 @@ def main():
     recent_benefit(game_log)
     print(weighted_avg_era_and_whip())
     print(pitcher_vs_hitter("carrc005", "sengk001"))
+    print(lineup_stats(season_pbp["20230705ARINYN"].visitor_lineup, "20230705"))
+    print(team_batting_averages(season_pbp["20230705ARINYN"].visitor_lineup, "20230705"))
     
     """
     max_hrs = 0

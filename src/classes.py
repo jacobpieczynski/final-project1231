@@ -18,7 +18,7 @@ class Player:
         self.team = team
         self.reset_stats()
     
-    def get_batting_totals(self, date, start_date=SEASON_START, pitcher=None):
+    def get_batting_totals(self, date=DEFAULT_YE, start_date=SEASON_START, pitcher=None):
         if self.hits > 0 or self.pas > 0:
             self.reset_stats()
         games = 0 # TEMP FOR TEST
@@ -309,6 +309,7 @@ class Game_PBP:
         self.lp = lp
         self.save = save
         self.visitor_lineup = visitor_lineup
+        
         self.home_lineup = home_lineup
         self.pbp = dict()
         for i in range(1, 20): # Hacky way to do this, I don't think a game has ever gone beyond 30 innings

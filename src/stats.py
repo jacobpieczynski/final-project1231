@@ -289,6 +289,34 @@ def recent_performance(last_games, team):
     #print(players["carrc005"].calc_avg(last_date, first_date))
     return {"Wins": wins, "Losses": losses}
 
+# Gets the lineup averages
+def lineup_stats(lineup, date):
+    stats = dict()
+    for player in lineup:
+        playerid = player[0].id
+        if player[2] != "0":
+            stats[playerid] = players[playerid].get_batting_totals(date)
+            stats[playerid]["Batting Average"] = players[playerid].calc_avg(date)
+            stats[playerid]["Slugging"] = players[playerid].calc_slg(date)
+            stats[playerid]["OBP"] = players[playerid].calc_obp(date)
+    return stats
+
+# Gets the team average for each stat
+def team_batting_averages(lineup, date):
+    stats = lineup_stats(lineup, date)
+    averages = {"Batting Average": 0, "Slugging": 0, "OBP": 0}
+    player_count = 0
+    for player in stats:
+        averages["Batting Average"] += stats[player]["Batting Average"]
+        averages["Slugging"] += stats[player]["Slugging"]
+        averages["OBP"] += stats[player]["OBP"]
+        player_count += 1
+
+    for average in averages:
+        averages[average] = round(averages[average] / player_count, 3)
+
+    return averages
+
 # Collects statistics from prior pitcher/hitter matchups
 def pitcher_vs_hitter(hitter, pitcher, date=DEFAULT_YE):
     h2h_abs = []
