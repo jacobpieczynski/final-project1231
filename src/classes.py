@@ -220,7 +220,10 @@ class Pitcher:
                                 self.starts += 1
                             #print(f"{self.name} played at {side} on {format_date(season_pbp[gameid].date)}. He pitched {pitcher[2]} innings and gave up {pitcher[3]} runs")
                                 
-        whip = round((self.walks + self.hits) * 3 / self.ip, 3)
+        if self.ip == 0:
+            whip = 0
+        else:
+            whip = round((self.walks + self.hits) * 3 / self.ip, 3)
             
         self.pitching_totals = {"ER": self.er, "IP": round(self.ip / 3, 2), "Starts": self.starts, "Walks": self.walks, "Hits": self.hits, "WHIP": whip, "Batters": self.batters, "Strikeouts": self.ks, "Date": date}
         return self.pitching_totals
@@ -303,6 +306,8 @@ class Pitcher:
         totals = self.pitching_totals
         wh = totals["Walks"] + totals["Hits"]
         ip = totals["IP"]
+        if ip == 0:
+            return 0
         return round(wh * 3/ ip, 3) # Multiplied by 3 to account for IP factor
     
     # Strikeouts per batter - NOT K9 stat

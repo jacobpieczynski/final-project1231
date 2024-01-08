@@ -357,31 +357,35 @@ def comp_team_avg(game_log):
     correct, losses, games = 0, 0, 0
     for game in game_log:
         if above_threshold(game):
-            #print(f"{game['date']}, {game['home']}")
+            date = str(int(game['date']) - 1)
+            print(f"{game['date']}, {game['home']}")
             home_score, stats, actual_winner, guess_winner = 0, 0, 1, 1
             if game['hscore'] > game['vscore']:
                 actual_winner = 0
             gameid = game['date'] + game['home'] + game['visitor']
             game_pbp = season_pbp[gameid]
             home_lineup, visitor_lineup = game_pbp.home_lineup, game_pbp.visitor_lineup
-            home_averages, visitor_averages = team_batting_averages(home_lineup, game['date']), team_batting_averages(visitor_lineup, game['date'])
+            home_averages, visitor_averages = team_batting_averages(home_lineup, date), team_batting_averages(visitor_lineup, date)
             for stat in home_averages:
                 if home_averages[stat] > visitor_averages[stat]:
                     home_score += 1
                 stats += 1
             home_starter, visiting_starter = pitchers[game_pbp.pitchers["Home"][0][1]], pitchers[game_pbp.pitchers["Visitor"][0][1]]
-            home_whip, home_era = home_starter.calc_whip(game['date']), home_starter.get_era(game['date'])
-            visitor_whip, visitor_era = visiting_starter.calc_whip(game['date']), visiting_starter.get_era(game['date'])
-            if home_whip < visitor_whip:
-                home_score += 0.5
-                stats += 0.5
+            home_whip, home_era = home_starter.calc_whip(date), home_starter.get_era(date)
+            visitor_whip, visitor_era = visiting_starter.calc_whip(date), visiting_starter.get_era(date)
+            
+            if home_whip == 0 or visitor_whip == 0:
+                pass
+            elif home_whip < visitor_whip:
+                home_score += 1.5
+                stats += 1.5
             else:
-                stats += 0.5
+                stats += 1.5
             if home_era < visitor_era:
-                home_score += 0.5
-                stats += 0.5
+                home_score += 1.5
+                stats += 1.5
             else:
-                stats += 0.5
+                stats += 1.5
             
             if home_score > (stats - home_score):
                 guess_winner = 0

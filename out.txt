@@ -8,7 +8,7 @@ LOADED
 
 LOADING GAME LOG
 --------------------------------------------------
-Out of 2430 games, the computer correctly guessed 1246 games (51.28%) and lost 1184 games (48.72%)
+Out of 2430 games, the computer correctly guessed 1218 games (50.12%) and lost 1212 games (49.88%)
 LOADED
 --------------------------------------------------
 
@@ -66,4 +66,3 @@ In 2140 games, the team with the recency advantage won 1119 games (52.29%). The 
 
 
 
-Out of 2140 games, based on team batting averages, the model correctly guessed 1251 games (58.46%). 889 were incorrectly guessed (41.54%)

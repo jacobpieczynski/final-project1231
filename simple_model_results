@@ -24,3 +24,15 @@ Out of 2140 games, based on team batting averages, the model correctly guessed 1
 
 Batting and pitching - updated pitching_results global var - 97 secs - Same results as above, but that is exactly what was expected
 Out of 2140 games, based on team batting averages, the model correctly guessed 1251 games (58.46%). 889 were incorrectly guessed (41.54%)
+
+Batting and pitching - increased pitching to 2/stat - 95 secs
+Out of 2140 games, based on team batting averages, the model correctly guessed 1295 games (60.51%). 845 were incorrectly guessed (39.49%)
+
+Batting and pitching - increased pitching to 9/stat to be similar amounts to batting stats (inc more?) - 96 secs - WHy the same? Is it outweighing the batting stats?
+Out of 2140 games, based on team batting averages, the model correctly guessed 1295 games (60.51%). 845 were incorrectly guessed (39.49%)
+
+Batting and pitching - changed to 1.5/stat - 94 secs
+Out of 2140 games, based on team batting averages, the model correctly guessed 1272 games (59.44%). 868 were incorrectly guessed (40.56%)
+
+Batting and pitching - Fixed so wouldn't include stats from the day of game and 10 int loop to find best factor (2) -
+FACTOR 2: Out of 2140 games, based on team batting averages, the model correctly guessed 1160 games (54.21%). 980 were incorrectly guessed (45.79%) 
