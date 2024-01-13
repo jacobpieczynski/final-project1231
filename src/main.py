@@ -19,6 +19,7 @@ def main():
     print("-" * 50)
     game_log = parse_log()
     random_game_guesser(game_log)
+    sort_games(game_log) # ???? is this necessary
     #print(game_log)
     print("LOADED")
     print("-" * 50, end="\n\n\n")
@@ -58,9 +59,10 @@ def main():
     print("TEST PRINTS")
     print("-" * 50)
     #print(season_pbp["20230614ARIPHI"].home_lineup)
-    print('break')
+    log_data(game_log)
     #print(season_pbp["20230725ARISLN"].batters)
     #print(season_pbp["20230930ARIHOU"].home_lineup)
+    """
     print(players["carrc005"].name)
     print("1 is: " + str(bool(1)))
     print("Corbin Carroll batting totals:")
@@ -87,17 +89,19 @@ def main():
 
     sort_games(game_log)
 
-    prior_performance = get_last_game_dates(PRIOR_RANGE, "ARI", "20230705")
-    print(recent_performance(prior_performance, "ARI"))
-    recent_benefit(game_log)
-    print(weighted_avg_era_and_whip())
-    print(pitcher_vs_hitter("carrc005", "sengk001"))
-    print(lineup_stats(season_pbp["20230705ARINYN"].visitor_lineup, "20230705"))
-    print(team_batting_averages(season_pbp["20230705ARINYN"].visitor_lineup, "20230705"))
+    #prior_performance = get_last_game_dates(PRIOR_RANGE, "ARI", "20230705")
+    #print(recent_performance(prior_performance, "ARI"))
+    #recent_benefit(game_log)
+    #print(weighted_avg_era_and_whip())
+    #print(pitcher_vs_hitter("carrc005", "sengk001"))
+    #print(lineup_stats(season_pbp["20230705ARINYN"].visitor_lineup, "20230705"))
+    #print(team_batting_averages(season_pbp["20230705ARINYN"].visitor_lineup, "20230705"))
 
     print("\n\n")
-    comp_team_avg(game_log)
-    
+    #comp_team_avg(game_log)
+
+    obp_to_wins(game_log)
+    """
     """
     max_hrs = 0
     max_total = 0

@@ -8,7 +8,7 @@ LOADED
 
 LOADING GAME LOG
 --------------------------------------------------
-Out of 2430 games, the computer correctly guessed 1218 games (50.12%) and lost 1212 games (49.88%)
+Out of 2430 games, the computer correctly guessed 1203 games (49.51%) and lost 1227 games (50.49%)
 LOADED
 --------------------------------------------------
 

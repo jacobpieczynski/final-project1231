@@ -2,6 +2,7 @@ from const import *
 from classes import *
 from parse import *
 from write import write_csv
+from random import random
 
 # Finds how often the team with the better winning percentage wins a game
 def winpct(game_log):
@@ -229,10 +230,10 @@ def weighted_avg_era_and_whip():
         teams_avg[team]["Team"] = team
         results.append([team, team_era, wins, team_whip])
     
-    write_csv(teams_avg)
+    #write_csv(teams_avg)
     return results
 
-# Gets a team's run differention
+# Gets a team's run differential
 def run_diff(team, game_log, date):
     #if team not in game_log
     team_dif = 0
@@ -300,17 +301,19 @@ def lineup_stats(lineup, date):
             stats[playerid]["Batting Average"] = players[playerid].calc_avg(date)
             stats[playerid]["Slugging"] = players[playerid].calc_slg(date)
             stats[playerid]["OBP"] = players[playerid].calc_obp(date)
+            stats[playerid]["OPS"] = players[playerid].calc_ops(date)
     return stats
 
 # Gets the team average for each stat
 def team_batting_averages(lineup, date):
     stats = lineup_stats(lineup, date)
-    averages = {"Batting Average": 0, "Slugging": 0, "OBP": 0}
+    averages = {"Batting Average": 0, "Slugging": 0, "OBP": 0, "OPS": 0}
     player_count = 0
     for player in stats:
         averages["Batting Average"] += stats[player]["Batting Average"]
         averages["Slugging"] += stats[player]["Slugging"]
         averages["OBP"] += stats[player]["OBP"]
+        averages["OPS"] += stats[player]["OPS"]
         player_count += 1
 
     for average in averages:
@@ -397,3 +400,94 @@ def comp_team_avg(game_log):
             games += 1
 
     print(f"Out of {games} games, based on team batting averages, the model correctly guessed {correct} games ({round(correct / games * 100, 2)}%). {losses} were incorrectly guessed ({round(losses / games * 100, 2)}%)")
+
+# First trial for logistic regression - plotting team average obp to wins
+def obp_to_wins(game_log):
+    results = dict()
+    for game in game_log:
+        if above_threshold(game):
+            gameid = game['date'] + game['home'] + game['visitor']
+            home_lineup, visitor_lineup = season_pbp[gameid].home_lineup, season_pbp[gameid].visitor_lineup
+            home_averages, visitor_averages = team_batting_averages(home_lineup, str(int(game['date']) - 1)), team_batting_averages(visitor_lineup, str(int(game['date']) - 1))
+            home_obp, visitor_obp = home_averages["OBP"], visitor_averages["OBP"]
+            home_avg, visitor_avg = home_averages["Batting Average"], visitor_averages["Batting Average"]
+            home_slg, visitor_slg = home_averages["Slugging"], visitor_averages["Slugging"]
+            dif = home_obp - visitor_obp
+            avg_dif = home_avg - visitor_avg
+            slg_dif = home_slg - visitor_slg
+            if gameid not in results:
+                results[gameid] = dict()
+            if game['hscore'] >= game['vscore']:
+                results[gameid]["OBP Difference"] = dif
+                results[gameid]["AVG Difference"] = avg_dif
+                results[gameid]["SLG Difference"] = slg_dif
+                results[gameid]["Home Win"] = 1
+            else:
+                results[gameid]["OBP Difference"] = dif
+                results[gameid]["AVG Difference"] = avg_dif
+                results[gameid]["SLG Difference"] = slg_dif
+                results[gameid]["Home Win"] = 0
+            print(gameid)
+    write_csv(results, "obp_dif.csv")
+    return results
+
+
+# Collects data for logistic regression
+def log_data(game_log):
+    factor = int(len(game_log) * 0.8)
+    game_log = game_log[:factor]
+    results = dict()
+    for game in game_log:
+        if above_threshold(game):
+            date = str(int(game['date']) - 1)
+            gameid = game['date'] + game['home'] + game['visitor']
+            print(f"{game['date']}: {game['home']} vs {game['visitor']}")
+            results[gameid] = dict()
+            home_lineup, visitor_lineup = season_pbp[gameid].home_lineup, season_pbp[gameid].visitor_lineup
+            home_averages, visitor_averages = team_batting_averages(home_lineup, date), team_batting_averages(visitor_lineup, date)
+            home_obp, visitor_obp = home_averages["OBP"], visitor_averages["OBP"]
+            home_avg, visitor_avg = home_averages["Batting Average"], visitor_averages["Batting Average"]
+            home_slg, visitor_slg = home_averages["Slugging"], visitor_averages["Slugging"]
+            home_ops, visitor_ops = home_averages["OPS"], visitor_averages["OPS"]
+
+            # Home Starting Pitcher ID
+            hspid, vspid = season_pbp[gameid].pitchers["Home"][0][1], season_pbp[gameid].pitchers["Visitor"][0][1]
+            hsp_era, vsp_era = pitchers[hspid].get_era(date), pitchers[vspid].get_era(date)
+            hsp_whip, vsp_whip = pitchers[hspid].calc_whip(date), pitchers[vspid].calc_whip(date)
+            hsp_k9, vsp_k9 = pitchers[hspid].calc_k9(date), pitchers[vspid].calc_k9(date)
+            hsp_bb9, vsp_bb9 = pitchers[hspid].calc_bb9(date), pitchers[vspid].calc_bb9(date)
+
+            h_recent_wins, v_recent_wins = recent_performance(get_last_game_dates(PRIOR_RANGE, game['home'], date), game['home'])["Wins"], recent_performance(get_last_game_dates(PRIOR_RANGE, game['visitor'], date), game['visitor'])["Wins"]
+            h_run_diff, v_run_diff = run_diff(game['home'], game_log, game['date']), run_diff(game['home'], game_log, game['date']) # Ok to use game['date'] because run diff function accounts for it already
+            h2h = head_to_head(game['home'], game['visitor'], game_log, date)
+ 
+            if game['hscore'] > game['vscore']:
+                results[gameid]["Home Win"] = 1
+            else:
+                results[gameid]["Home Win"] = 0
+            
+
+            results[gameid]["Gameid"] = gameid
+            results[gameid]["Home"] = game['home']
+            results[gameid]['Visitor'] = game['visitor']
+            results[gameid]["Date"] = game['date']
+            results[gameid]["OBP Difference"] = home_obp - visitor_obp
+            results[gameid]["AVG Difference"] = home_avg - visitor_avg
+            results[gameid]["SLG Difference"] = home_slg - visitor_slg
+            results[gameid]["OPS Difference"] = home_ops - visitor_ops
+            results[gameid]["ERA Difference"] = vsp_era - hsp_era # Lower is better for home team
+            results[gameid]["WHIP Difference"] = vsp_whip - hsp_whip
+            results[gameid]["K9 Difference"] = hsp_k9 - vsp_k9
+            results[gameid]["BB9 Difference"] = hsp_bb9 - vsp_bb9
+            results[gameid]["Home Recency Adv"] = h_recent_wins - v_recent_wins
+            results[gameid]["Run Differential"] = h_run_diff - v_run_diff
+            results[gameid]["Head to Head"] = h2h[game['home']] - h2h[game['visitor']]
+            results[gameid]["Randomness"] = random()
+    write_csv(results, "log_data.csv")
+    return results
+
+
+# TODO: Park factor/hrs, home advantage, pitcher hitter advantage
+
+
+# ERA, WHIP, K9, BB9, OBP, AVG, SLG, OPS, Park factor/hrs, recent performance, run differential, home advantage, head to head, randomness, pitcher hitter advantage

@@ -233,7 +233,7 @@ class Pitcher:
             self.pitching_totals = self.get_pitching_totals(date, start_date)
         return self.pitching_totals["ER"]
     def get_ip(self, date, start_date=SEASON_START):
-        if self.pitching_totals["Date"] != date:
+        if not self.pitching_totals or self.pitching_totals["Date"] != date:
             self.pitching_totals = self.get_pitching_totals(date, start_date)
         return self.pitching_totals["IP"] # Multiple of 3
     def get_walks(self, date, start_date=SEASON_START):
@@ -326,6 +326,8 @@ class Pitcher:
         totals = self.pitching_totals
         ks = totals["Strikeouts"]
         ip = totals["IP"]
+        if ip == 0:
+            return 0
         return round((9 * ks) / ip, 1)
     
     def calc_bb9(self, date, start_date=SEASON_START):
@@ -334,6 +336,8 @@ class Pitcher:
         totals = self.pitching_totals
         bbs = totals["Walks"]
         ip = totals["IP"]
+        if ip == 0:
+            return 0
         return round((9 * bbs) / ip, 1)
     
     # Maintenance Functions
