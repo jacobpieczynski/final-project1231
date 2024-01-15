@@ -435,7 +435,8 @@ def obp_to_wins(game_log):
 # Collects data for logistic regression
 def log_data(game_log):
     factor = int(len(game_log) * 0.8)
-    game_log = game_log[:factor]
+    #test_log = game_log[factor:]
+    #game_log = game_log[:factor]
     results = dict()
     for game in game_log:
         if above_threshold(game):
@@ -458,7 +459,7 @@ def log_data(game_log):
             hsp_bb9, vsp_bb9 = pitchers[hspid].calc_bb9(date), pitchers[vspid].calc_bb9(date)
 
             h_recent_wins, v_recent_wins = recent_performance(get_last_game_dates(PRIOR_RANGE, game['home'], date), game['home'])["Wins"], recent_performance(get_last_game_dates(PRIOR_RANGE, game['visitor'], date), game['visitor'])["Wins"]
-            h_run_diff, v_run_diff = run_diff(game['home'], game_log, game['date']), run_diff(game['home'], game_log, game['date']) # Ok to use game['date'] because run diff function accounts for it already
+            h_run_diff, v_run_diff = run_diff(game['home'], game_log, game['date']), run_diff(game['visitor'], game_log, game['date']) # Ok to use game['date'] because run diff function accounts for it already
             h2h = head_to_head(game['home'], game['visitor'], game_log, date)
  
             if game['hscore'] > game['vscore']:
