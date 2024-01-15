@@ -18,6 +18,11 @@ def main():
     print("LOADING GAME LOG")
     print("-" * 50)
     game_log = parse_log()
+    """
+    game_log += parse_log("gl/gl2022.txt") # 2022 TEMPORARY
+    for game in game_log:
+        print(game)
+    """
     random_game_guesser(game_log)
     sort_games(game_log) # ???? is this necessary
     #print(game_log)

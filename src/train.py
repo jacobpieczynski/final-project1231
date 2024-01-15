@@ -33,7 +33,7 @@ y_pred = model.predict(X_test_scaled)
 def accuracy(y_pred, y_test):
     return np.sum(y_pred==y_test)/len(y_test)
 
-"""
+
 new_game = pd.read_csv('new_game.csv')
 new_data = new_game.drop('Home Win', axis=1)
 new_data_scaled = scaler.transform(new_data)
@@ -41,6 +41,6 @@ prediction = model.predict(new_data_scaled)
 
 # Display the prediction
 print("Predicted Outcome:", prediction)
-"""
+
 acc = accuracy(y_pred, y_test)
 print(acc)
