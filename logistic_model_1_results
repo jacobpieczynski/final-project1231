@@ -1,0 +1,7 @@
+Without randomness, with random random_state in test each time, 50 trials:
+accuracy 56.5497%
+
+With 100 trials:
+accuracy 56.02%
+
+With 200 trials:
