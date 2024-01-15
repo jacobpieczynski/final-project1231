@@ -5,3 +5,18 @@ With 100 trials:
 accuracy 56.02%
 
 With 200 trials:
+accuracy 56.07109%
+
+Randomness included 1, 100 trials:
+accuracy 55.55118%
+
+Randomness included 2, 100 trials:
+accuracy 55.99857%
+
+Randomness included 3, 100 trials:
+accuracy 55.17061%
+
+Just to confirm, no randomness, 100 trials:
+accuracy 55.9289%
+
+Overall, randomness seems to harm the model instead of help

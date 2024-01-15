@@ -17,7 +17,7 @@ y = data['Home Win']
 #for data in X:
 #    print(data, end="\n\n")
 model_average, model_best = 0, 0
-rng = 200
+rng = 100
 for i in range(rng):
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1) #random_state=705
 
