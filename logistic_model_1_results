@@ -15,8 +15,60 @@ accuracy 55.99857%
 
 Randomness included 3, 100 trials:
 accuracy 55.17061%
+Average across 3 rounds: 55.57345%
 
 Just to confirm, no randomness, 100 trials:
 accuracy 55.9289%
 
 Overall, randomness seems to harm the model instead of help
+
+
+Tested data without OPS - I believe it is too collinear with other slg and obp, 100 trials:
+accuracy 55.70142%
+
+Round 2, 100 trials:
+accuracy 56.3744%
+
+Round 3, 100 trials:
+accuracy 55.3838%
+Average across 3 rounds: 55.8198%
+
+OPS Doesn't seem to have a large impact on the accuracy - about .3%?
+
+
+Tested data without OPS and batting average, 100 trials:
+accuracy 55.82938%
+
+Round 2, 100 trials:
+accuracy 55.96208%
+
+Round 3, 100 trials:
+accuracy 55.50171%
+Average across 3 rounds: 55.76439%
+
+
+Tested without scaling data, 100 trials:
+accuracy 55.6066%
+Scaling helps
+
+-----------
+All w/ 100 trials:
+
+Scikit Log Regression Function:
+accuracy 54.758%
+
+My log function:
+accuracy 56.303%
+
+TESTING PRIOR_RANGE:
+10 games:
+accuracy 56.165%
+
+7 games:
+accuracy 56.033%
+
+5 games:
+accuracy 55.9478%
+
+3 games:
+accuracy 55.327%
