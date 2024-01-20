@@ -72,3 +72,31 @@ accuracy 55.9478%
 
 3 games:
 accuracy 55.327%
+
+
+TESTING GAME THRESHOLD:
+25 games:
+accuracy 56.4705%
+
+20 games:
+accuracy 56.0616%
+
+15 games:
+accuracy 56.8767%
+
+10 games:
+accuracy 56.1769%
+
+Round 2:
+25 games:
+accuracy 56.45098%
+
+15 games:
+accuracy 56.328%
+
+Round 3:
+25 games:
+accuracy 56.3774%
+
+15 games:
+accuracy 56.26027%

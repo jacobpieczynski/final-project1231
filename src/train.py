@@ -9,7 +9,7 @@ from LogisticRegression import LogisticRegression
 import pandas as pd
 
 # Load the CSV file into a DataFrame
-data = pd.read_csv('log_data.csv')
+data = pd.read_csv('log_data25.csv')
 X = data.drop('Home Win', axis=1)
 y = data['Home Win']
 #bc = datasets.load_breast_cancer()
