@@ -2,7 +2,6 @@ from const import *
 from classes import *
 from parse import *
 from write import write_csv
-from random import random
 
 # Finds how often the team with the better winning percentage wins a game
 def winpct(game_log):
@@ -470,7 +469,7 @@ def log_data(game_log):
 
             results[gameid]["Gameid"] = gameid
             results[gameid]["Home"] = game['home']
-            results[gameid]['Visitor'] = game['visitor']
+            results[gameid]["Visitor"] = game['visitor']
             results[gameid]["Date"] = game['date']
             results[gameid]["OBP Difference"] = home_obp - visitor_obp
             results[gameid]["AVG Difference"] = home_avg - visitor_avg
@@ -483,7 +482,6 @@ def log_data(game_log):
             results[gameid]["Home Recency Adv"] = h_recent_wins - v_recent_wins
             results[gameid]["Run Differential"] = h_run_diff - v_run_diff
             results[gameid]["Head to Head"] = h2h[game['home']] - h2h[game['visitor']]
-            results[gameid]["Randomness"] = random()
     write_csv(results, "log_data.csv")
     return results
 

@@ -100,3 +100,37 @@ accuracy 56.3774%
 
 15 games:
 accuracy 56.26027%
+
+
+Outliers removed (3 standard deviations):
+accuracy 56.219% <-- does nothing it seems
+
+2 standard deviations:
+accuracy 54.826%
+
+2.5 sd:
+accuracy 55.6686%
+
+3.5 sd:
+accuracy 56.48%
+
+No outliers removed:
+accuracy 56.5651%
+
+Dummy trial 1 of Random Forest - initially to find variable importance:
+accuracy (only 10 trials) 54.78%
+
+Including Park Data (CATEGORICAL) - back to LR, 100 trials:
+accuracy 55.8996%
+
+Removed Park Data and Dummies:
+accuracy 56.3013%
+
+Just dummies:
+accuracy 56.237% - what would be dummied? I don't think anything
+
+1 more with Park data and dummies:
+accuracy 55..164%
+
+REMOVING PARK CATEGORY
+
