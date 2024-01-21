@@ -1,2 +1,0 @@
-Predicted Outcome: [0]
-0.5853658536585366

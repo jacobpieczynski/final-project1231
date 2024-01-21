@@ -19,7 +19,7 @@ def winpct(game_log):
                 if DATES[day] == game["date"]:
                     dayidx = max(day-1, 0)
                     break
-            homerec, vrec = season_record[DATES[dayidx]][game["home"]], season_record[DATES[dayidx]][game["visitor"]]
+            homerec, vrec = season_record[DATES[dayidx]][game["home"]]["Wins"], season_record[DATES[dayidx]][game["visitor"]]["Wins"]
             # Finds who was favored in the game based on record
             if homerec > vrec:
                 homewins += 1
@@ -149,7 +149,8 @@ def rec_and_h2h_adv(game_log):
             h2h = head_to_head(game["home"], game["visitor"], game_log, game["date"])
             if teams_have_h2h(h2h, game):
                 home_h2h_adv = h2h[game["home"]] > h2h[game["visitor"]]
-                home_rec_adv = season_record[game["date"]][game["home"]] > season_record[game["date"]][game["visitor"]]
+                date = prev_date(game['date'])
+                home_rec_adv = season_record[date][game["home"]]["Wins"] > season_record[date][game["visitor"]]["Wins"]
                 home_winner = game["hscore"] > game["vscore"]
                 if home_h2h_adv and home_rec_adv and home_winner:
                     wins += 1
@@ -359,7 +360,8 @@ def comp_team_avg(game_log):
     correct, losses, games = 0, 0, 0
     for game in game_log:
         if above_threshold(game):
-            date = str(int(game['date']) - 1)
+            date = prev_date(game['date'])
+            #date = str(int(game['date']) - 1)
             print(f"{game['date']}, {game['home']}")
             home_score, stats, actual_winner, guess_winner = 0, 0, 1, 1
             if game['hscore'] > game['vscore']:
@@ -407,7 +409,7 @@ def obp_to_wins(game_log):
         if above_threshold(game):
             gameid = game['date'] + game['home'] + game['visitor']
             home_lineup, visitor_lineup = season_pbp[gameid].home_lineup, season_pbp[gameid].visitor_lineup
-            home_averages, visitor_averages = team_batting_averages(home_lineup, str(int(game['date']) - 1)), team_batting_averages(visitor_lineup, str(int(game['date']) - 1))
+            home_averages, visitor_averages = team_batting_averages(home_lineup, prev_date(game['date'])), team_batting_averages(visitor_lineup, prev_date(game['date']))
             home_obp, visitor_obp = home_averages["OBP"], visitor_averages["OBP"]
             home_avg, visitor_avg = home_averages["Batting Average"], visitor_averages["Batting Average"]
             home_slg, visitor_slg = home_averages["Slugging"], visitor_averages["Slugging"]
@@ -439,7 +441,8 @@ def log_data(game_log):
     results = dict()
     for game in game_log:
         if above_threshold(game):
-            date = str(int(game['date']) - 1)
+            date = prev_date(game['date'])
+            #date = str(int(game['date']) - 1)
             gameid = game['date'] + game['home'] + game['visitor']
             print(f"{game['date']}: {game['home']} vs {game['visitor']}")
             results[gameid] = dict()
@@ -460,7 +463,10 @@ def log_data(game_log):
             h_recent_wins, v_recent_wins = recent_performance(get_last_game_dates(PRIOR_RANGE, game['home'], date), game['home'])["Wins"], recent_performance(get_last_game_dates(PRIOR_RANGE, game['visitor'], date), game['visitor'])["Wins"]
             h_run_diff, v_run_diff = run_diff(game['home'], game_log, game['date']), run_diff(game['visitor'], game_log, game['date']) # Ok to use game['date'] because run diff function accounts for it already
             h2h = head_to_head(game['home'], game['visitor'], game_log, date)
- 
+
+            home_wins, visitor_wins = season_record[date][game['home']]['Wins'], season_record[date][game['visitor']]['Wins']
+            #home_losses, visitor_losses = season_record[date][game['home']]['Losses'], season_record[date][game['visitor']]['Losses']
+            #print(f"DATE: {game['date']}, home_wins {home_wins}, visitor_wins {visitor_wins}")
             if game['hscore'] > game['vscore']:
                 results[gameid]["Home Win"] = 1
             else:
@@ -471,6 +477,8 @@ def log_data(game_log):
             results[gameid]["Home"] = game['home']
             results[gameid]["Visitor"] = game['visitor']
             results[gameid]["Date"] = game['date']
+            results[gameid]["Home Win Diff"] = home_wins - visitor_wins
+            #results[gameid]["Home Loss Diff"] = home_losses - visitor_losses
             results[gameid]["OBP Difference"] = home_obp - visitor_obp
             results[gameid]["AVG Difference"] = home_avg - visitor_avg
             results[gameid]["SLG Difference"] = home_slg - visitor_slg

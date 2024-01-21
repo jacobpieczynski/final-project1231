@@ -360,14 +360,42 @@ def parse_log(logname="gl/gl2023.txt"):
             TEAMS.append(games_dict["home"])
 
         # Creates a dict with each teams record at a given date then updates the standings
-        if games_dict["date"] is not game_date:
-            season_record[games_dict["date"]] = team_wins.copy()
+        if games_dict["date"] != game_date:
+            """
+            for team in TEAMS:
+                if team not in team_wins:
+                    team_wins[team]["Wins"] = season_record[str(int(games_dict['date'] - 1))]["Wins"]
+                    team_wins[team]["Losses"] = season_record[str(int(games_dict['date'] - 1))]["Losses"]
+            """
+            #print(f"DATE: {games_dict['date']}, team_wins {team_wins}")
+            if game_date not in season_record:
+                season_record[game_date] = dict()
+            #print(f"Season RCRD {season_record}")
+            for team in team_wins:
+                season_record[game_date][team] = {"Wins": 0, "Losses": 0}
+                season_record[game_date][team]["Wins"] = team_wins[team]["Wins"]
+                season_record[game_date][team]["Losses"] = team_wins[team]["Losses"]
+            #season_record[games_dict["date"]] = team_wins.copy()
+            #print(f"SZN RECORD: {season_record[game_date]}")
             game_date = games_dict["date"]
+
         if games_dict["vscore"] > games_dict["hscore"]:
-            team_wins[games_dict["visitor"]] += 1
+            team_wins[games_dict["visitor"]]["Wins"] += 1
+            team_wins[games_dict['home']]["Losses"] += 1
         else:
-            team_wins[games_dict["home"]] += 1
+            team_wins[games_dict['home']]['Wins'] += 1
+            team_wins[games_dict['visitor']]["Losses"] += 1
         game_arr.append(games_dict)
+    
+    # Appends last game
+    for team in team_wins:
+        season_record[game_date] = dict()
+        season_record[game_date][team] = {"Wins": 0, "Losses": 0}
+        season_record[game_date][team]["Wins"] = team_wins[team]["Wins"]
+        season_record[game_date][team]["Losses"] = team_wins[team]["Losses"]
+
+    #for date in season_record:
+    #    print(season_record[date])
     return game_arr
 
 def sort_games(game_log):

@@ -187,4 +187,6 @@ Major injuries?? (sounds super intensive, may need to wait)
 Team's historical performance (in similar conditions?)
 
 FIXED Change get_batting/pitching totals to a global class variable. Then make all the get functions reference this result instead of calling get_totals each time
+
+MINOR season_record off by 1 game on either win or losses by end of year
 """

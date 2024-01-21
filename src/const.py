@@ -23,7 +23,7 @@ DEFAULT_YE = "20231231"
 SEASON_START = "20230315"
 
 team_wins = dict()
-season_record = dict() # USEAGE: season_record[game_date][team]
+season_record = dict() # USEAGE: season_record[game_date][team]["Wins" or "Losses"] to get a teams wins or losses at a certain date. Should be inclusive (e.g 7/5 includes games that happen on 7/5)
 season_pbp = dict() # USEAGE: season_pbp[gameid] <-- MAY NEED TO CHANGE
 players = dict() # USEAGE: players[playerid]
 pitchers = dict() # USEAGE: pitchers[playerid]
@@ -31,7 +31,7 @@ game_log = [] # List of all games
 sorted_game_dates = dict() # USEAGE sorted_game_dates[TEAM]
 
 for team in TEAMS:
-    team_wins[team] = 0
+    team_wins[team] = {"Wins": 0, "Losses": 0}
 
 
 ## MISC FUNCTIONS
@@ -47,3 +47,12 @@ def format_date(date):
     day = date[6:8]
     formatted = str(month) + "/" + str(day) + "/" + str(year)
     return formatted
+
+def prev_date(date):
+    for i in range(len(DATES)):
+        if DATES[i] == date:
+            if i == 0:
+                return "20230101"
+            else:
+                return DATES[i-1]
+            break

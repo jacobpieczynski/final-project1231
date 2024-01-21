@@ -130,7 +130,12 @@ Just dummies:
 accuracy 56.237% - what would be dummied? I don't think anything
 
 1 more with Park data and dummies:
-accuracy 55..164%
+accuracy 55.164%
 
 REMOVING PARK CATEGORY
 
+With Home Win Difference (season record difference): 
+accuracy 57.429% (I think this isn't calculated properly)
+
+With Home Win Difference (should be correct calc), i swear to god if this doesn't improve accuracy i'll kms:
+accuracy 56.456% (I LIVE TO SEE ANOTHER DAY)
