@@ -154,3 +154,19 @@ accuracy 56.4429%
 
 500 trials (no home win diff) without dummies:
 accuracy 56.4648%
+
+
+------------------
+100 Trials (new day, setting baseline):
+accuracy 56.5205%
+
+With Home Loss Diff - shouldn't see major differences:
+accuracy 56.3333%
+
+With Difference in team average hits:
+accuracy 55.3196%
+
+With difference in total team hits instead of average:
+accuracy 56.4474%
+
+With difference in total Home Runs
