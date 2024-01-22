@@ -134,9 +134,6 @@ accuracy 55.164%
 
 REMOVING PARK CATEGORY
 
-With Home Win Difference (season record difference): 
-accuracy 57.429% (I think this isn't calculated properly)
-
 With Home Win Difference (should be correct calc), i swear to god if this doesn't improve accuracy i'll kms:
 accuracy 56.456% (I LIVE TO SEE ANOTHER DAY)
 
@@ -174,3 +171,82 @@ accuracy 56.2009%
 
 Removing total hits, just the specific types of hits
 accuracy 55.99999%
+
+Trying all hit type totals again
+accuracy 55.52511%
+
+Trying one more time
+accuracy 55.7534%
+
+Just Hits difference
+accuracy 56.1917%
+
+Trying hits difference a final time
+accuracy 56.0228%
+
+Including only hits difference and SOs difference:
+accuracy 56.3562%
+
+Including all differences:
+accuracy 56.105%
+
+Running again with updated main and write function - removed specific hit differences, only keeping SOs and hits:
+accuracy 56.49315%
+
+Total team walks added:
+accuracy 56.853%
+
+Total team runs added:
+accuracy 56.479%
+
+Without OPS difference, I think it would lead to an overfit:
+accuracy 56.840%
+
+Without run differential and OPS difference:
+accuracy 56.7625%
+
+Same factors, but with scikit built in LR model:
+accuracy 54.954%
+
+LEARNING RATE TESTING AGAIN:
+0.1:
+accuracy 55.205%
+
+0.01:
+accuracy 55.67123%
+
+0.001:
+accuracy 56.6164%
+
+0.0001:
+accuracy 56.63927%
+
+Trial with ISO Hitting stat:
+accuracy 56.6484% (best 64.84%)
+
+Trial with ISO replacing SLG:
+accuracy 56.82192% (best 65.84%)
+
+Trial with ISO replacing AVG:
+accuracy 56.977%
+
+Trial with ISO replacing both:
+accuracy 56.301%
+
+Trying above one more time just in case:
+accuracy 56.616%
+
+INCLUDING ISO AND SLG FROM NOW ON, EXCLUDING AVG
+
+Trial with home wins variable and visitor wins variable instead of home wins difference:
+accuracy 56.703
+
+Trying with Home Wins Difference as we had before:
+accuracy 56.575%
+
+CHANGED VAR TO HOME WINS AND VISITOR WINS, NOT DIFFERENCE
+
+Trial with home loss and visitor loss instead of difference:
+accuracy 57.315% (!!!!)
+
+Trying again to be safe

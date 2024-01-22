@@ -440,3 +440,13 @@ def random_game_guesser(game_log):
             losses += 1
 
     print(f"Out of {games} games, the computer correctly guessed {wins} games ({round(wins / games * 100, 2)}%) and lost {losses} games ({round(losses / games * 100, 2)}%)")
+
+def get_team_runs(team, date, game_log):
+    runs = 0
+    for game in game_log:
+        if game['date'] <= date:
+            if game['home'] == team:
+                runs += game['hscore']
+            else:
+                runs += game['vscore']
+    return runs

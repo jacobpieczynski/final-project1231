@@ -307,8 +307,8 @@ def lineup_stats(lineup, date):
 # Gets the team average for each stat
 def team_batting_averages(lineup, date):
     stats = lineup_stats(lineup, date)
-    averages = {"Batting Average": 0, "Slugging": 0, "OBP": 0, "OPS": 0, "Team Hits": 0, "Team Singles": 0, "Team Doubles": 0, "Team Triples": 0, "Team HRs": 0}
-    hits, singles, doubles, triples, hrs = 0, 0, 0, 0, 0
+    averages = {"Batting Average": 0, "Slugging": 0, "OBP": 0, "OPS": 0, "Team Hits": 0, "Team Singles": 0, "Team Doubles": 0, "Team Triples": 0, "Team HRs": 0, "Team Strikeouts": 0, "Team Walks": 0}
+    hits, singles, doubles, triples, hrs, strikeouts, walks = 0, 0, 0, 0, 0, 0, 0
     player_count = 0
     for player in stats:
         averages["Batting Average"] += stats[player]["Batting Average"]
@@ -320,6 +320,8 @@ def team_batting_averages(lineup, date):
         doubles += stats[player]["Doubles"]
         triples += stats[player]["Triples"]
         hrs += stats[player]["Home Runs"]
+        strikeouts += stats[player]["Strikeouts"]
+        walks += stats[player]["Walks"]
         player_count += 1
 
     for average in averages:
@@ -329,6 +331,8 @@ def team_batting_averages(lineup, date):
     averages["Team Doubles"] = doubles
     averages["Team Triples"] = triples
     averages["Team HRs"] = hrs
+    averages["Team Strikeouts"] = strikeouts
+    averages["Team Walks"] = walks
     return averages
 
 # Collects statistics from prior pitcher/hitter matchups
@@ -466,6 +470,9 @@ def log_data(game_log):
             home_singles, visitor_singles = home_averages["Team Singles"], visitor_averages["Team Singles"]
             home_doubles, visitor_doubles = home_averages["Team Doubles"], visitor_averages["Team Doubles"]
             home_triples, visitor_triples = home_averages["Team Triples"], visitor_averages["Team Triples"]
+            home_ks, visitor_ks = home_averages["Team Strikeouts"], visitor_averages["Team Strikeouts"]
+            home_walks, visitor_walks = home_averages["Team Walks"], visitor_averages["Team Walks"]
+            home_runs, visitor_runs = get_team_runs(game['home'], date, game_log), get_team_runs(game['visitor'], date, game_log)
             home_hrs, visitor_hrs = home_averages["Team HRs"], visitor_averages["Team HRs"]
 
             # Home Starting Pitcher ID
@@ -492,17 +499,25 @@ def log_data(game_log):
             results[gameid]["Home"] = game['home']
             results[gameid]["Visitor"] = game['visitor']
             results[gameid]["Date"] = game['date']
-            results[gameid]["Home Win Diff"] = home_wins - visitor_wins
-            results[gameid]["Home Loss Diff"] = home_losses - visitor_losses
+            #results[gameid]["Home Win Diff"] = home_wins - visitor_wins
+            results[gameid]["Home Wins"] = home_wins
+            results[gameid]["Visitor Wins"] = visitor_wins
+            results[gameid]["Home Losses"] = home_losses
+            results[gameid]["Visitor Losses"] = visitor_losses
+            #results[gameid]["Home Loss Diff"] = home_losses - visitor_losses
+            results[gameid]["Home Total Runs Difference"] = home_runs - visitor_runs
             results[gameid]["OBP Difference"] = home_obp - visitor_obp
             results[gameid]["AVG Difference"] = home_avg - visitor_avg
             results[gameid]["SLG Difference"] = home_slg - visitor_slg
             results[gameid]["OPS Difference"] = home_ops - visitor_ops
+            results[gameid]["ISO Difference"] = (home_slg - home_avg) - (visitor_slg - visitor_avg)
             results[gameid]["Hits Difference"] = home_hits - visitor_hits
-            results[gameid]["Singles Difference"] = home_singles - visitor_singles
-            results[gameid]["Doubles Difference"] = home_doubles - visitor_doubles
-            results[gameid]["Triples Difference"] = home_triples - visitor_triples
-            results[gameid]["HRs Difference"] = home_hrs - visitor_hrs
+            results[gameid]["Walks Difference"] = home_walks - visitor_walks
+            #results[gameid]["Singles Difference"] = home_singles - visitor_singles
+            #results[gameid]["Doubles Difference"] = home_doubles - visitor_doubles
+            #results[gameid]["Triples Difference"] = home_triples - visitor_triples
+            #results[gameid]["HRs Difference"] = home_hrs - visitor_hrs
+            results[gameid]["Strikeouts Difference"] = home_ks - visitor_ks
             results[gameid]["ERA Difference"] = vsp_era - hsp_era # Lower is better for home team
             results[gameid]["WHIP Difference"] = vsp_whip - hsp_whip
             results[gameid]["K9 Difference"] = hsp_k9 - vsp_k9
@@ -512,7 +527,6 @@ def log_data(game_log):
             results[gameid]["Head to Head"] = h2h[game['home']] - h2h[game['visitor']]
     write_csv(results, "log_data.csv")
     return results
-
 
 # TODO: Park factor/hrs, home advantage, pitcher hitter advantage
 

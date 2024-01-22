@@ -10,7 +10,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load the CSV file into a DataFrame
-data = pd.read_csv('log_data.csv').drop(columns=['Gameid', 'Home', 'Visitor', 'Date'], axis=1)
+data = pd.read_csv('log_data.csv').drop(columns=['Gameid', 'Home', 'Visitor', 'Date', 'AVG Difference', 'OPS Difference', 'Run Differential'], axis=1)
 #data = pd.get_dummies(data)
 #data = data[(np.abs(stats.zscore(data)) < 3).all(axis=1)] # Removing outliers by 3 standard deviations (doesn't seem to do anything)
 X = data.drop('Home Win', axis=1)
