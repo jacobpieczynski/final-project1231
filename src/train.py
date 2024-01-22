@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 
 # Load the CSV file into a DataFrame
 data = pd.read_csv('log_data.csv').drop(columns=['Gameid', 'Home', 'Visitor', 'Date'], axis=1)
-data = pd.get_dummies(data)
+#data = pd.get_dummies(data)
 #data = data[(np.abs(stats.zscore(data)) < 3).all(axis=1)] # Removing outliers by 3 standard deviations (doesn't seem to do anything)
 X = data.drop('Home Win', axis=1)
 y = data['Home Win']
@@ -25,7 +25,7 @@ print(feature_list)
 #for data in X:
 #    print(data, end="\n\n")
 model_average, model_best, rf_model_average = 0, 0, 0
-rng = 100
+rng = 500
 for i in range(rng):
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1) #random_state=705
 
@@ -79,7 +79,7 @@ for i in range(rng):
     #rf_model_average += rf_acc
     if acc >= model_best:
         model_best = acc
-    print(f"LR Accuracy: {acc}")
+    print(f"TRIAL {i} - LR Accuracy: {acc}")
     #plt.show()
 
 model_average /= rng

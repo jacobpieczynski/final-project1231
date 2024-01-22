@@ -139,3 +139,18 @@ accuracy 57.429% (I think this isn't calculated properly)
 
 With Home Win Difference (should be correct calc), i swear to god if this doesn't improve accuracy i'll kms:
 accuracy 56.456% (I LIVE TO SEE ANOTHER DAY)
+
+Test 2:
+accuracy 56.242
+
+1000 trials (for shits and giggles) with dummies:
+accuracy 56.31%
+
+1000 trials (no home win difference) iwth dummies:
+accuracy 56.546% HOW DOES HOME WIN DIFF MAKE IT WORSE
+
+500 trials (home win diff) without dummies:
+accuracy 56.4429%
+
+500 trials (no home win diff) without dummies:
+accuracy 56.4648%

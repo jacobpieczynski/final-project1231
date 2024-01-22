@@ -1,0 +1,155 @@
+       Home Win Diff  OBP Difference  ...  Head to Head     Home Win
+count    2182.000000     2182.000000  ...   2182.000000  2182.000000
+mean       -0.047663        0.001042  ...     -0.120073     0.521998
+std        11.822023        0.030525  ...      1.910964     0.499630
+min       -42.000000       -0.101000  ...     -9.000000     0.000000
+25%        -6.000000       -0.018000  ...     -1.000000     0.000000
+50%         0.000000        0.000500  ...      0.000000     1.000000
+75%         6.000000        0.021000  ...      1.000000     1.000000
+max        38.000000        0.134000  ...      9.000000     1.000000
+
+[8 rows x 13 columns]
+['Home Win Diff', 'OBP Difference', 'AVG Difference', 'SLG Difference', 'OPS Difference', 'ERA Difference', 'WHIP Difference', 'K9 Difference', 'BB9 Difference', 'Home Recency Adv', 'Run Differential', 'Head to Head', 'Home Win']
+Variable: Run Differential     Importance: 0.11
+Variable: ERA Difference       Importance: 0.1
+Variable: WHIP Difference      Importance: 0.1
+Variable: K9 Difference        Importance: 0.1
+Variable: AVG Difference       Importance: 0.09
+Variable: Home Win Diff        Importance: 0.08
+Variable: OBP Difference       Importance: 0.08
+Variable: SLG Difference       Importance: 0.08
+Variable: BB9 Difference       Importance: 0.08
+Variable: OPS Difference       Importance: 0.07
+Variable: Home Recency Adv     Importance: 0.06
+Variable: Head to Head         Importance: 0.05
+RF Accuracy: 0.5662100456621004 %.
+TRIAL 0 - LR Accuracy: 0.5296803652968036
+Variable: Run Differential     Importance: 0.12
+Variable: ERA Difference       Importance: 0.1
+Variable: WHIP Difference      Importance: 0.1
+Variable: K9 Difference        Importance: 0.1
+Variable: OBP Difference       Importance: 0.09
+Variable: AVG Difference       Importance: 0.09
+Variable: Home Win Diff        Importance: 0.08
+Variable: SLG Difference       Importance: 0.08
+Variable: BB9 Difference       Importance: 0.08
+Variable: OPS Difference       Importance: 0.07
+Variable: Home Recency Adv     Importance: 0.05
+Variable: Head to Head         Importance: 0.05
+RF Accuracy: 0.5159817351598174 %.
+TRIAL 1 - LR Accuracy: 0.5388127853881278
+Variable: Run Differential     Importance: 0.11
+Variable: ERA Difference       Importance: 0.1
+Variable: WHIP Difference      Importance: 0.1
+Variable: K9 Difference        Importance: 0.1
+Variable: AVG Difference       Importance: 0.09
+Variable: Home Win Diff        Importance: 0.08
+Variable: OBP Difference       Importance: 0.08
+Variable: SLG Difference       Importance: 0.08
+Variable: BB9 Difference       Importance: 0.08
+Variable: OPS Difference       Importance: 0.07
+Variable: Home Recency Adv     Importance: 0.05
+Variable: Head to Head         Importance: 0.05
+RF Accuracy: 0.5616438356164384 %.
+TRIAL 2 - LR Accuracy: 0.5753424657534246
+Variable: Run Differential     Importance: 0.12
+Variable: ERA Difference       Importance: 0.1
+Variable: K9 Difference        Importance: 0.1
+Variable: OBP Difference       Importance: 0.09
+Variable: AVG Difference       Importance: 0.09
+Variable: WHIP Difference      Importance: 0.09
+Variable: Home Win Diff        Importance: 0.08
+Variable: SLG Difference       Importance: 0.08
+Variable: BB9 Difference       Importance: 0.08
+Variable: OPS Difference       Importance: 0.07
+Variable: Home Recency Adv     Importance: 0.05
+Variable: Head to Head         Importance: 0.05
+RF Accuracy: 0.5296803652968036 %.
+TRIAL 3 - LR Accuracy: 0.4931506849315068
+Variable: Run Differential     Importance: 0.11
+Variable: ERA Difference       Importance: 0.1
+Variable: WHIP Difference      Importance: 0.1
+Variable: K9 Difference        Importance: 0.1
+Variable: Home Win Diff        Importance: 0.09
+Variable: AVG Difference       Importance: 0.09
+Variable: OBP Difference       Importance: 0.08
+Variable: SLG Difference       Importance: 0.08
+Variable: BB9 Difference       Importance: 0.08
+Variable: OPS Difference       Importance: 0.07
+Variable: Home Recency Adv     Importance: 0.05
+Variable: Head to Head         Importance: 0.05
+RF Accuracy: 0.5342465753424658 %.
+TRIAL 4 - LR Accuracy: 0.5114155251141552
+Variable: Run Differential     Importance: 0.11
+Variable: ERA Difference       Importance: 0.1
+Variable: WHIP Difference      Importance: 0.1
+Variable: K9 Difference        Importance: 0.1
+Variable: AVG Difference       Importance: 0.09
+Variable: Home Win Diff        Importance: 0.08
+Variable: OBP Difference       Importance: 0.08
+Variable: SLG Difference       Importance: 0.08
+Variable: BB9 Difference       Importance: 0.08
+Variable: OPS Difference       Importance: 0.07
+Variable: Home Recency Adv     Importance: 0.06
+Variable: Head to Head         Importance: 0.05
+RF Accuracy: 0.5342465753424658 %.
+TRIAL 5 - LR Accuracy: 0.547945205479452
+Variable: Run Differential     Importance: 0.11
+Variable: ERA Difference       Importance: 0.1
+Variable: WHIP Difference      Importance: 0.1
+Variable: K9 Difference        Importance: 0.1
+Variable: OBP Difference       Importance: 0.09
+Variable: AVG Difference       Importance: 0.09
+Variable: Home Win Diff        Importance: 0.08
+Variable: SLG Difference       Importance: 0.08
+Variable: BB9 Difference       Importance: 0.08
+Variable: OPS Difference       Importance: 0.07
+Variable: Home Recency Adv     Importance: 0.06
+Variable: Head to Head         Importance: 0.05
+RF Accuracy: 0.5159817351598174 %.
+TRIAL 6 - LR Accuracy: 0.5662100456621004
+Variable: Run Differential     Importance: 0.11
+Variable: ERA Difference       Importance: 0.1
+Variable: WHIP Difference      Importance: 0.1
+Variable: K9 Difference        Importance: 0.1
+Variable: AVG Difference       Importance: 0.09
+Variable: Home Win Diff        Importance: 0.08
+Variable: OBP Difference       Importance: 0.08
+Variable: SLG Difference       Importance: 0.08
+Variable: BB9 Difference       Importance: 0.08
+Variable: OPS Difference       Importance: 0.07
+Variable: Home Recency Adv     Importance: 0.05
+Variable: Head to Head         Importance: 0.05
+RF Accuracy: 0.5114155251141552 %.
+TRIAL 7 - LR Accuracy: 0.589041095890411
+Variable: Run Differential     Importance: 0.11
+Variable: ERA Difference       Importance: 0.1
+Variable: WHIP Difference      Importance: 0.1
+Variable: K9 Difference        Importance: 0.1
+Variable: AVG Difference       Importance: 0.09
+Variable: Home Win Diff        Importance: 0.08
+Variable: OBP Difference       Importance: 0.08
+Variable: BB9 Difference       Importance: 0.08
+Variable: SLG Difference       Importance: 0.07
+Variable: OPS Difference       Importance: 0.07
+Variable: Home Recency Adv     Importance: 0.05
+Variable: Head to Head         Importance: 0.05
+RF Accuracy: 0.4931506849315068 %.
+TRIAL 8 - LR Accuracy: 0.5251141552511416
+Variable: Run Differential     Importance: 0.11
+Variable: ERA Difference       Importance: 0.1
+Variable: WHIP Difference      Importance: 0.1
+Variable: K9 Difference        Importance: 0.1
+Variable: Home Win Diff        Importance: 0.09
+Variable: AVG Difference       Importance: 0.09
+Variable: OBP Difference       Importance: 0.08
+Variable: SLG Difference       Importance: 0.08
+Variable: BB9 Difference       Importance: 0.08
+Variable: OPS Difference       Importance: 0.07
+Variable: Home Recency Adv     Importance: 0.06
+Variable: Head to Head         Importance: 0.05
+RF Accuracy: 0.5388127853881278 %.
+TRIAL 9 - LR Accuracy: 0.5388127853881278
+Best accuracy is 0.589041095890411
+Overall accuracy Random Forest is: 0.5301369863013699
+Overall accuracy Linear Regression is: 0.5415525114155251
