@@ -307,8 +307,8 @@ def lineup_stats(lineup, date):
 # Gets the team average for each stat
 def team_batting_averages(lineup, date):
     stats = lineup_stats(lineup, date)
-    averages = {"Batting Average": 0, "Slugging": 0, "OBP": 0, "OPS": 0, "Team Hits": 0, "Team HRs": 0}
-    hits, singles, doubles, triples, hrs = 0, 0, 0, 0
+    averages = {"Batting Average": 0, "Slugging": 0, "OBP": 0, "OPS": 0, "Team Hits": 0, "Team Singles": 0, "Team Doubles": 0, "Team Triples": 0, "Team HRs": 0}
+    hits, singles, doubles, triples, hrs = 0, 0, 0, 0, 0
     player_count = 0
     for player in stats:
         averages["Batting Average"] += stats[player]["Batting Average"]
@@ -325,6 +325,9 @@ def team_batting_averages(lineup, date):
     for average in averages:
         averages[average] = round(averages[average] / player_count, 3)
     averages["Team Hits"] = hits
+    averages["Team Singles"] = singles
+    averages["Team Doubles"] = doubles
+    averages["Team Triples"] = triples
     averages["Team HRs"] = hrs
     return averages
 
@@ -460,6 +463,9 @@ def log_data(game_log):
             home_slg, visitor_slg = home_averages["Slugging"], visitor_averages["Slugging"]
             home_ops, visitor_ops = home_averages["OPS"], visitor_averages["OPS"]
             home_hits, visitor_hits = home_averages["Team Hits"], visitor_averages["Team Hits"]
+            home_singles, visitor_singles = home_averages["Team Singles"], visitor_averages["Team Singles"]
+            home_doubles, visitor_doubles = home_averages["Team Doubles"], visitor_averages["Team Doubles"]
+            home_triples, visitor_triples = home_averages["Team Triples"], visitor_averages["Team Triples"]
             home_hrs, visitor_hrs = home_averages["Team HRs"], visitor_averages["Team HRs"]
 
             # Home Starting Pitcher ID
@@ -493,7 +499,10 @@ def log_data(game_log):
             results[gameid]["SLG Difference"] = home_slg - visitor_slg
             results[gameid]["OPS Difference"] = home_ops - visitor_ops
             results[gameid]["Hits Difference"] = home_hits - visitor_hits
-            results[gameid]["HRs Differeence"] = home_hrs - visitor_hrs
+            results[gameid]["Singles Difference"] = home_singles - visitor_singles
+            results[gameid]["Doubles Difference"] = home_doubles - visitor_doubles
+            results[gameid]["Triples Difference"] = home_triples - visitor_triples
+            results[gameid]["HRs Difference"] = home_hrs - visitor_hrs
             results[gameid]["ERA Difference"] = vsp_era - hsp_era # Lower is better for home team
             results[gameid]["WHIP Difference"] = vsp_whip - hsp_whip
             results[gameid]["K9 Difference"] = hsp_k9 - vsp_k9

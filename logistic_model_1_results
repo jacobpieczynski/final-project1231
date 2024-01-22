@@ -169,4 +169,8 @@ accuracy 55.3196%
 With difference in total team hits instead of average:
 accuracy 56.4474%
 
-With difference in total Home Runs
+With all hit type totals - using the difference between the two, e.g. diff in singles, or triples:
+accuracy 56.2009%
+
+Removing total hits, just the specific types of hits
+accuracy 55.99999%
