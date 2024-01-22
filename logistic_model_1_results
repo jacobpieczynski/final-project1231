@@ -251,3 +251,22 @@ accuracy 57.315% (!!!!)
 
 Trying again to be safe
 accuracy 57.4566%
+
+Removal of BB9 stat for pitchers
+accuracy 56.6438%
+
+KEEPING BB9
+
+Fixed head_to_head function to be inclusive of the date as we are passing in the prior game date - shouldn't be too drastic a change:
+accuracy 56.8219%
+
+Tried one more time:
+accuracy 56.945%
+
+Removal of h2h stat entirely:
+accuracy 56.7762% 
+
+KEEPING H2H
+
+Fixed get_recent_game_dates function to be inclusive of date passed in - same issue as h2h func
+accuracy 

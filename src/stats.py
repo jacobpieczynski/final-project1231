@@ -79,7 +79,7 @@ def head_to_head(team1, team2, game_log, end_date="20231231"): # IF THERE ARE ER
     for game in game_log:
         # Checks that the two teams played each other
         #print(f"{team1}, {team2} : {game["home"]}, {game["visitor"]}")
-        if (team1 in [game["home"], game["visitor"]]) and (team2 in [game["home"], game["visitor"]]) and int(game["date"]) < int(end_date):
+        if (team1 in [game["home"], game["visitor"]]) and (team2 in [game["home"], game["visitor"]]) and game['date'] <= end_date:
             gamect += 1
             winner = game["visitor"]
             if game["hscore"] > game["vscore"]:

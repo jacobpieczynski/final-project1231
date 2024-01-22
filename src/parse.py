@@ -413,7 +413,7 @@ def sort_games(game_log):
 def get_last_game_dates(num, team, date="20231231"):
     prior_games = []
     for game in sorted_game_dates[team]:
-        if game['date'] < date:
+        if game['date'] <= date:
             prior_games.append(game)
         else:
             break
